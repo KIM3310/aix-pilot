@@ -20,6 +20,7 @@
 ## 포트폴리오 임팩트
 
 - 단순 챗봇이 아니라 RAG, Agent, 보안, 감사, KPI, 평가를 한 화면에서 운영하는 제품형 데모입니다.
+- `public/brand`의 자체 생성 4K 이미지와 GIF 모션 자산으로 저작권 리스크 없이 프리미엄 제품 첫인상을 제공합니다.
 - `Evaluation Lab`과 `evaluation.test.ts`로 AI 기능을 골든 질문셋 기준으로 회귀 검증합니다.
 - `docs/THREAT_MODEL.md`, `docs/ADR/`, `docs/PORTFOLIO_CASE_STUDY.md`까지 포함해 제품 판단, 보안 사고, 엔지니어링 의사결정을 같이 보여줍니다.
 - `npm run qa` 하나로 TypeScript, 테스트, 빌드를 재현할 수 있어 CI에 바로 연결할 수 있습니다.
@@ -82,6 +83,12 @@ src/
     security.ts          # DLP 탐지와 마스킹
     security.test.ts     # DLP 탐지/마스킹 테스트
   styles.css             # 반응형 엔터프라이즈 UI
+public/
+  brand/
+    aix-hero-generated.png  # AI 생성 프리미엄 제품 비주얼
+    aix-hero-generated.webp # 브라우저용 최적화 히어로 이미지
+    aix-hero-4k.png         # 로컬 생성 4K 저작권 안전 비주얼
+    aix-motion.gif          # 로컬 생성 운영 흐름 GIF
 ```
 
 ## 데모 시나리오

@@ -433,47 +433,68 @@ function App() {
       </aside>
 
       <main className="workspace" id="main-content">
-        <header className="top-bar">
-          <div>
-            <p className="eyebrow">Enterprise GenAI Pilot Workspace</p>
-            <h1>RAG, Agent, 보안, KPI를 한 번에 운영하는 무료 기준 파일럿</h1>
+        <header className="product-hero">
+          <div className="hero-copy">
+            <div className="hero-kicker">
+              <Sparkles size={16} />
+              Enterprise GenAI Pilot Workspace
+            </div>
+            <h1>근거, 보안, Agent, KPI까지 운영 가능한 GenAI 파일럿</h1>
+            <p className="hero-subcopy">
+              흩어진 사내 지식을 RAG로 묶고, 업무 초안 Agent와 DLP 마스킹, 평가 게이트, 운영 리포트까지 하나의 고급 콘솔에서 검증합니다.
+            </p>
+            <div className="top-actions">
+              <button type="button" className="icon-button" title="파일럿 실행" onClick={runDemoScenario}>
+                <Play size={18} />
+                <span>실행</span>
+              </button>
+              <button type="button" className="icon-button ghost" title="보고서 생성" onClick={exportReport}>
+                <Download size={18} />
+                <span>리포트</span>
+              </button>
+              <button type="button" className="icon-button ghost" title="초기화" onClick={resetWorkspace}>
+                <RotateCcw size={18} />
+                <span>초기화</span>
+              </button>
+            </div>
+            <div className="hero-proof-row" aria-label="pilot proof summary">
+              <span>Eval {evaluationRun.overallScore}</span>
+              <span>Spec {specScore}%</span>
+              <span>문서 {documents.length}건</span>
+              <span>위험 {latestRisk}</span>
+            </div>
           </div>
-          <div className="top-actions">
-            <button type="button" className="icon-button" title="파일럿 실행" onClick={runDemoScenario}>
-              <Play size={18} />
-              <span>실행</span>
-            </button>
-            <button type="button" className="icon-button ghost" title="보고서 생성" onClick={exportReport}>
-              <Download size={18} />
-              <span>리포트</span>
-            </button>
-            <button type="button" className="icon-button ghost" title="초기화" onClick={resetWorkspace}>
-              <RotateCcw size={18} />
-              <span>초기화</span>
-            </button>
+
+          <div className="hero-visual" aria-label="AIX Pilot product visual">
+            <picture>
+              <source srcSet="/brand/aix-hero-generated.webp" type="image/webp" />
+              <img src="/brand/aix-hero-generated.png" alt="기업용 GenAI 운영 콘솔을 표현한 추상 제품 비주얼" />
+            </picture>
+            <div className="visual-glass-card visual-score">
+              <span>Evaluation</span>
+              <strong>{evaluationRun.overallScore}</strong>
+              <small>{evaluationRun.passCount} 통과 / {evaluationRun.failCount} 실패</small>
+            </div>
+            <div className="visual-glass-card visual-motion">
+              <img src="/brand/aix-motion.gif" alt="AIX Pilot 운영 흐름 애니메이션" />
+              <span>Live operating flow</span>
+            </div>
           </div>
         </header>
 
-        <section className="pilot-status" aria-label="pilot status">
-          <div>
+        <section className="signal-grid" aria-label="pilot signals">
+          <article>
             <span>로컬 데모</span>
             <strong>무료 기준 운영 준비도 {readinessScore}%</strong>
-          </div>
-          <div>
+          </article>
+          <article>
             <span>지식 베이스</span>
             <strong>문서 {documents.length}건 / 청크 {chunks.length}개</strong>
-          </div>
-          <div>
-            <span>위험 상태</span>
-            <strong>{latestRisk}</strong>
-          </div>
-          <div className="toast-line" aria-live="polite" role="status">
+          </article>
+          <article>
             <span>시스템</span>
-            <strong>{toast}</strong>
-          </div>
-        </section>
-
-        <section className="readiness-grid" aria-label="deployment readiness">
+            <strong aria-live="polite" role="status">{toast}</strong>
+          </article>
           {readinessCards.map((item) => (
             <ReadinessCard key={item.label} {...item} />
           ))}
@@ -483,7 +504,7 @@ function App() {
           <div className="proof-hero">
             <div>
               <p className="eyebrow">Launch Proof</p>
-              <h2>채용자가 첫 화면에서 바로 읽는 운영형 GenAI 제품 증적</h2>
+              <h2>제품처럼 보이는 데모를 넘어, 실제 운영 전환 기준까지 증명합니다</h2>
             </div>
             <div className="proof-orbit" style={{ "--score": `${evaluationRun.overallScore * 3.6}deg` } as CSSProperties}>
               <strong>{evaluationRun.overallScore}</strong>

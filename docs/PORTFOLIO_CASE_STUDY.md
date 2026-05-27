@@ -20,6 +20,7 @@ AIX Pilot is built to show those operational answers upfront. It is intentionall
 | KPI | Adoption, RAG quality, automation, cost, risk dashboards | Product measurement mindset |
 | Evaluation | Golden question suite with retrieval, citation, safety score | Regression testing for AI behavior |
 | Spec Pack | Requirements, rollout phases, gates, stack decisions | Enterprise handoff and execution clarity |
+| Visual System | Original generated hero image and local GIF motion asset | Design taste with copyright-safe assets |
 
 ## Architecture Summary
 
@@ -56,6 +57,7 @@ The repository is designed so the reviewer can inspect product, code, and govern
 - `src/lib/report.test.ts` verifies raw phone and email values do not leak into reports.
 - Browser QA screenshots validate desktop, mobile, and Spec Pack layouts.
 - `npm run qa` keeps the same quality gate ready for CI wiring.
+- Brand visuals live under `public/brand` and are original project assets, not stock imagery.
 
 ## Demo Talk Track
 
