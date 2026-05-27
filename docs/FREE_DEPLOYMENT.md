@@ -11,10 +11,17 @@ npm run build
 Cloudflare Pages 직접 배포:
 
 ```bash
-npx wrangler pages deploy dist --project-name aix-pilot
+npx --yes wrangler@4 pages deploy dist --project-name aix-pilot
 ```
 
 `wrangler.toml`에는 Pages build output directory를 `dist`로 고정했습니다.
+
+GitHub Actions에서 수동 배포하려면 저장소 Secrets에 아래 값을 넣고 `Cloudflare Pages` workflow를 실행합니다.
+
+- `CLOUDFLARE_ACCOUNT_ID`
+- `CLOUDFLARE_API_TOKEN`
+
+배포 workflow는 `npm run qa`를 먼저 통과한 뒤 Cloudflare Pages에 업로드합니다.
 
 ## 2. 로컬 LLM 연결
 

@@ -1,5 +1,7 @@
 # AIX Pilot
 
+[![QA](https://github.com/KIM3310/aix-pilot/actions/workflows/qa.yml/badge.svg)](https://github.com/KIM3310/aix-pilot/actions/workflows/qa.yml)
+
 기업용 GenAI 도입을 위한 무료 기준 RAG, Agent, 보안, KPI 대시보드 통합 플랫폼 프로토타입입니다.
 
 ## 핵심 기능
@@ -28,6 +30,7 @@
 - `Evaluation Lab`과 `evaluation.test.ts`로 AI 기능을 골든 질문셋 기준으로 회귀 검증합니다.
 - `docs/THREAT_MODEL.md`, `docs/ADR/`, `docs/PORTFOLIO_CASE_STUDY.md`까지 포함해 제품 판단, 보안 사고, 엔지니어링 의사결정을 같이 보여줍니다.
 - `npm run qa` 하나로 TypeScript, 테스트, 빌드를 재현할 수 있어 CI에 바로 연결할 수 있습니다.
+- GitHub Actions QA, Dependabot, 수동 Cloudflare Pages 배포 워크플로까지 포함해 공개 저장소에서도 유지보수 신뢰도를 확인할 수 있습니다.
 
 ## 무료 기준 스택
 
@@ -65,6 +68,14 @@ npm run qa
 ```
 
 `qa`는 TypeScript 검사, Vitest 자동 테스트, 프로덕션 빌드를 순서대로 실행합니다.
+GitHub Actions에서도 모든 push와 pull request마다 같은 검증을 실행합니다.
+
+## 운영 품질 게이트
+
+- `QA` workflow: TypeScript, 26개 Vitest 테스트, 프로덕션 빌드, production dependency audit
+- `Cloudflare Pages` workflow: 릴리스 후보를 다시 검증한 뒤 `dist/`를 Cloudflare Pages에 수동 배포
+- `Dependabot`: npm 패키지와 GitHub Actions 버전을 주 1회 점검
+- 배포 전 로컬 명령: `npm run qa && npm audit --omit=dev`
 
 ## 파일 구조
 
