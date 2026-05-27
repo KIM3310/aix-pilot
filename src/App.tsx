@@ -76,6 +76,14 @@ import { maskSensitive, scanRisk, securityControls } from "./lib/security";
 import { calculateServiceReadiness } from "./lib/serviceReadiness";
 import { specCoverageScore } from "./lib/spec";
 import { runEvaluationSuite, type EvalVerdict } from "./lib/evaluation";
+import {
+  buildOllamaPrompt,
+  createOllamaGenerateRequest,
+  getFreeRuntimeCards,
+  normalizeEndpoint,
+  OLLAMA_DEFAULT_ENDPOINT,
+  OLLAMA_DEFAULT_MODEL
+} from "./lib/freeRuntime";
 import { calculateRevenueBusinessCase, calculateScaleScenario, formatKrw } from "./lib/revenue";
 
 const sourceOrder = ["고객센터", "사내지식", "보안정책", "운영지표", "영업지원"];
@@ -86,7 +94,10 @@ const demoScenario =
 const storageKeys = {
   documents: "aix-pilot.documents",
   query: "aix-pilot.query",
-  audit: "aix-pilot.audit"
+  audit: "aix-pilot.audit",
+  clientId: "aix-pilot.client-id",
+  ollamaEndpoint: "aix-pilot.ollama-endpoint",
+  ollamaModel: "aix-pilot.ollama-model"
 };
 const initialAuditLog: AuditEvent[] = [
   { id: 1, time: "09:12", type: "RAG", summary: "초기 문서 8건 색인", risk: "낮음" },
@@ -266,6 +277,20 @@ function writeStoredValue<T>(key: string, value: T) {
   }
 }
 
+function getOrCreateClientId() {
+  try {
+    const existing = localStorage.getItem(storageKeys.clientId);
+    if (existing) {
+      return existing;
+    }
+    const next = crypto.randomUUID();
+    localStorage.setItem(storageKeys.clientId, next);
+    return next;
+  } catch {
+    return "local-runtime-client";
+  }
+}
+
 function App() {
   const [documents, setDocuments] = useState<KnowledgeDocument[]>(() => readStoredValue(storageKeys.documents, sampleDocuments));
   const [query, setQuery] = useState(() => readStoredValue(storageKeys.query, starterQuestions[1]));
@@ -276,6 +301,12 @@ function App() {
   const [activeView, setActiveView] = useState("command");
   const [toast, setToast] = useState("파일럿 워크스페이스 준비 완료");
   const [auditLog, setAuditLog] = useState<AuditEvent[]>(() => readStoredValue(storageKeys.audit, initialAuditLog));
+  const [clientId] = useState(getOrCreateClientId);
+  const [ollamaEndpoint, setOllamaEndpoint] = useState(() => readStoredValue(storageKeys.ollamaEndpoint, OLLAMA_DEFAULT_ENDPOINT));
+  const [ollamaModel, setOllamaModel] = useState(() => readStoredValue(storageKeys.ollamaModel, OLLAMA_DEFAULT_MODEL));
+  const [llmStatus, setLlmStatus] = useState("무료 LLM 대기");
+  const [llmOutput, setLlmOutput] = useState("");
+  const [databaseStatus, setDatabaseStatus] = useState("Cloudflare D1 바인딩 대기");
   const [teamMembers, setTeamMembers] = useState(450);
   const [monthlyWorkflows, setMonthlyWorkflows] = useState(120000);
   const [minutesSavedPerWorkflow, setMinutesSavedPerWorkflow] = useState(7);
@@ -348,6 +379,15 @@ function App() {
   );
   const scaleResults = useMemo(() => scaleScenarios.map((scenario) => ({ ...scenario, result: calculateScaleScenario(scenario) })), []);
   const primaryScale = scaleResults[0];
+  const freeRuntimeCards = useMemo(
+    () =>
+      getFreeRuntimeCards({
+        llmConnected: llmStatus.includes("연결"),
+        databaseConnected: databaseStatus.includes("D1 저장"),
+        deploymentReady: true
+      }),
+    [databaseStatus, llmStatus]
+  );
   const readinessCards = [
     {
       icon: Database,
@@ -420,6 +460,15 @@ function App() {
   useEffect(() => {
     writeStoredValue(storageKeys.audit, auditLog);
   }, [auditLog]);
+
+  useEffect(() => {
+    writeStoredValue(storageKeys.ollamaEndpoint, ollamaEndpoint);
+  }, [ollamaEndpoint]);
+
+  useEffect(() => {
+    writeStoredValue(storageKeys.ollamaModel, ollamaModel);
+  }, [ollamaModel]);
+
   const pilotReport = useMemo(
     () =>
       buildPilotReport({
@@ -482,6 +531,85 @@ function App() {
     downloadTextFile(`aix-pilot-report-${new Date().toISOString().slice(0, 10)}.md`, pilotReport);
     pushAudit("Report", "파일럿 리포트 다운로드", latestRisk);
     setToast("파일럿 리포트를 다운로드했습니다");
+  }
+
+  async function checkOllama() {
+    try {
+      const endpoint = normalizeEndpoint(ollamaEndpoint);
+      const response = await fetch(`${endpoint}/api/tags`);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      const data = (await response.json()) as { models?: Array<{ name?: string }> };
+      const modelCount = data.models?.length ?? 0;
+      setLlmStatus(`Ollama 연결 (${modelCount}개 모델)`);
+      setToast("무료 로컬 LLM 런타임을 확인했습니다");
+    } catch {
+      setLlmStatus("Ollama 미연결");
+      setToast("Ollama가 아직 실행되지 않았습니다");
+    }
+  }
+
+  async function runLocalLlm() {
+    const prompt = buildOllamaPrompt({ query, answer });
+    try {
+      setLlmStatus("Ollama 생성 중");
+      const endpoint = normalizeEndpoint(ollamaEndpoint);
+      const response = await fetch(`${endpoint}/api/generate`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(createOllamaGenerateRequest(ollamaModel, prompt))
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      const data = (await response.json()) as { response?: string };
+      setLlmOutput(maskSensitive(data.response || "로컬 모델 응답이 비어 있습니다."));
+      setLlmStatus("Ollama 연결");
+      setToast("무료 로컬 LLM 요약을 생성했습니다");
+    } catch {
+      try {
+        setLlmStatus("Workers AI 생성 중");
+        const response = await fetch("/api/llm", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ prompt })
+        });
+        const data = (await response.json()) as { status?: string; response?: string; provider?: string };
+        if (!response.ok || data.status !== "ok") {
+          throw new Error(data.status || `HTTP ${response.status}`);
+        }
+        setLlmOutput(maskSensitive(data.response || "Cloudflare Workers AI 응답이 비어 있습니다."));
+        setLlmStatus("Workers AI 연결");
+        setToast("무료 Cloudflare Workers AI 요약을 생성했습니다");
+      } catch {
+        setLlmStatus("무료 LLM 미연결");
+        setLlmOutput("Ollama 또는 Cloudflare Workers AI 연결이 필요합니다. 연결 전에는 규칙 기반 RAG/Agent가 그대로 동작합니다.");
+        setToast("무료 LLM 연결을 확인해주세요");
+      }
+    }
+  }
+
+  async function syncCloudDatabase() {
+    try {
+      const response = await fetch("/api/workspace", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-aix-client-id": clientId
+        },
+        body: JSON.stringify({ documents, auditEvents: auditLog })
+      });
+      const data = (await response.json()) as { status?: string; stored?: { documents?: number; auditEvents?: number } };
+      if (!response.ok || data.status !== "ok") {
+        throw new Error(data.status || `HTTP ${response.status}`);
+      }
+      setDatabaseStatus(`D1 저장 완료: 문서 ${data.stored?.documents ?? 0}건 / 감사 ${data.stored?.auditEvents ?? 0}건`);
+      setToast("무료 Cloudflare D1에 워크스페이스를 저장했습니다");
+    } catch {
+      setDatabaseStatus("D1 미연결: 로컬 저장소 사용 중");
+      setToast("D1 바인딩 전이라 브라우저 로컬 DB로 유지합니다");
+    }
   }
 
   function resetWorkspace() {
@@ -1291,6 +1419,60 @@ function App() {
                   <strong>{value}</strong>
                 </article>
               ))}
+            </div>
+            <div className="free-runtime-grid" aria-label="free runtime status">
+              {freeRuntimeCards.map((item) => (
+                <article className={`runtime-card runtime-${item.status}`} key={item.label}>
+                  <span>{item.label}</span>
+                  <strong>{item.value}</strong>
+                  <em>{item.detail}</em>
+                </article>
+              ))}
+            </div>
+            <div className="free-runtime-panel">
+              <article>
+                <div className="runtime-panel-head">
+                  <Bot size={18} />
+                  <strong>무료 LLM</strong>
+                  <span>{llmStatus}</span>
+                </div>
+                <label className="plain-label">
+                  <span>Endpoint</span>
+                  <input className="plain-input" value={ollamaEndpoint} onChange={(event) => setOllamaEndpoint(event.target.value)} />
+                </label>
+                <label className="plain-label">
+                  <span>Model</span>
+                  <input className="plain-input" value={ollamaModel} onChange={(event) => setOllamaModel(event.target.value)} />
+                </label>
+                <div className="runtime-actions">
+                  <button type="button" className="icon-button ghost" onClick={checkOllama}>
+                    <Eye size={17} />
+                    <span>확인</span>
+                  </button>
+                  <button type="button" className="icon-button" onClick={runLocalLlm}>
+                    <Sparkles size={17} />
+                    <span>요약</span>
+                  </button>
+                </div>
+                <p className="runtime-output">{llmOutput || "연결되면 현재 RAG 답변을 무료 모델로 재요약합니다."}</p>
+              </article>
+              <article>
+                <div className="runtime-panel-head">
+                  <Database size={18} />
+                  <strong>무료 Cloudflare D1</strong>
+                  <span>{databaseStatus}</span>
+                </div>
+                <div className="database-proof-row">
+                  <span>Client {clientId.slice(0, 8)}</span>
+                  <span>문서 {documents.length}건</span>
+                  <span>감사 {auditLog.length}건</span>
+                </div>
+                <button type="button" className="full-button" onClick={syncCloudDatabase}>
+                  <UploadCloud size={17} />
+                  <span>D1 저장</span>
+                </button>
+                <p className="runtime-output">D1 바인딩 전에는 브라우저 로컬 저장소가 무료 fallback으로 유지됩니다.</p>
+              </article>
             </div>
           </div>
 

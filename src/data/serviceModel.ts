@@ -85,11 +85,11 @@ export const servicePillars: ServicePillar[] = [
   {
     id: "SRV-DEP",
     name: "Free Deployment Path",
-    intent: "무료 데모에서 사내 PoC, 운영 확장까지 비용과 제약을 명시",
+    intent: "Ollama, Cloudflare Pages, D1로 무료 LLM/배포/DB 경로를 실행 가능하게 유지",
     operator: "Infra",
-    metric: "Zero paid API baseline",
-    evidence: "FREE_DEPLOYMENT.md / Stack decision",
-    score: 88
+    metric: "Zero paid API baseline + CI green",
+    evidence: "FREE_DEPLOYMENT.md / GitHub Actions / Free runtime panel",
+    score: 91
   }
 ];
 

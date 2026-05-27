@@ -2005,6 +2005,124 @@ h2 {
   border: 1px solid var(--line);
 }
 
+.free-runtime-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.runtime-card {
+  min-height: 94px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffdf8;
+  display: grid;
+  align-content: space-between;
+  gap: 6px;
+}
+
+.runtime-card span,
+.runtime-card em,
+.runtime-panel-head span,
+.plain-label span,
+.database-proof-row span {
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.runtime-card span,
+.plain-label span {
+  text-transform: uppercase;
+}
+
+.runtime-card strong {
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.runtime-연결 {
+  border-color: rgba(17, 167, 162, 0.42);
+  background: #f3fbf7;
+}
+
+.runtime-대기 {
+  border-color: rgba(217, 154, 43, 0.32);
+}
+
+.free-runtime-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.free-runtime-panel article {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.runtime-panel-head {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 3px 8px;
+  align-items: center;
+}
+
+.runtime-panel-head svg {
+  color: var(--teal);
+}
+
+.runtime-panel-head strong {
+  color: var(--ink);
+}
+
+.runtime-panel-head span {
+  grid-column: 2;
+}
+
+.plain-label {
+  display: grid;
+  gap: 6px;
+}
+
+.runtime-actions,
+.database-proof-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.runtime-output {
+  min-height: 58px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fbf9;
+  color: #3b514d;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.database-proof-row span {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: #f3f6f4;
+}
+
 .spec-section {
   margin-bottom: 18px;
   padding: 22px;
@@ -2493,7 +2611,9 @@ h2 {
   .target-vertical-list,
   .scale-scenario-grid,
   .culture-grid,
-  .experiment-strip {
+  .experiment-strip,
+  .free-runtime-grid,
+  .free-runtime-panel {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -2602,6 +2722,8 @@ h2 {
   .scale-scenario-grid,
   .culture-grid,
   .experiment-strip,
+  .free-runtime-grid,
+  .free-runtime-panel,
   .spec-kpi-row,
   .eval-kpi-row,
   .phase-track,

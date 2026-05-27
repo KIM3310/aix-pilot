@@ -109,10 +109,10 @@ export const capabilityRequirements: CapabilityRequirement[] = [
     id: "REQ-OPS-007",
     area: "Deployment",
     requirement: "무료 기준 PoC에서 운영 확장 경로 제시",
-    pilot: "Vite 정적 배포 + 로컬 LLM/Vector DB 확장 문서",
-    production: "SSO, RBAC, observability, backup",
+    pilot: "Cloudflare Pages, Ollama, D1 fallback 경로",
+    production: "SSO, RBAC, observability, backup, model gateway",
     owner: "Infra",
-    evidence: "FREE_DEPLOYMENT.md / Spec Pack",
+    evidence: "FREE_DEPLOYMENT.md / Cloudflare workflow / Free runtime panel",
     status: "확장"
   }
 ];
@@ -232,9 +232,23 @@ export const stackDecisions: StackDecision[] = [
   {
     id: "STK-LLM",
     layer: "LLM",
-    freeOption: "Rule-based demo / Ollama",
+    freeOption: "Ollama qwen2.5:1.5b",
     enterprisePath: "Approved model gateway",
     constraint: "모델 로그, 데이터 보존, 학습 제외 조건 확인"
+  },
+  {
+    id: "STK-DB",
+    layer: "Database",
+    freeOption: "Cloudflare D1 + local fallback",
+    enterprisePath: "Managed Postgres or governed D1",
+    constraint: "운영 전 인증, 테넌트 분리, 백업 정책 필요"
+  },
+  {
+    id: "STK-DEP",
+    layer: "Deployment",
+    freeOption: "Cloudflare Pages",
+    enterprisePath: "Pages + WAF + custom domain",
+    constraint: "Cloudflare 계정과 배포 토큰 필요"
   },
   {
     id: "STK-GRC",

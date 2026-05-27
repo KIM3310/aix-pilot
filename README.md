@@ -25,6 +25,7 @@
 
 - 단순 챗봇이 아니라 RAG, Agent, 보안, 감사, KPI, 평가를 한 화면에서 운영하는 제품형 데모입니다.
 - `public/brand`의 자체 생성 4K 이미지와 GIF 모션 자산으로 저작권 리스크 없이 프리미엄 제품 첫인상을 제공합니다.
+- `무료 기준 스택`에서 Ollama 로컬 LLM, Cloudflare Workers AI fallback, Cloudflare Pages, Cloudflare D1 저장 상태를 바로 확인할 수 있습니다.
 - `Service Trust Model`은 보안 탐지, 승인 흐름, 평가 점수, 스펙 커버리지를 합산해 운영 전환 준비도를 계산합니다.
 - `Revenue Engine`은 월 절감액, ROI 배수, 회수 기간, 대형 계정 MRR 공식, 가격 패키지, 구매자 반론 처리까지 연결해 실제 판매 가능한 서비스 구조를 보여줍니다.
 - `Evaluation Lab`과 `evaluation.test.ts`로 AI 기능을 골든 질문셋 기준으로 회귀 검증합니다.
@@ -38,13 +39,15 @@
 |---|---|---|
 | UI | React, Vite, TypeScript | Next.js, Remix |
 | RAG 검색 | 로컬 TF-IDF/BM25 유사 검색 | Qdrant, Chroma, LanceDB |
-| LLM | 규칙 기반 추출 요약 데모 | Ollama, LM Studio, vLLM |
+| LLM | Ollama `qwen2.5:1.5b` + Workers AI free allocation + 규칙 기반 fallback | 사내 승인 LLM gateway |
 | Agent | Playbook 기반 오케스트레이션 | LangGraph, CrewAI, n8n |
 | 보안 | DLP 패턴 탐지, 마스킹, 승인 플래그 | OPA, Keycloak, Authentik |
 | 평가 | Golden set + Vitest | Promptfoo, Ragas, LangSmith |
 | 운영 준비도 | Service readiness scoring | SLO, incident runbook, SIEM |
 | 수익화 | ROI calculator + pricing tiers | CRM, billing, usage metering |
 | KPI | Recharts | Metabase, Superset |
+| 배포 | Cloudflare Pages free tier | WAF, custom domain, SSO |
+| DB | Cloudflare D1 + localStorage fallback | Governed Postgres/D1 |
 
 ## 실행
 
