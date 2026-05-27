@@ -10,6 +10,7 @@
 - 전화번호, 이메일, 주민등록번호 패턴, 민감 키워드 DLP 스캔
 - RAG 성공률, 자동화율, 보안 차단, 부서별 도입률 KPI 대시보드
 - 지식, 근거, 보안, 승인 준비도 보드
+- Service Trust Model: 서비스 운영 준비도, launch blocker, trust control, SLO, maturity track
 - Evaluation Lab: 골든 질문셋 기반 검색 정확도, Citation 포함률, DLP 안전성 회귀 검증
 - Enterprise Spec Pack: 요구사항 추적, 6주 도입 로드맵, 평가/보안 게이트, 무료 스택 의사결정
 - 유료 API 없이 동작하는 브라우저 기반 데모
@@ -21,6 +22,7 @@
 
 - 단순 챗봇이 아니라 RAG, Agent, 보안, 감사, KPI, 평가를 한 화면에서 운영하는 제품형 데모입니다.
 - `public/brand`의 자체 생성 4K 이미지와 GIF 모션 자산으로 저작권 리스크 없이 프리미엄 제품 첫인상을 제공합니다.
+- `Service Trust Model`은 보안 탐지, 승인 흐름, 평가 점수, 스펙 커버리지를 합산해 운영 전환 준비도를 계산합니다.
 - `Evaluation Lab`과 `evaluation.test.ts`로 AI 기능을 골든 질문셋 기준으로 회귀 검증합니다.
 - `docs/THREAT_MODEL.md`, `docs/ADR/`, `docs/PORTFOLIO_CASE_STUDY.md`까지 포함해 제품 판단, 보안 사고, 엔지니어링 의사결정을 같이 보여줍니다.
 - `npm run qa` 하나로 TypeScript, 테스트, 빌드를 재현할 수 있어 CI에 바로 연결할 수 있습니다.
@@ -35,6 +37,7 @@
 | Agent | Playbook 기반 오케스트레이션 | LangGraph, CrewAI, n8n |
 | 보안 | DLP 패턴 탐지, 마스킹, 승인 플래그 | OPA, Keycloak, Authentik |
 | 평가 | Golden set + Vitest | Promptfoo, Ragas, LangSmith |
+| 운영 준비도 | Service readiness scoring | SLO, incident runbook, SIEM |
 | KPI | Recharts | Metabase, Superset |
 
 ## 실행
@@ -69,6 +72,7 @@ src/
     sampleDocs.ts        # 고객센터/사내지식 샘플 문서
     metrics.ts           # KPI와 운영 이벤트 샘플 데이터
     enterpriseSpec.ts    # 요구사항/로드맵/평가/보안 게이트 스펙 데이터
+    serviceModel.ts      # 서비스 운영 모델, trust control, SLO, maturity 데이터
   lib/
     rag.ts               # 로컬 문서 청크화, 검색, 근거 답변 생성
     rag.test.ts          # RAG 랭킹과 fallback 테스트
@@ -78,6 +82,8 @@ src/
     report.test.ts       # 리포트 개인정보 미노출 테스트
     evaluation.ts        # 골든 질문셋 기반 RAG/보안 평가
     evaluation.test.ts   # 평가 점수와 DLP 회귀 테스트
+    serviceReadiness.ts  # 운영 준비도 계산과 서비스 모델 무결성 검증
+    serviceReadiness.test.ts # launch readiness와 trust model 테스트
     spec.ts              # 스펙팩 완성도와 ID 무결성 검증
     spec.test.ts         # 스펙팩 요구사항/게이트 테스트
     security.ts          # DLP 탐지와 마스킹
@@ -110,7 +116,7 @@ public/
 6. 파일럿 KPI를 정합니다: 검색 성공률, 근거 포함률, 상담 처리 시간, 자동화 완료율, 보안 차단 건수.
 
 상세 제품 스펙은 [docs/PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md)에 정리되어 있습니다.
-채용/포트폴리오용 케이스 스터디는 [docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md), 위협 모델은 [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md), 주요 의사결정은 [docs/ADR](docs/ADR)에 정리되어 있습니다.
+서비스 운영 모델은 [docs/SERVICE_OPERATING_MODEL.md](docs/SERVICE_OPERATING_MODEL.md), 채용/포트폴리오용 케이스 스터디는 [docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md), 위협 모델은 [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md), 주요 의사결정은 [docs/ADR](docs/ADR)에 정리되어 있습니다.
 
 ## 무료 배포 옵션
 

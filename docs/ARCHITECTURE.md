@@ -12,6 +12,7 @@ Browser
     RAG Console
     Agent Studio
     Security Guard
+    Service Trust Model
     KPI Dashboard
     Evaluation Lab
     Readiness Board
@@ -36,11 +37,18 @@ Local Runtime
   evaluation.ts
     runEvaluationSuite
     evaluateGoldenCase
+  serviceReadiness.ts
+    calculateServiceReadiness
+    validateServiceOperatingModel
   spec.ts
     validateSpecPack
     specCoverageScore
   data/evaluation.ts
     golden evaluation cases
+  serviceModel.ts
+    service pillars
+    trust controls
+    SLOs
   enterpriseSpec.ts
     requirements
     rollout phases
@@ -75,6 +83,12 @@ Local Runtime
 - 보안: DLP 차단, 권한 위반 시도, 민감 문서 접근
 - 비용: 업무 1건당 비용, 절감 시간, 무료/유료 전환 기준
 - 평가: 검색 정확도, Citation 포함률, 안전 통과율, 평균 신뢰도
+
+## Service Trust Model
+
+`src/data/serviceModel.ts` and `src/lib/serviceReadiness.ts` add an operating layer above the demo features. The readiness score combines Evaluation Lab score, security readiness, Spec Pack coverage, workspace readiness, Agent approval readiness, and knowledge depth. High-risk security findings apply a launch penalty, so the product can communicate a realistic Go/No-Go posture instead of treating every demo state as safe.
+
+The Trust section also lists controls, SLOs, launch blockers, and maturity stages. This is intentionally separate from the RAG and Agent code so the project reads like a service with owners, evidence, and release gates.
 
 ## Spec Pack
 

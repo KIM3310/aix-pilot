@@ -34,15 +34,18 @@ flowchart TB
 | Agent drafts an external email without review | Incorrect or risky customer communication | Human approval badge and playbook steps |
 | RAG retrieves a restricted document | Unauthorized knowledge disclosure | Production RBAC and allowed-role metadata requirement |
 | Prompt asks for secrets or security exception | Sensitive operational leakage | Sensitive keyword detection and security gate |
+| Prompt asks to ignore instructions or reveal system prompts | Prompt injection, policy bypass, unsafe disclosure | Prompt Injection Guard and high-risk launch penalty |
+| API key or token-like value appears in prompt or document | Credential leakage | Token-shaped secret detection and masking |
 | Report export stores raw identifiers | Durable privacy incident | Report masking regression test |
 | Uploaded document pollutes retrieval results | Bad answer quality or misleading evidence | Evaluation Lab and golden regression suite |
 
 ## Current Controls
 
-- Phone, email, resident-registration pattern, and sensitive keyword detection.
+- Phone, email, resident-registration pattern, token-shaped secret, prompt injection, and sensitive keyword detection.
 - Masked Agent preview and masked Markdown report export.
 - Citation dedupe by source document.
 - Audit trail for RAG, scenario, upload, and report actions.
+- Service readiness score that penalizes high-risk findings before launch.
 - Enterprise Spec Pack requiring RBAC, DLP, audit retention, and HITL before production.
 - Vitest coverage for RAG, Agent, Security, Report, Spec Pack, and Evaluation.
 

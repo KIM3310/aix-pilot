@@ -46,6 +46,7 @@ import {
 } from "recharts";
 import { goldenEvaluationSuite } from "./data/evaluation";
 import { costProfile, departmentAdoption, kpiTrend, workflowEvents } from "./data/metrics";
+import { launchMaturity, servicePillars, serviceSlos, trustControls } from "./data/serviceModel";
 import {
   capabilityRequirements,
   evaluationGates,
@@ -58,6 +59,7 @@ import { runAgent, type AgentMode } from "./lib/agent";
 import { chunkDocuments, createDocumentFromUpload, generateRagAnswer, searchKnowledge } from "./lib/rag";
 import { buildPilotReport } from "./lib/report";
 import { maskSensitive, scanRisk, securityControls } from "./lib/security";
+import { calculateServiceReadiness } from "./lib/serviceReadiness";
 import { specCoverageScore } from "./lib/spec";
 import { runEvaluationSuite, type EvalVerdict } from "./lib/evaluation";
 
@@ -241,6 +243,28 @@ function App() {
   );
   const securityReadiness = latestRisk === "높음" ? 62 : latestRisk === "중간" ? 82 : 96;
   const approvalReadiness = agentDraft.requiresApproval ? 84 : 92;
+  const serviceReadiness = useMemo(
+    () =>
+      calculateServiceReadiness({
+        evaluationScore: evaluationRun.overallScore,
+        specScore,
+        readinessScore,
+        securityReadiness,
+        approvalReadiness,
+        riskFindings,
+        documentCount: documents.length,
+        chunkCount: chunks.length
+      }),
+    [
+      approvalReadiness,
+      chunks.length,
+      documents.length,
+      evaluationRun.overallScore,
+      readinessScore,
+      riskFindings,
+      securityReadiness
+    ]
+  );
   const readinessCards = [
     {
       icon: Database,
@@ -295,9 +319,9 @@ function App() {
     },
     {
       icon: Rocket,
-      label: "Deploy Ready",
-      value: "QA",
-      detail: "TypeScript, 테스트, 빌드 게이트",
+      label: "Service Score",
+      value: `${serviceReadiness.score}`,
+      detail: `${serviceReadiness.tier} / ${serviceReadiness.posture}`,
       tone: "coral" as const
     }
   ];
@@ -409,6 +433,7 @@ function App() {
         <nav>
           {[
             ["command", Gauge, "Command"],
+            ["trust", LockKeyhole, "Trust"],
             ["rag", Search, "RAG"],
             ["agent", Bot, "Agent"],
             ["security", ShieldCheck, "Security"],
@@ -460,6 +485,7 @@ function App() {
             <div className="hero-proof-row" aria-label="pilot proof summary">
               <span>Eval {evaluationRun.overallScore}</span>
               <span>Spec {specScore}%</span>
+              <span>Service {serviceReadiness.score}</span>
               <span>문서 {documents.length}건</span>
               <span>위험 {latestRisk}</span>
             </div>
@@ -553,6 +579,128 @@ function App() {
               <GitBranch size={16} />
               CI-ready
             </span>
+          </div>
+        </section>
+
+        <section className="trust-section" id="trust">
+          <div className="section-heading trust-heading">
+            <div>
+              <p className="eyebrow">Service Trust Model</p>
+              <h2>서비스로 운영될 때 필요한 품질, 보안, 승인, 감사 기준을 한 화면에서 관리합니다</h2>
+            </div>
+            <div className="trust-score" aria-label="서비스 운영 준비도">
+              <LockKeyhole size={20} />
+              <strong>{serviceReadiness.score}</strong>
+              <span>{serviceReadiness.tier}</span>
+            </div>
+          </div>
+
+          <div className="trust-command">
+            <article className="trust-posture">
+              <span>현재 판단</span>
+              <strong>{serviceReadiness.posture}</strong>
+              <p>
+                Eval, Spec, 보안 탐지, 승인 흐름, 지식 베이스 깊이를 가중 합산하고 고위험 탐지 항목은 자동 감점합니다.
+              </p>
+              <div className="trust-weight-row">
+                {Object.entries(serviceReadiness.weights).map(([label, value]) => (
+                  <span key={label}>
+                    {label} {value}
+                  </span>
+                ))}
+              </div>
+            </article>
+
+            <div className="trust-blockers">
+              <div className="section-heading compact">
+                <h2>Launch blockers</h2>
+                <AlertTriangle size={21} />
+              </div>
+              {serviceReadiness.blockers.length ? (
+                serviceReadiness.blockers.map((blocker) => (
+                  <article key={blocker}>
+                    <RiskBadge value="높음" />
+                    <span>{blocker}</span>
+                  </article>
+                ))
+              ) : (
+                <article className="trust-clear">
+                  <CheckCircle2 size={20} />
+                  <span>현재 데모 입력 기준 운영 전환을 막는 고위험 blocker가 없습니다.</span>
+                </article>
+              )}
+            </div>
+          </div>
+
+          <div className="service-pillar-grid">
+            {servicePillars.map((pillar) => (
+              <article key={pillar.id}>
+                <div>
+                  <span>{pillar.id}</span>
+                  <strong>{pillar.name}</strong>
+                </div>
+                <p>{pillar.intent}</p>
+                <div className="pillar-meta">
+                  <span>{pillar.operator}</span>
+                  <span>{pillar.metric}</span>
+                </div>
+                <div className="pillar-score" aria-hidden="true">
+                  <i style={{ width: `${pillar.score}%` }} />
+                </div>
+                <em>{pillar.evidence}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="trust-grid">
+            <div className="workspace-band trust-control-panel">
+              <div className="section-heading compact">
+                <h2>Trust controls</h2>
+                <ShieldCheck size={22} />
+              </div>
+              <div className="trust-control-list">
+                {trustControls.map((control) => (
+                  <article key={control.id}>
+                    <RiskBadge value={control.severity} />
+                    <div>
+                      <strong>{control.name}</strong>
+                      <span>{control.category} / {control.status}</span>
+                      <p>{control.objective}</p>
+                      <em>{control.evidence} | {control.automation}</em>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="workspace-band slo-panel">
+              <div className="section-heading compact">
+                <h2>SLO & maturity</h2>
+                <Gauge size={22} />
+              </div>
+              <div className="slo-list">
+                {serviceSlos.map((slo) => (
+                  <article className={`slo-row slo-${slo.status}`} key={slo.id}>
+                    <div>
+                      <strong>{slo.metric}</strong>
+                      <span>{slo.owner}</span>
+                    </div>
+                    <p>{slo.current} / target {slo.target}</p>
+                    <em>{slo.signal}</em>
+                  </article>
+                ))}
+              </div>
+              <div className="maturity-track">
+                {launchMaturity.map((stage) => (
+                  <article key={stage.id}>
+                    <span>{stage.id}</span>
+                    <strong>{stage.stage}</strong>
+                    <p>{stage.promise}</p>
+                    <em>{stage.gate}</em>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
