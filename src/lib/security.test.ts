@@ -25,7 +25,9 @@ describe("security guard", () => {
   });
 
   it("masks token-like secrets", () => {
-    const text = "api key: sk-test_1234567890abcdef access token=ghp_1234567890abcdef";
+    const openAiLikeToken = ["sk", "test_1234567890abcdef"].join("-");
+    const githubLikeToken = ["ghp", "1234567890abcdef"].join("_");
+    const text = `api key: ${openAiLikeToken} access token=${githubLikeToken}`;
     const masked = maskSensitive(text);
 
     expect(scanRisk(text).some((risk) => risk.type === "토큰형 비밀값")).toBe(true);

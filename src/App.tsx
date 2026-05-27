@@ -212,7 +212,15 @@ function NumberControl({
     <label className="number-control">
       <span>{label}</span>
       <div>
-        <input type="range" min={min} max={max} step={step} value={value} onChange={(event) => commit(Number(event.target.value))} />
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(event) => commit(Number(event.target.value))}
+          aria-label={`${label} 슬라이더`}
+        />
         <input
           type="number"
           min={min}
@@ -220,7 +228,7 @@ function NumberControl({
           step={step}
           value={value}
           onChange={(event) => commit(Number(event.target.value || min))}
-          aria-label={label}
+          aria-label={`${label} 직접 입력`}
         />
         <em>{suffix}</em>
       </div>
@@ -571,7 +579,14 @@ function App() {
           <div className="hero-visual" aria-label="AIX Pilot product visual">
             <picture>
               <source srcSet="/brand/aix-hero-generated.webp" type="image/webp" />
-              <img src="/brand/aix-hero-generated.png" alt="기업용 GenAI 운영 콘솔을 표현한 추상 제품 비주얼" />
+              <img
+                src="/brand/aix-hero-generated.png"
+                width={1536}
+                height={1024}
+                decoding="async"
+                fetchPriority="high"
+                alt="기업용 GenAI 운영 콘솔을 표현한 추상 제품 비주얼"
+              />
             </picture>
             <div className="visual-glass-card visual-score">
               <span>Evaluation</span>
@@ -579,7 +594,7 @@ function App() {
               <small>{evaluationRun.passCount} 통과 / {evaluationRun.failCount} 실패</small>
             </div>
             <div className="visual-glass-card visual-motion">
-              <img src="/brand/aix-motion.gif" alt="AIX Pilot 운영 흐름 애니메이션" />
+              <img src="/brand/aix-motion.gif" width={1280} height={720} decoding="async" alt="AIX Pilot 운영 흐름 애니메이션" />
               <span>Live operating flow</span>
             </div>
           </div>
