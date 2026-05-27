@@ -1,21 +1,22 @@
 import { describe, expect, it } from "vitest";
-import { calculateRevenueBusinessCase, formatKrw, validateBusinessModel } from "./revenue";
+import { scaleScenarios } from "../data/businessModel";
+import { calculateRevenueBusinessCase, calculateScaleScenario, formatKrw, validateBusinessModel } from "./revenue";
 
 describe("revenue engine", () => {
   it("calculates a monetizable business case from workflow savings", () => {
     const result = calculateRevenueBusinessCase({
-      teamMembers: 45,
-      monthlyWorkflows: 9000,
+      teamMembers: 450,
+      monthlyWorkflows: 120000,
       minutesSavedPerWorkflow: 7,
-      hourlyCostKrw: 32000,
-      selectedTierMonthlyKrw: 1490000
+      hourlyCostKrw: 38000,
+      selectedTierMonthlyKrw: 29000000
     });
 
-    expect(result.monthlySavedHours).toBe(1050);
-    expect(result.monthlySavingsKrw).toBe(33600000);
+    expect(result.monthlySavedHours).toBe(14000);
+    expect(result.monthlySavingsKrw).toBe(532000000);
     expect(result.paybackMultiple).toBeGreaterThan(10);
     expect(result.closeSignal).toBe("강함");
-    expect(result.recommendedTier).toBe("Ops");
+    expect(result.recommendedTier).toBe("Enterprise");
   });
 
   it("keeps weak business cases from being over-sold", () => {
@@ -24,7 +25,7 @@ describe("revenue engine", () => {
       monthlyWorkflows: 300,
       minutesSavedPerWorkflow: 2,
       hourlyCostKrw: 12000,
-      selectedTierMonthlyKrw: 1490000
+      selectedTierMonthlyKrw: 9900000
     });
 
     expect(result.closeSignal).toBe("보류");
@@ -32,8 +33,16 @@ describe("revenue engine", () => {
   });
 
   it("formats Korean won values for executive readouts", () => {
-    expect(formatKrw(1490000)).toBe("149만");
+    expect(formatKrw(9900000)).toBe("990만");
     expect(formatKrw(125000000)).toBe("1.3억");
+  });
+
+  it("models a monthly hundred-million scale scenario", () => {
+    const scenario = calculateScaleScenario(scaleScenarios[0]);
+
+    expect(scenario.mrrKrw).toBeGreaterThanOrEqual(200000000);
+    expect(scenario.annualRunRateKrw).toBeGreaterThanOrEqual(2400000000);
+    expect(scenario.setupPipelineKrw).toBeGreaterThanOrEqual(700000000);
   });
 
   it("keeps the business model complete and measurable", () => {
@@ -45,5 +54,8 @@ describe("revenue engine", () => {
     expect(result.behavioralLeversEthical).toBe(true);
     expect(result.culturalPatternsActionable).toBe(true);
     expect(result.experimentsMeasurable).toBe(true);
+    expect(result.targetVerticalsFocused).toBe(true);
+    expect(result.scaleScenariosReachHundredMillion).toBe(true);
+    expect(result.salesMotionMeasurable).toBe(true);
   });
 });

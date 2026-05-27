@@ -48,7 +48,16 @@ import {
   XAxis,
   YAxis
 } from "recharts";
-import { behavioralLevers, buyerPersonas, culturalAdoptionPatterns, pricingTiers, revenueExperiments } from "./data/businessModel";
+import {
+  behavioralLevers,
+  buyerPersonas,
+  culturalAdoptionPatterns,
+  pricingTiers,
+  revenueExperiments,
+  salesMotions,
+  scaleScenarios,
+  targetVerticals
+} from "./data/businessModel";
 import { goldenEvaluationSuite } from "./data/evaluation";
 import { costProfile, departmentAdoption, kpiTrend, workflowEvents } from "./data/metrics";
 import { launchMaturity, servicePillars, serviceSlos, trustControls } from "./data/serviceModel";
@@ -67,7 +76,7 @@ import { maskSensitive, scanRisk, securityControls } from "./lib/security";
 import { calculateServiceReadiness } from "./lib/serviceReadiness";
 import { specCoverageScore } from "./lib/spec";
 import { runEvaluationSuite, type EvalVerdict } from "./lib/evaluation";
-import { calculateRevenueBusinessCase, formatKrw } from "./lib/revenue";
+import { calculateRevenueBusinessCase, calculateScaleScenario, formatKrw } from "./lib/revenue";
 
 const sourceOrder = ["고객센터", "사내지식", "보안정책", "운영지표", "영업지원"];
 const agentModes: AgentMode[] = ["FAQ 응답", "이메일 생성", "보고서 생성", "업무 자동화"];
@@ -259,11 +268,11 @@ function App() {
   const [activeView, setActiveView] = useState("command");
   const [toast, setToast] = useState("파일럿 워크스페이스 준비 완료");
   const [auditLog, setAuditLog] = useState<AuditEvent[]>(() => readStoredValue(storageKeys.audit, initialAuditLog));
-  const [teamMembers, setTeamMembers] = useState(45);
-  const [monthlyWorkflows, setMonthlyWorkflows] = useState(9000);
+  const [teamMembers, setTeamMembers] = useState(450);
+  const [monthlyWorkflows, setMonthlyWorkflows] = useState(120000);
   const [minutesSavedPerWorkflow, setMinutesSavedPerWorkflow] = useState(7);
-  const [hourlyCostKrw, setHourlyCostKrw] = useState(32000);
-  const [selectedTierId, setSelectedTierId] = useState("PRICE-OPS");
+  const [hourlyCostKrw, setHourlyCostKrw] = useState(38000);
+  const [selectedTierId, setSelectedTierId] = useState("PRICE-ENT");
 
   const chunks = useMemo(() => chunkDocuments(documents), [documents]);
   const results = useMemo(() => searchKnowledge(query, chunks, selectedSources), [query, chunks, selectedSources]);
@@ -329,6 +338,8 @@ function App() {
       }),
     [hourlyCostKrw, minutesSavedPerWorkflow, monthlyWorkflows, selectedTier.monthlyKrw, teamMembers]
   );
+  const scaleResults = useMemo(() => scaleScenarios.map((scenario) => ({ ...scenario, result: calculateScaleScenario(scenario) })), []);
+  const primaryScale = scaleResults[0];
   const readinessCards = [
     {
       icon: Database,
@@ -774,7 +785,7 @@ function App() {
           <div className="section-heading revenue-heading">
             <div>
               <p className="eyebrow">Revenue Engine</p>
-              <h2>구매자가 돈을 낼 이유를 ROI, 리스크, 조직 확산 언어로 압축합니다</h2>
+              <h2>월 수억 매출은 대형 regulated contact center의 반복 업무와 보안 예산에서 나옵니다</h2>
             </div>
             <div className={`close-signal close-${revenueCase.closeSignal}`}>
               <DollarSign size={20} />
@@ -813,13 +824,13 @@ function App() {
             </article>
 
             <div className="revenue-controls">
-              <NumberControl label="사용 인원" value={teamMembers} min={3} max={300} step={1} suffix="명" onChange={setTeamMembers} />
+              <NumberControl label="사용 인원" value={teamMembers} min={3} max={1200} step={5} suffix="명" onChange={setTeamMembers} />
               <NumberControl
                 label="월 반복 업무"
                 value={monthlyWorkflows}
                 min={300}
-                max={50000}
-                step={100}
+                max={500000}
+                step={1000}
                 suffix="건"
                 onChange={setMonthlyWorkflows}
               />
@@ -836,11 +847,34 @@ function App() {
                 label="시간당 비용"
                 value={hourlyCostKrw}
                 min={12000}
-                max={120000}
+                max={150000}
                 step={1000}
                 suffix="원"
                 onChange={setHourlyCostKrw}
               />
+            </div>
+          </div>
+
+          <div className="scale-board">
+            <article className="scale-main">
+              <span>월 수억 매출 공식</span>
+              <strong>{primaryScale.targetAccounts}개 대형 계정 = 월 {formatKrw(primaryScale.result.mrrKrw)}원 MRR</strong>
+              <p>{primaryScale.whyItCanReach}</p>
+              <div>
+                <span>셋업 파이프라인 {formatKrw(primaryScale.result.setupPipelineKrw)}원</span>
+                <span>ARR {formatKrw(primaryScale.result.annualRunRateKrw)}원</span>
+                <span>{primaryScale.channel}</span>
+              </div>
+            </article>
+            <div className="target-vertical-list">
+              {targetVerticals.map((vertical) => (
+                <article key={vertical.id}>
+                  <span>{vertical.market}</span>
+                  <strong>{vertical.wedgeWorkflow}</strong>
+                  <p>{vertical.whyNow}</p>
+                  <em>{vertical.budgetOwner} / {vertical.buyingTrigger}</em>
+                </article>
+              ))}
             </div>
           </div>
 
@@ -868,6 +902,17 @@ function App() {
                   <span>{selectedTier.id === tier.id ? "선택됨" : "선택"}</span>
                 </button>
                 <small>{tier.conversionTrigger}</small>
+              </article>
+            ))}
+          </div>
+
+          <div className="scale-scenario-grid">
+            {scaleResults.map((scenario) => (
+              <article key={scenario.id}>
+                <span>{scenario.name}</span>
+                <strong>월 {formatKrw(scenario.result.mrrKrw)}원</strong>
+                <p>{scenario.wedge}</p>
+                <em>셋업 {formatKrw(scenario.result.setupPipelineKrw)}원 / {scenario.channel}</em>
               </article>
             ))}
           </div>
@@ -914,6 +959,17 @@ function App() {
                 <strong>{pattern.rolloutMove}</strong>
                 <p>{pattern.friction}</p>
                 <em>{pattern.message}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="experiment-strip">
+            {salesMotions.map((motion) => (
+              <article key={motion.id}>
+                <span>{motion.stage}</span>
+                <strong>{motion.action}</strong>
+                <p>{motion.metric}</p>
+                <em>enterprise sales motion</em>
               </article>
             ))}
           </div>

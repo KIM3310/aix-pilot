@@ -11,7 +11,7 @@
 - RAG 성공률, 자동화율, 보안 차단, 부서별 도입률 KPI 대시보드
 - 지식, 근거, 보안, 승인 준비도 보드
 - Service Trust Model: 서비스 운영 준비도, launch blocker, trust control, SLO, maturity track
-- Revenue Engine: ROI 계산기, 가격 티어, 구매자 심리, 행동경제학, 조직 문화별 도입 전략
+- Revenue Engine: 고가 B2B ROI 계산기, regulated contact center 타깃, 월 수억 MRR 시나리오, 구매자 심리/조직 문화별 도입 전략
 - Evaluation Lab: 골든 질문셋 기반 검색 정확도, Citation 포함률, DLP 안전성 회귀 검증
 - Enterprise Spec Pack: 요구사항 추적, 6주 도입 로드맵, 평가/보안 게이트, 무료 스택 의사결정
 - 유료 API 없이 동작하는 브라우저 기반 데모
@@ -24,7 +24,7 @@
 - 단순 챗봇이 아니라 RAG, Agent, 보안, 감사, KPI, 평가를 한 화면에서 운영하는 제품형 데모입니다.
 - `public/brand`의 자체 생성 4K 이미지와 GIF 모션 자산으로 저작권 리스크 없이 프리미엄 제품 첫인상을 제공합니다.
 - `Service Trust Model`은 보안 탐지, 승인 흐름, 평가 점수, 스펙 커버리지를 합산해 운영 전환 준비도를 계산합니다.
-- `Revenue Engine`은 월 절감액, ROI 배수, 회수 기간, 가격 패키지, 구매자 반론 처리까지 연결해 실제 판매 가능한 서비스 구조를 보여줍니다.
+- `Revenue Engine`은 월 절감액, ROI 배수, 회수 기간, 대형 계정 MRR 공식, 가격 패키지, 구매자 반론 처리까지 연결해 실제 판매 가능한 서비스 구조를 보여줍니다.
 - `Evaluation Lab`과 `evaluation.test.ts`로 AI 기능을 골든 질문셋 기준으로 회귀 검증합니다.
 - `docs/THREAT_MODEL.md`, `docs/ADR/`, `docs/PORTFOLIO_CASE_STUDY.md`까지 포함해 제품 판단, 보안 사고, 엔지니어링 의사결정을 같이 보여줍니다.
 - `npm run qa` 하나로 TypeScript, 테스트, 빌드를 재현할 수 있어 CI에 바로 연결할 수 있습니다.

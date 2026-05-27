@@ -1203,6 +1203,9 @@ h2 {
 .revenue-case,
 .revenue-controls,
 .pricing-card,
+.scale-main,
+.target-vertical-list article,
+.scale-scenario-grid article,
 .culture-grid article,
 .experiment-strip article {
   border: 1px solid var(--line);
@@ -1324,10 +1327,109 @@ h2 {
   font-weight: 800;
 }
 
+.scale-board {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.78fr) minmax(0, 1.22fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.scale-main {
+  min-height: 246px;
+  padding: 16px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  background:
+    linear-gradient(135deg, rgba(255, 246, 241, 0.95), rgba(255, 253, 248, 0.94)),
+    repeating-linear-gradient(135deg, rgba(223, 106, 86, 0.06) 0 1px, transparent 1px 48px);
+}
+
+.scale-main > span,
+.target-vertical-list span,
+.scale-scenario-grid span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.scale-main strong {
+  color: var(--ink);
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.scale-main p {
+  margin: 0;
+  color: #3b514d;
+  line-height: 1.6;
+}
+
+.scale-main div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.scale-main div span {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #34504b;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.target-vertical-list,
+.scale-scenario-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.target-vertical-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.target-vertical-list article,
+.scale-scenario-grid article {
+  padding: 13px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.target-vertical-list strong,
+.scale-scenario-grid strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.target-vertical-list p,
+.target-vertical-list em,
+.scale-scenario-grid p,
+.scale-scenario-grid em {
+  display: block;
+  margin: 8px 0 0;
+  color: #3b514d;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+  margin-bottom: 14px;
+}
+
+.scale-scenario-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-bottom: 14px;
 }
 
@@ -2373,6 +2475,7 @@ h2 {
   .trust-command,
   .trust-grid,
   .revenue-command,
+  .scale-board,
   .buyer-grid,
   .ops-grid,
   .analytics-grid,
@@ -2386,6 +2489,8 @@ h2 {
   .service-pillar-grid,
   .pricing-grid,
   .revenue-kpi-row,
+  .target-vertical-list,
+  .scale-scenario-grid,
   .culture-grid,
   .experiment-strip {
     grid-template-columns: 1fr 1fr;
@@ -2488,9 +2593,12 @@ h2 {
   .trust-command,
   .trust-grid,
   .revenue-command,
+  .scale-board,
   .buyer-grid,
   .pricing-grid,
   .revenue-kpi-row,
+  .target-vertical-list,
+  .scale-scenario-grid,
   .culture-grid,
   .experiment-strip,
   .spec-kpi-row,
@@ -2637,6 +2745,8 @@ h2 {
   .maturity-track,
   .pricing-grid,
   .revenue-kpi-row,
+  .target-vertical-list,
+  .scale-scenario-grid,
   .culture-grid,
   .experiment-strip {
     grid-template-columns: 1fr;
