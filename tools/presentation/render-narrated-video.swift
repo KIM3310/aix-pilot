@@ -166,7 +166,7 @@ func renderSilentVideo(payload: ScenePayload, outputURL: URL) throws {
         AVVideoWidthKey: width,
         AVVideoHeightKey: height,
         AVVideoCompressionPropertiesKey: [
-            AVVideoAverageBitRateKey: 9_000_000,
+            AVVideoAverageBitRateKey: 3_200_000,
             AVVideoProfileLevelKey: AVVideoProfileLevelH264HighAutoLevel
         ]
     ]
