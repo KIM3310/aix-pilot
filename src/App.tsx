@@ -5,9 +5,11 @@ import {
   ArrowRight,
   BarChart3,
   Bot,
+  Building2,
   CheckCircle2,
   ClipboardList,
   Database,
+  DollarSign,
   Download,
   Eye,
   FileCheck2,
@@ -27,7 +29,9 @@ import {
   ShieldCheck,
   Sparkles,
   Target,
+  TrendingUp,
   UploadCloud,
+  Users,
   Workflow
 } from "lucide-react";
 import {
@@ -44,6 +48,7 @@ import {
   XAxis,
   YAxis
 } from "recharts";
+import { behavioralLevers, buyerPersonas, culturalAdoptionPatterns, pricingTiers, revenueExperiments } from "./data/businessModel";
 import { goldenEvaluationSuite } from "./data/evaluation";
 import { costProfile, departmentAdoption, kpiTrend, workflowEvents } from "./data/metrics";
 import { launchMaturity, servicePillars, serviceSlos, trustControls } from "./data/serviceModel";
@@ -62,6 +67,7 @@ import { maskSensitive, scanRisk, securityControls } from "./lib/security";
 import { calculateServiceReadiness } from "./lib/serviceReadiness";
 import { specCoverageScore } from "./lib/spec";
 import { runEvaluationSuite, type EvalVerdict } from "./lib/evaluation";
+import { calculateRevenueBusinessCase, formatKrw } from "./lib/revenue";
 
 const sourceOrder = ["고객센터", "사내지식", "보안정책", "운영지표", "영업지원"];
 const agentModes: AgentMode[] = ["FAQ 응답", "이메일 생성", "보고서 생성", "업무 자동화"];
@@ -172,6 +178,47 @@ function EvalVerdictBadge({ value }: { value: EvalVerdict }) {
   return <span className={`eval-badge eval-${value}`}>{label}</span>;
 }
 
+function NumberControl({
+  label,
+  value,
+  min,
+  max,
+  step,
+  suffix,
+  onChange
+}: {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  suffix: string;
+  onChange: (value: number) => void;
+}) {
+  function commit(nextValue: number) {
+    onChange(Math.min(max, Math.max(min, nextValue)));
+  }
+
+  return (
+    <label className="number-control">
+      <span>{label}</span>
+      <div>
+        <input type="range" min={min} max={max} step={step} value={value} onChange={(event) => commit(Number(event.target.value))} />
+        <input
+          type="number"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(event) => commit(Number(event.target.value || min))}
+          aria-label={label}
+        />
+        <em>{suffix}</em>
+      </div>
+    </label>
+  );
+}
+
 function downloadTextFile(filename: string, content: string) {
   const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -212,6 +259,11 @@ function App() {
   const [activeView, setActiveView] = useState("command");
   const [toast, setToast] = useState("파일럿 워크스페이스 준비 완료");
   const [auditLog, setAuditLog] = useState<AuditEvent[]>(() => readStoredValue(storageKeys.audit, initialAuditLog));
+  const [teamMembers, setTeamMembers] = useState(45);
+  const [monthlyWorkflows, setMonthlyWorkflows] = useState(9000);
+  const [minutesSavedPerWorkflow, setMinutesSavedPerWorkflow] = useState(7);
+  const [hourlyCostKrw, setHourlyCostKrw] = useState(32000);
+  const [selectedTierId, setSelectedTierId] = useState("PRICE-OPS");
 
   const chunks = useMemo(() => chunkDocuments(documents), [documents]);
   const results = useMemo(() => searchKnowledge(query, chunks, selectedSources), [query, chunks, selectedSources]);
@@ -264,6 +316,18 @@ function App() {
       riskFindings,
       securityReadiness
     ]
+  );
+  const selectedTier = pricingTiers.find((tier) => tier.id === selectedTierId) ?? pricingTiers[1];
+  const revenueCase = useMemo(
+    () =>
+      calculateRevenueBusinessCase({
+        teamMembers,
+        monthlyWorkflows,
+        minutesSavedPerWorkflow,
+        hourlyCostKrw,
+        selectedTierMonthlyKrw: selectedTier.monthlyKrw
+      }),
+    [hourlyCostKrw, minutesSavedPerWorkflow, monthlyWorkflows, selectedTier.monthlyKrw, teamMembers]
   );
   const readinessCards = [
     {
@@ -434,6 +498,7 @@ function App() {
           {[
             ["command", Gauge, "Command"],
             ["trust", LockKeyhole, "Trust"],
+            ["revenue", DollarSign, "Revenue"],
             ["rag", Search, "RAG"],
             ["agent", Bot, "Agent"],
             ["security", ShieldCheck, "Security"],
@@ -486,6 +551,7 @@ function App() {
               <span>Eval {evaluationRun.overallScore}</span>
               <span>Spec {specScore}%</span>
               <span>Service {serviceReadiness.score}</span>
+              <span>ROI {revenueCase.paybackMultiple}x</span>
               <span>문서 {documents.length}건</span>
               <span>위험 {latestRisk}</span>
             </div>
@@ -701,6 +767,166 @@ function App() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="revenue-section" id="revenue">
+          <div className="section-heading revenue-heading">
+            <div>
+              <p className="eyebrow">Revenue Engine</p>
+              <h2>구매자가 돈을 낼 이유를 ROI, 리스크, 조직 확산 언어로 압축합니다</h2>
+            </div>
+            <div className={`close-signal close-${revenueCase.closeSignal}`}>
+              <DollarSign size={20} />
+              <strong>{revenueCase.paybackMultiple}x</strong>
+              <span>{revenueCase.closeSignal} 전환 신호</span>
+            </div>
+          </div>
+
+          <div className="revenue-command">
+            <article className="revenue-case">
+              <span>Executive business case</span>
+              <strong>월 {formatKrw(revenueCase.monthlySavingsKrw)}원 절감 가능</strong>
+              <p>{revenueCase.anchorMessage}</p>
+              <div className="revenue-kpi-row">
+                <article>
+                  <TrendingUp size={18} />
+                  <strong>{formatKrw(revenueCase.annualSavingsKrw)}원</strong>
+                  <span>연간 절감 근거</span>
+                </article>
+                <article>
+                  <Gauge size={18} />
+                  <strong>{revenueCase.monthlySavedHours}h</strong>
+                  <span>월 회수 시간</span>
+                </article>
+                <article>
+                  <Rocket size={18} />
+                  <strong>{revenueCase.paybackMonths}</strong>
+                  <span>회수 개월</span>
+                </article>
+                <article>
+                  <Building2 size={18} />
+                  <strong>{revenueCase.recommendedTier}</strong>
+                  <span>추천 패키지</span>
+                </article>
+              </div>
+            </article>
+
+            <div className="revenue-controls">
+              <NumberControl label="사용 인원" value={teamMembers} min={3} max={300} step={1} suffix="명" onChange={setTeamMembers} />
+              <NumberControl
+                label="월 반복 업무"
+                value={monthlyWorkflows}
+                min={300}
+                max={50000}
+                step={100}
+                suffix="건"
+                onChange={setMonthlyWorkflows}
+              />
+              <NumberControl
+                label="건당 절감"
+                value={minutesSavedPerWorkflow}
+                min={1}
+                max={30}
+                step={1}
+                suffix="분"
+                onChange={setMinutesSavedPerWorkflow}
+              />
+              <NumberControl
+                label="시간당 비용"
+                value={hourlyCostKrw}
+                min={12000}
+                max={120000}
+                step={1000}
+                suffix="원"
+                onChange={setHourlyCostKrw}
+              />
+            </div>
+          </div>
+
+          <div className="pricing-grid">
+            {pricingTiers.map((tier) => (
+              <article className={`pricing-card ${selectedTier.id === tier.id ? "active" : ""}`} key={tier.id}>
+                <div className="pricing-head">
+                  <div>
+                    <span>{tier.buyer}</span>
+                    <strong>{tier.name}</strong>
+                  </div>
+                  {tier.recommended ? <em>추천</em> : null}
+                </div>
+                <p>{tier.promise}</p>
+                <div className="price-line">
+                  <strong>월 {formatKrw(tier.monthlyKrw)}원</strong>
+                  <span>초기 {formatKrw(tier.setupKrw)}원</span>
+                </div>
+                <ul>
+                  {tier.features.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+                <button type="button" onClick={() => setSelectedTierId(tier.id)} title={`${tier.name} 패키지 선택`}>
+                  <span>{selectedTier.id === tier.id ? "선택됨" : "선택"}</span>
+                </button>
+                <small>{tier.conversionTrigger}</small>
+              </article>
+            ))}
+          </div>
+
+          <div className="buyer-grid">
+            <div className="workspace-band buyer-panel">
+              <div className="section-heading compact">
+                <h2>Buyer psychology</h2>
+                <Users size={22} />
+              </div>
+              <div className="buyer-list">
+                {buyerPersonas.map((persona) => (
+                  <article key={persona.id}>
+                    <span>{persona.role}</span>
+                    <strong>{persona.desiredOutcome}</strong>
+                    <p>{persona.pain}</p>
+                    <em>{persona.objection} → {persona.closeMessage}</em>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="workspace-band behavior-panel">
+              <div className="section-heading compact">
+                <h2>Behavioral economics</h2>
+                <Target size={22} />
+              </div>
+              <div className="behavior-list">
+                {behavioralLevers.map((lever) => (
+                  <article key={lever.id}>
+                    <strong>{lever.principle}</strong>
+                    <p>{lever.productMove}</p>
+                    <span>{lever.ethicalUse}</span>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="culture-grid">
+            {culturalAdoptionPatterns.map((pattern) => (
+              <article key={pattern.id}>
+                <span>{pattern.culture}</span>
+                <strong>{pattern.rolloutMove}</strong>
+                <p>{pattern.friction}</p>
+                <em>{pattern.message}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="experiment-strip">
+            {revenueExperiments.map((experiment) => (
+              <article key={experiment.id}>
+                <span>{experiment.id}</span>
+                <strong>{experiment.hypothesis}</strong>
+                <p>{experiment.test}</p>
+                <em>{experiment.successMetric}</em>
+              </article>
+            ))}
           </div>
         </section>
 
