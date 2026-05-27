@@ -79,7 +79,7 @@ export const pricingTiers: PricingTier[] = [
     monthlyKrw: 2900000,
     setupKrw: 15000000,
     buyer: "고객센터 1개 핵심 업무",
-    promise: "2주 안에 한 업무의 상담 초안, 근거 검색, QA 시간을 돈으로 환산합니다.",
+    promise: "2주 안에 한 업무의 상담 초안, 근거 검색, QA 시간을 월 절감액으로 검증합니다.",
     usage: "월 30,000 질의 / 문서 5,000개 / 관리자 5명",
     features: ["RAG 콘솔", "Agent 초안", "DLP 마스킹", "기본 KPI", "파일럿 리포트", "현장 온보딩"],
     conversionTrigger: "현재 업무 기준 ROI가 월 구독료 3배 이상이면 결제 전환",
@@ -90,7 +90,7 @@ export const pricingTiers: PricingTier[] = [
     name: "Ops",
     monthlyKrw: 9900000,
     setupKrw: 35000000,
-    buyer: "100~300석 regulated ops",
+    buyer: "100~300석 규제 산업 운영 조직",
     promise: "보안 승인, QA 리포트, 상담 지식 표준화를 묶어 현장 확산을 만듭니다.",
     usage: "월 150,000 질의 / 문서 50,000개 / 관리자 20명",
     features: ["부서별 권한 설계", "승인 워크플로우", "평가 게이트", "SLO 리포트", "도입 코칭", "QA 샘플링"],
@@ -138,35 +138,35 @@ export const buyerPersonas: BuyerPersona[] = [
     desiredOutcome: "민감정보 노출과 무단 발송 리스크 차단",
     proof: "DLP Guard, Prompt Injection Guard, Audit Trail",
     objection: "AI가 통제를 우회하면 어떻게 하나?",
-    closeMessage: "고위험 탐지는 launch blocker로 격상하고 외부 발송은 휴먼 승인에 묶습니다."
+    closeMessage: "고위험 탐지는 운영 전환 리스크로 격상하고 외부 발송은 휴먼 승인에 묶습니다."
   }
 ];
 
 export const behavioralLevers: BehavioralLever[] = [
   {
     id: "BEH-LOSS",
-    principle: "Loss Aversion",
-    ethicalUse: "잃고 있는 시간과 리스크 비용을 숫자로 보여주되 공포 과장은 피합니다.",
-    productMove: "월 절감액, 리스크 회피액, 회수 기간을 첫 화면에서 계산",
+    principle: "손실 회피",
+    ethicalUse: "놓치고 있는 시간과 리스크 비용을 숫자로 보여주되 공포 과장은 피합니다.",
+    productMove: "월 절감액, 리스크 회피액, 회수 기간을 한 화면에서 계산",
     metric: "ROI multiple / payback months"
   },
   {
     id: "BEH-ENDOW",
-    principle: "Endowment Effect",
+    principle: "자기 문서 효과",
     ethicalUse: "고객의 실제 문서와 업무 언어로 데모를 개인화합니다.",
     productMove: "문서 업로드 후 자기 팀 기준 리포트 생성",
     metric: "uploaded docs / return sessions"
   },
   {
     id: "BEH-COMMIT",
-    principle: "Commitment Device",
+    principle: "실행 약속",
     ethicalUse: "작은 실행 약속을 명확히 하되 해지와 보류 선택권을 유지합니다.",
     productMove: "6주 파일럿, 주간 KPI 리뷰, Go/No-Go 기준",
     metric: "weekly active teams / review completion"
   },
   {
     id: "BEH-SOCIAL",
-    principle: "Social Proof",
+    principle: "사용 증거",
     ethicalUse: "허위 후기 대신 부서별 사용률과 절감 시간을 투명하게 보여줍니다.",
     productMove: "도입률, 재사용률, 성공 workflow 공개",
     metric: "department adoption / expansion rate"
@@ -213,7 +213,7 @@ export const revenueExperiments: RevenueExperiment[] = [
   },
   {
     id: "EXP-TRUST",
-    hypothesis: "보안 통제와 blocker를 먼저 보여주면 엔터프라이즈 구매 저항이 낮아진다.",
+    hypothesis: "보안 통제와 운영 전환 리스크를 먼저 보여주면 엔터프라이즈 구매 저항이 낮아진다.",
     test: "Trust section을 가격 설명 전에 노출",
     successMetric: "security review pass 70%+"
   },
@@ -255,13 +255,13 @@ export const targetVerticals: TargetVertical[] = [
 export const scaleScenarios: ScaleScenario[] = [
   {
     id: "SCALE-WHALE",
-    name: "8개 대형 regulated center",
+    name: "8개 대형 규제 산업 센터",
     targetAccounts: 8,
     monthlyKrw: 29000000,
     setupKrw: 90000000,
     channel: "직판 + 보안/AI PMO 동시 설득",
     wedge: "민감정보 많은 고객센터 QA/RAG/Agent 운영",
-    whyItCanReach: "8개 엔터프라이즈만 확보해도 월 반복매출 2.3억 이상"
+    whyItCanReach: "대형 계정 8곳 기준 월 반복매출 2.3억 이상을 검토할 수 있습니다."
   },
   {
     id: "SCALE-BPO",
@@ -271,7 +271,7 @@ export const scaleScenarios: ScaleScenario[] = [
     setupKrw: 35000000,
     channel: "BPO/OEM 파트너십",
     wedge: "고객사별 지식팩과 상담원 온보딩",
-    whyItCanReach: "직판보다 빠른 다중 센터 확장으로 월 1.7억 MRR"
+    whyItCanReach: "파트너 채널을 통하면 다중 센터 확장으로 월 1.7억 MRR을 검토할 수 있습니다."
   },
   {
     id: "SCALE-MIXED",
@@ -281,7 +281,7 @@ export const scaleScenarios: ScaleScenario[] = [
     setupKrw: 0,
     channel: "상위 계정 직판, 중견 계정 파트너",
     wedge: "고위험 업무는 Enterprise, 반복 업무는 Ops로 분리",
-    whyItCanReach: "혼합 포트폴리오로 월 2.4억 이상과 셋업 매출을 동시에 확보"
+    whyItCanReach: "혼합 포트폴리오로 월 2.4억 이상과 셋업 매출을 함께 검토할 수 있습니다."
   }
 ];
 
@@ -307,7 +307,7 @@ export const salesMotions: SalesMotion[] = [
   {
     id: "MOTION-LOCK",
     stage: "04 Retain",
-    action: "월간 QA 리포트와 평가 게이트를 운영 회의에 박아 churn을 낮춥니다.",
+    action: "월간 QA 리포트와 평가 게이트를 운영 회의에 연결해 이탈을 낮춥니다.",
     metric: "연간 계약 전환 70%+"
   }
 ];

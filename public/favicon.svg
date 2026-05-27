@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AIX Pilot">
+  <rect width="64" height="64" rx="14" fill="#093F39"/>
+  <path d="M16 43.5 27.2 17h6.1l11.1 26.5h-7l-2-5.2H24.9l-2 5.2H16Zm11-10.7h6.4l-3.2-8.5-3.2 8.5Z" fill="#FBFAF5"/>
+  <path d="M46.2 43.5V17h6.4v26.5h-6.4Z" fill="#7BD0C4"/>
+  <path d="M11.5 50.5h41" stroke="#DF604D" stroke-width="4" stroke-linecap="round"/>
+</svg>

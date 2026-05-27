@@ -638,7 +638,7 @@ function App() {
           </div>
           <div>
             <strong>AIX Pilot</strong>
-            <span>무료 GenAI 운영</span>
+            <span>Pilot Ops Console</span>
           </div>
         </div>
         <nav>
@@ -674,11 +674,11 @@ function App() {
           <div className="hero-copy">
             <div className="hero-kicker">
               <Sparkles size={16} />
-              Enterprise GenAI Pilot Workspace
+              Enterprise AI Pilot Console
             </div>
-            <h1>근거, 보안, Agent, KPI까지 운영 가능한 GenAI 파일럿</h1>
+            <h1>기업 지식 검색과 업무 초안을 한 흐름에서 검증합니다</h1>
             <p className="hero-subcopy">
-              흩어진 사내 지식을 RAG로 묶고, 업무 초안 Agent와 DLP 마스킹, 평가 게이트, 운영 리포트까지 하나의 고급 콘솔에서 검증합니다.
+              문서 검색, 응답 초안, 보안 마스킹, 평가 리포트를 하나의 파일럿 워크스페이스에서 확인하고 운영 전환 기준을 숫자로 남깁니다.
             </p>
             <div className="top-actions">
               <button type="button" className="icon-button" title="파일럿 실행" onClick={runDemoScenario}>
@@ -705,17 +705,53 @@ function App() {
           </div>
 
           <div className="hero-visual" aria-label="AIX Pilot product visual">
-            <picture>
-              <source srcSet="/brand/aix-hero-generated.webp" type="image/webp" />
-              <img
-                src="/brand/aix-hero-generated.png"
-                width={1536}
-                height={1024}
-                decoding="async"
-                fetchPriority="high"
-                alt="기업용 GenAI 운영 콘솔을 표현한 추상 제품 비주얼"
-              />
-            </picture>
+            <div className="product-preview" aria-label="AIX Pilot live product preview">
+              <div className="preview-sidebar">
+                <span>AIX</span>
+                <i />
+                <i />
+                <i />
+                <i />
+              </div>
+              <div className="preview-main">
+                <div className="preview-toolbar">
+                  <span>운영 준비도 {serviceReadiness.score}</span>
+                  <span>Eval {evaluationRun.overallScore}</span>
+                  <span>PII 0건</span>
+                </div>
+                <div className="preview-grid">
+                  <article className="preview-card wide">
+                    <span>RAG Command</span>
+                    <strong>고객 보상 가능 여부와 근거 문서 확인</strong>
+                    <p>근거 문서 {answer.citations.length}개 · 신뢰도 {answer.confidence}%</p>
+                    <div className="preview-answer">
+                      <i />
+                      <em>{answer.answer.slice(0, 74)}...</em>
+                    </div>
+                  </article>
+                  <article className="preview-card">
+                    <span>Agent Studio</span>
+                    <strong>{agentDraft.requiresApproval ? "승인 필요" : "자동 처리 가능"}</strong>
+                    <p>{agentDraft.title}</p>
+                  </article>
+                  <article className="preview-card">
+                    <span>Trust Queue</span>
+                    <strong>{latestRisk}</strong>
+                    <p>DLP 마스킹과 승인 정책 적용</p>
+                  </article>
+                  <article className="preview-card chart">
+                    <span>KPI Trend</span>
+                    <div className="preview-bars" aria-hidden="true">
+                      <i style={{ height: "62%" }} />
+                      <i style={{ height: "88%" }} />
+                      <i style={{ height: "54%" }} />
+                      <i style={{ height: "72%" }} />
+                      <i style={{ height: "46%" }} />
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
             <div className="visual-glass-card visual-score">
               <span>Evaluation</span>
               <strong>{evaluationRun.overallScore}</strong>
@@ -723,15 +759,15 @@ function App() {
             </div>
             <div className="visual-glass-card visual-motion">
               <img src="/brand/aix-motion.gif" width={1280} height={720} decoding="async" alt="AIX Pilot 운영 흐름 애니메이션" />
-              <span>Live operating flow</span>
+              <span>운영 흐름</span>
             </div>
           </div>
         </header>
 
         <section className="signal-grid" aria-label="pilot signals">
           <article>
-            <span>로컬 데모</span>
-            <strong>무료 기준 운영 준비도 {readinessScore}%</strong>
+            <span>파일럿 상태</span>
+            <strong>운영 준비도 {readinessScore}%</strong>
           </article>
           <article>
             <span>지식 베이스</span>
@@ -749,8 +785,8 @@ function App() {
         <section className="launch-proof" aria-label="launch proof">
           <div className="proof-hero">
             <div>
-              <p className="eyebrow">Launch Proof</p>
-              <h2>제품처럼 보이는 데모를 넘어, 실제 운영 전환 기준까지 증명합니다</h2>
+              <p className="eyebrow">Operating Proof</p>
+              <h2>화면 시연보다 운영 증거를 먼저 보여줍니다</h2>
             </div>
             <div className="proof-orbit" style={{ "--score": `${evaluationRun.overallScore * 3.6}deg` } as CSSProperties}>
               <strong>{evaluationRun.overallScore}</strong>
@@ -785,19 +821,19 @@ function App() {
           <div className="proof-ribbon">
             <span>
               <Network size={16} />
-              Local-first
+              무료 기준
             </span>
             <span>
               <Eye size={16} />
-              Evidence-led
+              근거 중심
             </span>
             <span>
               <LockKeyhole size={16} />
-              Privacy-safe
+              개인정보 마스킹
             </span>
             <span>
               <GitBranch size={16} />
-              CI-ready
+              QA 자동화
             </span>
           </div>
         </section>
@@ -833,7 +869,7 @@ function App() {
 
             <div className="trust-blockers">
               <div className="section-heading compact">
-                <h2>Launch blockers</h2>
+                <h2>운영 전환 리스크</h2>
                 <AlertTriangle size={21} />
               </div>
               {serviceReadiness.blockers.length ? (
@@ -846,7 +882,7 @@ function App() {
               ) : (
                 <article className="trust-clear">
                   <CheckCircle2 size={20} />
-                  <span>현재 데모 입력 기준 운영 전환을 막는 고위험 blocker가 없습니다.</span>
+                  <span>현재 데모 입력 기준 운영 전환을 막는 고위험 리스크가 없습니다.</span>
                 </article>
               )}
             </div>
@@ -928,7 +964,7 @@ function App() {
           <div className="section-heading revenue-heading">
             <div>
               <p className="eyebrow">Revenue Engine</p>
-              <h2>월 수억 매출은 대형 regulated contact center의 반복 업무와 보안 예산에서 나옵니다</h2>
+              <h2>고가 파일럿은 반복 업무 절감액과 보안 승인 근거에서 결정됩니다</h2>
             </div>
             <div className={`close-signal close-${revenueCase.closeSignal}`}>
               <DollarSign size={20} />
@@ -1000,8 +1036,8 @@ function App() {
 
           <div className="scale-board">
             <article className="scale-main">
-              <span>월 수억 매출 공식</span>
-              <strong>{primaryScale.targetAccounts}개 대형 계정 = 월 {formatKrw(primaryScale.result.mrrKrw)}원 MRR</strong>
+              <span>확장 시나리오</span>
+              <strong>{primaryScale.targetAccounts}개 대형 계정 기준 월 {formatKrw(primaryScale.result.mrrKrw)}원 MRR</strong>
               <p>{primaryScale.whyItCanReach}</p>
               <div>
                 <span>셋업 파이프라인 {formatKrw(primaryScale.result.setupPipelineKrw)}원</span>
@@ -1063,7 +1099,7 @@ function App() {
           <div className="buyer-grid">
             <div className="workspace-band buyer-panel">
               <div className="section-heading compact">
-                <h2>Buyer psychology</h2>
+                <h2>구매자 관점</h2>
                 <Users size={22} />
               </div>
               <div className="buyer-list">
@@ -1080,7 +1116,7 @@ function App() {
 
             <div className="workspace-band behavior-panel">
               <div className="section-heading compact">
-                <h2>Behavioral economics</h2>
+                <h2>전환 설계</h2>
                 <Target size={22} />
               </div>
               <div className="behavior-list">

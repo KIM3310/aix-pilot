@@ -243,17 +243,173 @@ button:disabled {
   background: #f9fbf7;
 }
 
-.hero-visual picture,
-.hero-visual > picture img {
-  display: block;
-  width: 100%;
+.product-preview {
+  min-height: 496px;
   height: 100%;
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid rgba(201, 216, 209, 0.95);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 247, 0.96)),
+    repeating-linear-gradient(0deg, rgba(11, 117, 110, 0.04) 0 1px, transparent 1px 56px);
 }
 
-.hero-visual > picture img {
-  min-height: 496px;
-  object-fit: cover;
+.preview-sidebar {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: 22px 18px;
+  background: #113c3a;
+  color: #fff8e6;
+}
+
+.preview-sidebar span {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.preview-sidebar i {
+  display: block;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.preview-sidebar i:nth-child(2) {
+  width: 48px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.preview-sidebar i:nth-child(3) {
+  width: 36px;
+}
+
+.preview-sidebar i:nth-child(4) {
+  width: 44px;
+}
+
+.preview-sidebar i:nth-child(5) {
+  width: 30px;
+}
+
+.preview-main {
+  min-width: 0;
+  padding: 24px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 18px;
+}
+
+.preview-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preview-toolbar span {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 11px;
+  border: 1px solid var(--line);
   border-radius: 8px;
+  background: #ffffff;
+  color: #36514c;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(170px, 0.72fr);
+  grid-auto-rows: minmax(118px, auto);
+  gap: 12px;
+  align-content: start;
+}
+
+.preview-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 28px rgba(28, 46, 43, 0.06);
+}
+
+.preview-card.wide {
+  grid-row: span 2;
+}
+
+.preview-card span {
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.preview-card strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.32;
+}
+
+.preview-card p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.preview-answer {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid #c7e5da;
+  border-radius: 8px;
+  background: #eaf6f0;
+}
+
+.preview-answer i {
+  display: block;
+  width: 76%;
+  height: 8px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--teal), var(--blue));
+}
+
+.preview-answer em {
+  color: #344a46;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.55;
+}
+
+.preview-card.chart {
+  display: grid;
+  gap: 14px;
+}
+
+.preview-bars {
+  height: 86px;
+  display: flex;
+  align-items: end;
+  gap: 9px;
+}
+
+.preview-bars i {
+  width: 20%;
+  min-height: 18px;
+  border-radius: 7px 7px 0 0;
+  background: var(--gold);
+}
+
+.preview-bars i:nth-child(2n) {
+  background: var(--blue);
 }
 
 .visual-glass-card {
@@ -2683,8 +2839,9 @@ h2 {
     padding: 24px;
   }
 
-  .hero-visual > picture img {
-    min-height: 360px;
+  .product-preview {
+    min-height: 420px;
+    grid-template-columns: 72px minmax(0, 1fr);
   }
 
   .visual-score {
@@ -2821,8 +2978,56 @@ h2 {
     padding: 8px;
   }
 
-  .hero-visual > picture img {
-    min-height: 300px;
+  .product-preview {
+    min-height: 430px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .preview-sidebar {
+    display: none;
+  }
+
+  .preview-main {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .preview-toolbar span {
+    min-height: 28px;
+    padding: 0 9px;
+    font-size: 11px;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+  }
+
+  .preview-card {
+    padding: 13px;
+  }
+
+  .preview-card.wide {
+    grid-row: auto;
+  }
+
+  .preview-card strong {
+    font-size: 16px;
+  }
+
+  .preview-card p,
+  .preview-answer em {
+    font-size: 12px;
+  }
+
+  .preview-answer {
+    margin-top: 12px;
+    padding: 12px;
+  }
+
+  .preview-card.chart {
+    display: none;
   }
 
   .visual-score {
