@@ -4,6 +4,18 @@
 
 기업용 GenAI 도입을 위한 무료 기준 RAG, Agent, 보안, KPI 대시보드 통합 플랫폼 프로토타입입니다.
 
+## Product and Review Surface
+
+AIX Pilot is the clearest near-term revenue wedge: a free-first enterprise GenAI pilot that can become setup, governance, and monthly support revenue.
+
+| Lens | Definition |
+|---|---|
+| Buyer or user | Customer-center leaders, internal knowledge owners, IT governance teams, and AI adoption leads. |
+| Commercial route | Start with a free proof-of-value demo, then sell implementation setup, secure knowledge onboarding, evaluation tuning, and monthly KPI reporting. |
+| Review signal | RAG, Agent drafts, DLP masking, evaluation lab, KPI dashboard, revenue engine, presentation pack, and Cloudflare-ready deployment. |
+| Safety boundary | Demo data is local and controlled; paid deployments should use approved customer storage, access control, audit logs, and model routing. |
+| Fast proof | `npm run qa` runs TypeScript checks, tests, production build, and content verification. |
+
 ## 핵심 기능
 
 - 고객센터/사내 지식 문서를 로컬에서 청크화하고 검색하는 RAG 콘솔
