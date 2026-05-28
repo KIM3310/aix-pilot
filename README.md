@@ -23,6 +23,10 @@ AIX Pilot is the clearest near-term revenue wedge: a free-first enterprise GenAI
 - **Verification:** Run `npm run qa`; it covers TypeScript, tests, production build, and content verification.
 - **Commercial read:** Sell the pilot as a free proof-of-value that upgrades into knowledge onboarding, governance, and monthly KPI reporting.
 
+## Commercialization Playbook
+
+- [Monetization and GTM playbook](docs/monetization-playbook.md) maps the repository to buyer segments, offer ladder, pricing hypotheses, proof gates, and risk boundaries.
+
 ## 핵심 기능
 
 - 고객센터/사내 지식 문서를 로컬에서 청크화하고 검색하는 RAG 콘솔
