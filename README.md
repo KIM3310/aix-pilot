@@ -16,6 +16,13 @@ AIX Pilot is the clearest near-term revenue wedge: a free-first enterprise GenAI
 | Safety boundary | Demo data is local and controlled; paid deployments should use approved customer storage, access control, audit logs, and model routing. |
 | Fast proof | `npm run qa` runs TypeScript checks, tests, production build, and content verification. |
 
+## Reviewer Fast Path
+
+- **First minute:** Open the revenue engine, service trust model, and evaluation lab before reading implementation details.
+- **Local demo:** Run `npm install && npm run dev`, then open `http://localhost:5173`.
+- **Verification:** Run `npm run qa`; it covers TypeScript, tests, production build, and content verification.
+- **Commercial read:** Sell the pilot as a free proof-of-value that upgrades into knowledge onboarding, governance, and monthly KPI reporting.
+
 ## 핵심 기능
 
 - 고객센터/사내 지식 문서를 로컬에서 청크화하고 검색하는 RAG 콘솔
