@@ -27,6 +27,11 @@ AIX Pilot is the clearest near-term revenue wedge: a free-first enterprise GenAI
 
 - [Monetization and GTM playbook](docs/monetization-playbook.md) maps the repository to buyer segments, offer ladder, pricing hypotheses, proof gates, and risk boundaries.
 
+## Executive Proof Pack
+
+- [Reviewer evidence map](docs/reviewer-evidence-map.md) gives a 7-minute route through the strongest hiring, buyer, and architecture signals.
+- [Quality gate](docs/quality-gate.md) lists the local checks, CI surface, release boundary, and no-key/demo expectations for this repository.
+
 ## 핵심 기능
 
 - 고객센터/사내 지식 문서를 로컬에서 청크화하고 검색하는 RAG 콘솔
