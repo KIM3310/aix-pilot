@@ -12,7 +12,7 @@ AIX Pilot is built to show those operational answers upfront. It is intentionall
 
 ## Product Scope
 
-| Area | Built Into Demo | Recruiter Signal |
+| Area | Built Into Demo | Review Signal |
 |---|---|---|
 | RAG | Local chunking, Korean-friendly tokenization, search ranking, citation dedupe | Retrieval quality and evidence discipline |
 | Agent | FAQ, email, report, automation modes with approval steps | Workflow thinking beyond a chatbot |
@@ -47,7 +47,7 @@ flowchart LR
 | Decision | Reason |
 |---|---|
 | Local-first browser demo | Free to run, no API key exposure, easy for reviewers to start |
-| Deterministic RAG and agent outputs | Stable tests and predictable interview demo behavior |
+| Deterministic RAG and agent outputs | Stable tests and predictable review behavior |
 | Golden evaluation suite | AI features need acceptance criteria, not only screenshots |
 | DLP before export | Report downloads should not become the privacy leak |
 | Spec Pack in the product UI | Enterprise buyers and internal platform teams need the operating model, not just the prototype |

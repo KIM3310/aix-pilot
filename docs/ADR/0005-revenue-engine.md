@@ -27,4 +27,4 @@ Add a Revenue Engine for regulated contact-center enterprise sales that includes
 - The service is positioned around a narrow high-budget wedge instead of a broad low-price chatbot market.
 - Weak ROI cases are not over-sold; they produce a "보류" signal and recommend narrowing the workflow.
 - The business model becomes testable through `revenue.test.ts`.
-- The project sends a stronger hiring signal for product thinking, commercial judgment, and responsible go-to-market design.
+- The project gives a clearer product signal: commercial judgment, responsible go-to-market design, and measurable revenue assumptions.

@@ -27,10 +27,10 @@ AIX Pilot is the clearest near-term revenue wedge: a free-first enterprise GenAI
 
 - [Monetization and GTM playbook](docs/monetization-playbook.md) maps the repository to buyer segments, offer ladder, pricing hypotheses, proof gates, and risk boundaries.
 
-## Executive Proof Pack
+## Review Notes
 
-- [Reviewer evidence map](docs/reviewer-evidence-map.md) gives a 7-minute route through the strongest technical, buyer, and architecture signals.
-- [Quality gate](docs/quality-gate.md) lists the local checks, CI surface, release boundary, and no-key/demo expectations for this repository.
+- [Review guide](docs/reviewer-evidence-map.md) summarizes the project angle, first files to inspect, verification commands, and known boundaries.
+- [Quality notes](docs/quality-gate.md) lists the local checks, CI surface, and release expectations for this repository.
 
 ## 핵심 기능
 
@@ -164,7 +164,7 @@ public/
 6. 파일럿 KPI를 정합니다: 검색 성공률, 근거 포함률, 상담 처리 시간, 자동화 완료율, 보안 차단 건수.
 
 상세 제품 스펙은 [docs/PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md)에 정리되어 있습니다.
-서비스 운영 모델은 [docs/SERVICE_OPERATING_MODEL.md](docs/SERVICE_OPERATING_MODEL.md), 수익화 전략은 [docs/REVENUE_STRATEGY.md](docs/REVENUE_STRATEGY.md), 채용/포트폴리오용 케이스 스터디는 [docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md), 위협 모델은 [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md), 주요 의사결정은 [docs/ADR](docs/ADR)에 정리되어 있습니다.
+서비스 운영 모델은 [docs/SERVICE_OPERATING_MODEL.md](docs/SERVICE_OPERATING_MODEL.md), 수익화 전략은 [docs/REVENUE_STRATEGY.md](docs/REVENUE_STRATEGY.md), 기술 리뷰용 케이스 스터디는 [docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md), 위협 모델은 [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md), 주요 의사결정은 [docs/ADR](docs/ADR)에 정리되어 있습니다.
 
 ## 무료 배포 옵션
 
