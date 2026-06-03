@@ -184,3 +184,7 @@ public/
 - 로컬 LLM 확장: Ollama 서버를 같은 네트워크에 두고 API 프록시로 연결
 
 이 프로젝트는 무료 기준의 설득력 있는 파일럿 데모를 목표로 합니다. 실제 개인정보나 고객 데이터를 넣기 전에는 반드시 접근 권한, 로그 보관, DLP 정책을 먼저 확정하세요.
+
+## Enterprise Productization
+
+- [Product operating model](docs/product-operating-model.md) defines the buyer, paid wedge, trust boundary, operating checks, and revenue path for this repository.
