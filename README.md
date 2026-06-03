@@ -35,6 +35,8 @@ AIX Pilot is the clearest near-term revenue wedge: a free-first enterprise GenAI
 - [Enterprise readiness notes](docs/enterprise-readiness.md) outlines security, data, operations, integration, and handoff expectations.
 - [Conversion UX model](docs/conversion-ux-model.md) maps the buyer path, behavioral design, UI/UX direction, pricing frame, and ethical conversion guardrails.
 - [Commercial offer](docs/commercial-offer.md) packages the repository into a buyer-ready offer ladder, proof gate, outreach angle, and close path.
+- [Cloud + AI architecture blueprint](docs/cloud-ai-architecture.md) records the deployment, runtime, AI evaluation, and risk-control surface.
+- [Machine-readable architecture manifest](docs/architecture/blueprint.json) keeps the blueprint reviewable in CI.
 
 ## 핵심 기능
 
@@ -108,6 +110,9 @@ GitHub Actions에서도 모든 push와 pull request마다 같은 검증을 실�
 ## 운영 품질 게이트
 
 - `QA` workflow: TypeScript, 30개 Vitest 테스트, 프로덕션 빌드, production dependency audit
+- `Repository Surface` workflow: README, local docs, architecture blueprint, and neutral positioning guard
+- `Architecture Blueprint` workflow: machine-readable cloud/AI architecture manifest validation
+- `scripts/validate_architecture_blueprint.py`: local architecture manifest guard used by CI
 - `Cloudflare Pages` workflow: 릴리스 후보를 다시 검증한 뒤 `dist/`를 Cloudflare Pages에 수동 배포
 - `Dependabot`: npm 패키지와 GitHub Actions 버전을 주 1회 점검
 - 배포 전 로컬 명령: `npm run qa && npm audit --omit=dev`
@@ -169,6 +174,7 @@ public/
 
 상세 제품 스펙은 [docs/PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md)에 정리되어 있습니다.
 서비스 운영 모델은 [docs/SERVICE_OPERATING_MODEL.md](docs/SERVICE_OPERATING_MODEL.md), 수익화 전략은 [docs/REVENUE_STRATEGY.md](docs/REVENUE_STRATEGY.md), 기술 리뷰용 케이스 스터디는 [docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md), 위협 모델은 [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md), 주요 의사결정은 [docs/ADR](docs/ADR)에 정리되어 있습니다.
+클라우드와 AI 운영 경계는 [docs/cloud-ai-architecture.md](docs/cloud-ai-architecture.md)와 [docs/architecture/blueprint.json](docs/architecture/blueprint.json)에 정리되어 있습니다.
 
 ## 무료 배포 옵션
 

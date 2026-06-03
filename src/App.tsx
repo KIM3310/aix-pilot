@@ -1616,7 +1616,7 @@ function App() {
                   <p>전화번호와 이메일 원문이 평가 증적에 남지 않는지 테스트와 화면에서 같이 확인합니다.</p>
                 </article>
                 <article>
-                  <span>Hiring Signal</span>
+                  <span>Readiness Signal</span>
                   <strong>데모, 테스트, 문서, CI가 같은 기준을 공유</strong>
                   <p>프로덕트 감각뿐 아니라 운영 전환 기준과 회귀 방지 사고를 함께 보여줍니다.</p>
                 </article>

@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "repository": "aix-pilot",
+  "status": "active",
+  "neutrality": {
+    "positioning": "enterprise GenAI pilot operating model",
+    "scope_note": "Describes the repository-local proof surface, deployment path, evaluation controls, and extension boundaries without claiming external production certification.",
+    "tone_guard": "Keep the artifact technical, neutral, and evidence-first."
+  },
+  "focus": {
+    "domain": "enterprise GenAI pilot operations",
+    "summary": "Browser-first GenAI pilot console with local RAG fixtures, agent drafts, DLP masking, KPI dashboards, evaluation tests, and Cloudflare deployment path.",
+    "primary_stack": [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Vitest",
+      "Cloudflare Pages",
+      "Cloudflare Functions"
+    ],
+    "architecture_axes": [
+      "cloud architecture",
+      "AI engineering",
+      "governance",
+      "evaluation",
+      "security",
+      "operator experience"
+    ]
+  },
+  "cloud_architecture": {
+    "operating_model": "static-first enterprise pilot console with optional Cloudflare runtime edges for API adapters, workspace state, and controlled service expansion",
+    "patterns": [
+      "Static frontend with runtime adapters isolated behind Cloudflare Functions",
+      "Manual Cloudflare Pages deployment workflow that re-runs QA before publishing",
+      "Local deterministic fallback for RAG, agent draft, DLP, KPI, and report demos"
+    ],
+    "landing_zone_controls": [
+      "identity boundary and least-privilege service access",
+      "environment separation for local, preview, and managed deployment paths",
+      "secret storage outside source and deterministic fallback for missing credentials",
+      "audit-friendly workspace events for generated drafts and report exports",
+      "rollback path through static build artifacts and GitHub Actions deployment history"
+    ],
+    "resilience_controls": [
+      "deterministic QA command covering typecheck, tests, and production build",
+      "model-free fallback paths for demo operation when external providers are unavailable",
+      "explicit service-readiness scoring before pilot claims are trusted",
+      "bounded browser-local state with reset and report export controls"
+    ]
+  },
+  "ai_engineering": {
+    "operating_model": "retrieval-backed knowledge answers, agent drafts, safety checks, evaluation scorecards, and revenue-readiness signals that stay inspectable without external credentials",
+    "patterns": [
+      "Keep source documents, retrieval scores, owners, recency, and answer evidence visible beside generated output",
+      "Separate deterministic DLP and security checks from agent draft text so the system remains testable",
+      "Treat generated emails, reports, and automation drafts as human-reviewed artifacts",
+      "Preserve evaluation fixtures and golden questions as CI-safe regression gates",
+      "Keep ROI and revenue signals tied to explicit assumptions instead of hidden model output"
+    ],
+    "evaluation_controls": [
+      "Vitest coverage for RAG ranking, agent drafting, DLP masking, revenue calculations, and service-readiness scoring",
+      "golden question fixtures for retrieval quality and citation behavior",
+      "content and build checks in npm run qa before deploy",
+      "production dependency audit in GitHub Actions"
+    ],
+    "model_risk_controls": [
+      "stale knowledge source metadata",
+      "unsafe automation without approval",
+      "private data leakage in reports or screenshots",
+      "overconfident ROI or adoption claims",
+      "external provider outage or quota exhaustion"
+    ]
+  },
+  "validation": {
+    "local_command": "python3 scripts/validate_architecture_blueprint.py",
+    "ci_workflow": ".github/workflows/architecture-blueprint.yml",
+    "required_files": [
+      "docs/architecture/blueprint.json",
+      "docs/cloud-ai-architecture.md",
+      "scripts/validate_architecture_blueprint.py"
+    ]
+  },
+  "research_grounding": [
+    {
+      "title": "Hidden Technical Debt in Machine Learning Systems",
+      "url": "https://papers.nips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html"
+    },
+    {
+      "title": "Guidelines for Human-AI Interaction",
+      "url": "https://doi.org/10.1145/3290605.3300233"
+    },
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/abs/2005.11401"
+    }
+  ]
+}
