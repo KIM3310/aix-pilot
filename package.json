@@ -9,6 +9,7 @@
     "preview": "vite preview --host 0.0.0.0",
     "lint": "tsc --noEmit --pretty false",
     "test": "vitest run",
+    "verify": "npm run qa",
     "qa": "npm run lint && npm run test && npm run build"
   },
   "dependencies": {
