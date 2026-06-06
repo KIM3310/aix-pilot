@@ -1,6 +1,6 @@
 # Service Architecture - aix-pilot
 
-This document defines the deployment and resource plan for turning this repository into a buyer-reviewable service. It intentionally avoids public public financial assumptions, public financial guesses, or contract assumptions.
+This document defines the deployment and resource plan for turning this repository into a buyer-reviewable service. It intentionally avoids public financial assumptions, public financial guesses, or contract assumptions.
 
 ## Commercial Role
 
@@ -47,6 +47,15 @@ Visitor or operator
 - R2 credentials
 - JWT/session secret
 - analytics token
+
+## Revenue Channel Architecture
+
+- **Primary channel:** B2B diagnostics and pilots
+- **Monetization route:** Enterprise AI readiness diagnostic, governed pilot, then eval and rollout support.
+- **Acquisition motion:** Portfolio proof, GitHub evidence, direct outreach to AI, data, platform, and security leaders.
+- **Activation path:** Use non-sensitive buyer samples, define RAG/eval acceptance gates, and turn on model spend caps before external testing.
+- **Margin control:** Keep the pilot fixed-scope, reuse templates and evidence packs, set spend limits, and add persistent infrastructure only after buyer scope is approved.
+- **Public boundary:** Keep revenue, pricing, and contract assumptions in private planning; this repository publishes service structure, resource needs, and technical proof only.
 
 ## Cost and Risk Controls
 
