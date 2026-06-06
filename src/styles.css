@@ -1661,7 +1661,9 @@ h2 {
 .package-line strong {
   color: var(--ink);
   font-size: 22px;
-  white-space: nowrap;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .package-line span {
@@ -2811,19 +2813,35 @@ h2 {
     position: static;
     height: auto;
     padding: 12px;
-    flex-direction: row;
-    align-items: center;
-    overflow-x: auto;
+    flex-direction: column;
+    align-items: stretch;
+    overflow-x: visible;
   }
 
   .side-nav nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
     gap: 8px;
+    width: 100%;
   }
 
   .brand-lockup div:last-child,
   .nav-button span {
     display: block;
+  }
+
+  .nav-button {
+    justify-content: center;
+    min-width: 0;
+    padding: 0 8px;
+  }
+
+  .nav-button span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.74rem;
   }
 
   .workspace {

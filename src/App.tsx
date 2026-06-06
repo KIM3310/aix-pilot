@@ -681,15 +681,15 @@ function App() {
             <div className="top-actions">
               <button type="button" className="icon-button" title="파일럿 실행" onClick={runDemoScenario}>
                 <Play size={18} />
-                <span>실행</span>
+                <span>Run Demo</span>
               </button>
               <button type="button" className="icon-button ghost" title="보고서 생성" onClick={exportReport}>
                 <Download size={18} />
-                <span>리포트</span>
+                <span>Export Report</span>
               </button>
               <button type="button" className="icon-button ghost" title="초기화" onClick={resetWorkspace}>
                 <RotateCcw size={18} />
-                <span>초기화</span>
+                <span>Reset</span>
               </button>
             </div>
             <div className="hero-proof-row" aria-label="pilot proof summary">
