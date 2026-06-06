@@ -18,7 +18,7 @@ AIX Pilot is built to show those operational answers upfront. It is intentionall
 | Agent | FAQ, email, report, automation modes with approval steps | Workflow thinking beyond a chatbot |
 | Security | Phone, email, resident-number pattern, sensitive keyword detection and masking | Responsible AI and privacy awareness |
 | Service Trust | Launch readiness score, trust controls, SLOs, maturity track | Product/infra ownership beyond UI polish |
-| Revenue | High-ticket ROI calculator, regulated contact-center ICP, pricing tiers, MRR scenarios | Commercial product thinking and ethical monetization |
+| Value Readiness | Operational value model, regulated contact-center ICP, service packages, resource-focused expansion paths | Commercial product thinking and ethical service launch |
 | KPI | Adoption, RAG quality, automation, cost, risk dashboards | Product measurement mindset |
 | Evaluation | Golden question suite with retrieval, citation, safety score | Regression testing for AI behavior |
 | Spec Pack | Requirements, rollout phases, gates, stack decisions | Enterprise handoff and execution clarity |
@@ -33,7 +33,7 @@ flowchart LR
   UI --> Agent["Agent Playbooks"]
   UI --> Guard["Security Guard"]
   UI --> Trust["Service Trust Model"]
-  UI --> Revenue["Revenue Engine"]
+  UI --> Value["Value Readiness"]
   UI --> Eval["Evaluation Lab"]
   RAG --> Docs["Knowledge Documents"]
   Agent --> Guard
@@ -59,7 +59,7 @@ The repository is designed so the reviewer can inspect product, code, and govern
 - `npm run qa` runs TypeScript, Vitest, and production build.
 - `src/lib/evaluation.test.ts` keeps the golden suite above the pilot acceptance bar.
 - `src/lib/serviceReadiness.test.ts` checks launch readiness, blocker behavior, and service model completeness.
-- `src/lib/revenue.test.ts` checks ROI, price anchoring, weak-case restraint, and business model completeness.
+- `src/lib/valueModel.test.ts` checks workflow recovery, service scope selection, weak-case restraint, and business model completeness.
 - `src/lib/report.test.ts` verifies raw phone and email values do not leak into reports.
 - Browser QA screenshots validate desktop, mobile, and Spec Pack layouts.
 - `npm run qa` keeps the same quality gate ready for CI wiring.
@@ -72,7 +72,7 @@ The repository is designed so the reviewer can inspect product, code, and govern
 3. Point out that the phone number is masked in the Agent output and report.
 4. Open Evaluation Lab to show retrieval, citation, safety, and confidence scores.
 5. Open Service Trust Model to show launch readiness, controls, SLOs, and blockers.
-6. Open Revenue Engine to show why the target is regulated contact centers, how 8 enterprise accounts can exceed KRW 200M MRR, and how buyer objections are handled.
+6. Open Value Readiness to show why the target is regulated contact centers, which cloud resources are needed next, and how buyer objections are handled.
 7. Finish with Enterprise Spec Pack to show rollout, security gates, requirements, and stack decisions.
 
 ## Production Path

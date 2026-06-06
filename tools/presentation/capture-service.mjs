@@ -20,7 +20,7 @@ const chromePath = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 const sections = [
   { id: "home", label: "실서비스 히어로", selector: "body", y: 0 },
   { id: "trust", label: "서비스 신뢰 모델", selector: "#trust" },
-  { id: "revenue", label: "수익화 엔진", selector: "#revenue" },
+  { id: "value", label: "가치 준비도", selector: "#value" },
   { id: "command", label: "운영 KPI 대시보드", selector: "#command" },
   { id: "rag", label: "RAG 콘솔", selector: "#rag" },
   { id: "stack", label: "무료 런타임 스택", selector: "#stack" },

@@ -2,7 +2,7 @@
 
 Updated: 2026-05-30
 
-This note specializes the repository for revenue. It combines product strategy, UX design, behavioral economics, and neuroscience-informed attention and working-memory design in a practical way: reduce confusion, build trust, help the right user act, and avoid manipulative conversion patterns.
+This note specializes the repository for service launch. It combines product strategy, UX design, behavioral economics, and neuroscience-informed attention and working-memory design in a practical way: reduce confusion, build trust, help the right user act, and avoid manipulative conversion patterns.
 
 ## Commercial Focus
 
@@ -11,8 +11,8 @@ This note specializes the repository for revenue. It combines product strategy, 
 | Repository status | active |
 | Lane | B2B enterprise GenAI adoption platform |
 | Primary buyer or user | Customer support, internal knowledge, IT governance, and AI adoption leaders. |
-| Value wedge | Free-first RAG/Agent/security/KPI pilot that converts into governed deployment revenue. |
-| Revenue model | Enterprise workshop, implementation pilot, and support retainer |
+| Value wedge | Free-first RAG/Agent/security/KPI pilot that converts into governed implementation and operating support after validation. |
+| Service model | Enterprise workshop, implementation pilot, and support retainer |
 | Operating note | Make the buyer's painful workflow visible, then offer a scoped pilot with explicit acceptance criteria. |
 | Best channel | Outbound to narrow ICPs, demo walkthroughs, partner referrals, and review artifacts. |
 
@@ -49,14 +49,14 @@ This note specializes the repository for revenue. It combines product strategy, 
 
 ## Conversion Path
 
-- Risk-reversing entry: Free proof-of-value demo (Free demo -> $5k setup) with one acceptance metric.
-- Pilot: Secure knowledge onboarding setup ($15k-$50k pilot) using buyer-approved data and named operators.
-- Recurring layer: Monthly KPI and governance reporting ($3k-$15k/month support) for monitoring, governance, support, or managed review.
+- Risk-reversing entry: Free proof-of-value demo with one acceptance metric.
+- Pilot: Secure knowledge onboarding setup using buyer-approved data and named operators.
+- Operating layer: Monthly KPI and governance reporting for monitoring, governance, support, or managed review.
 
-## Pricing Frame
+## Scope Frame
 
-- Anchor price to the buyer's existing cost: hours lost, incidents, review delay, audit exposure, or manual handoff.
-- Use the first offer as risk reversal, not as a race to the bottom.
+- Anchor scope to the buyer's existing pain: hours lost, incidents, review delay, audit exposure, or manual handoff.
+- Use the first offer as risk reversal, not as a race to broad customization.
 - Put Deflection rate on the pilot scorecard.
 
 ## Metrics To Watch
@@ -67,8 +67,8 @@ This note specializes the repository for revenue. It combines product strategy, 
 
 ## Ethical Guardrails
 
-- No fake users, fake logos, fake revenue, fake benchmarks, or unverifiable endorsements.
-- No urgency timers, hidden opt-outs, forced continuity, or confusing pricing.
+- No fake users, fake logos, fake financial outcomes, fake benchmarks, or unverifiable endorsements.
+- No urgency timers, hidden opt-outs, forced continuity, or confusing scope.
 - Conversion prompts should come after value or evidence, not before.
 - Data collection should be minimal, visible, and tied to product value.
 - Customer data needs approved storage

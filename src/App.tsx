@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   ClipboardList,
   Database,
-  DollarSign,
   Download,
   Eye,
   FileCheck2,
@@ -52,10 +51,10 @@ import {
   behavioralLevers,
   buyerPersonas,
   culturalAdoptionPatterns,
-  pricingTiers,
-  revenueExperiments,
   salesMotions,
-  scaleScenarios,
+  servicePackages,
+  validationExperiments,
+  expansionPaths,
   targetVerticals
 } from "./data/businessModel";
 import { goldenEvaluationSuite } from "./data/evaluation";
@@ -84,7 +83,7 @@ import {
   OLLAMA_DEFAULT_ENDPOINT,
   OLLAMA_DEFAULT_MODEL
 } from "./lib/freeRuntime";
-import { calculateRevenueBusinessCase, calculateScaleScenario, formatKrw } from "./lib/revenue";
+import { calculateExpansionPath, calculateValueReadiness, formatCount } from "./lib/valueModel";
 
 const sourceOrder = ["고객센터", "사내지식", "보안정책", "운영지표", "영업지원"];
 const agentModes: AgentMode[] = ["FAQ 응답", "이메일 생성", "보고서 생성", "업무 자동화"];
@@ -310,8 +309,8 @@ function App() {
   const [teamMembers, setTeamMembers] = useState(450);
   const [monthlyWorkflows, setMonthlyWorkflows] = useState(120000);
   const [minutesSavedPerWorkflow, setMinutesSavedPerWorkflow] = useState(7);
-  const [hourlyCostKrw, setHourlyCostKrw] = useState(38000);
-  const [selectedTierId, setSelectedTierId] = useState("PRICE-ENT");
+  const [approvalSteps, setApprovalSteps] = useState(4);
+  const [selectedPackageId, setSelectedPackageId] = useState("PKG-OPERATIONS");
 
   const chunks = useMemo(() => chunkDocuments(documents), [documents]);
   const results = useMemo(() => searchKnowledge(query, chunks, selectedSources), [query, chunks, selectedSources]);
@@ -365,20 +364,19 @@ function App() {
       securityReadiness
     ]
   );
-  const selectedTier = pricingTiers.find((tier) => tier.id === selectedTierId) ?? pricingTiers[1];
-  const revenueCase = useMemo(
+  const selectedPackage = servicePackages.find((item) => item.id === selectedPackageId) ?? servicePackages[1];
+  const valueCase = useMemo(
     () =>
-      calculateRevenueBusinessCase({
+      calculateValueReadiness({
         teamMembers,
         monthlyWorkflows,
         minutesSavedPerWorkflow,
-        hourlyCostKrw,
-        selectedTierMonthlyKrw: selectedTier.monthlyKrw
+        approvalSteps
       }),
-    [hourlyCostKrw, minutesSavedPerWorkflow, monthlyWorkflows, selectedTier.monthlyKrw, teamMembers]
+    [approvalSteps, minutesSavedPerWorkflow, monthlyWorkflows, teamMembers]
   );
-  const scaleResults = useMemo(() => scaleScenarios.map((scenario) => ({ ...scenario, result: calculateScaleScenario(scenario) })), []);
-  const primaryScale = scaleResults[0];
+  const expansionResults = useMemo(() => expansionPaths.map((path) => ({ ...path, result: calculateExpansionPath(path) })), []);
+  const primaryExpansion = expansionResults[0];
   const freeRuntimeCards = useMemo(
     () =>
       getFreeRuntimeCards({
@@ -645,7 +643,7 @@ function App() {
           {[
             ["command", Gauge, "Command"],
             ["trust", LockKeyhole, "Trust"],
-            ["revenue", DollarSign, "Revenue"],
+            ["value", Layers3, "Value"],
             ["rag", Search, "RAG"],
             ["agent", Bot, "Agent"],
             ["security", ShieldCheck, "Security"],
@@ -698,7 +696,7 @@ function App() {
               <span>Eval {evaluationRun.overallScore}</span>
               <span>Spec {specScore}%</span>
               <span>Service {serviceReadiness.score}</span>
-              <span>ROI {revenueCase.paybackMultiple}x</span>
+              <span>Value {valueCase.readinessSignal}</span>
               <span>문서 {documents.length}건</span>
               <span>위험 {latestRisk}</span>
             </div>
@@ -960,49 +958,49 @@ function App() {
           </div>
         </section>
 
-        <section className="revenue-section" id="revenue">
-          <div className="section-heading revenue-heading">
+        <section className="value-section" id="value">
+          <div className="section-heading value-heading">
             <div>
-              <p className="eyebrow">Revenue Engine</p>
-              <h2>고가 파일럿은 반복 업무 절감액과 보안 승인 근거에서 결정됩니다</h2>
+              <p className="eyebrow">Value Readiness</p>
+              <h2>공개 가격표 없이 업무 가치, 승인 근거, 운영 리소스를 정리합니다</h2>
             </div>
-            <div className={`close-signal close-${revenueCase.closeSignal}`}>
-              <DollarSign size={20} />
-              <strong>{revenueCase.paybackMultiple}x</strong>
-              <span>{revenueCase.closeSignal} 전환 신호</span>
+            <div className={`readiness-signal readiness-${valueCase.readinessSignal}`}>
+              <Layers3 size={20} />
+              <strong>{valueCase.readinessSignal}</strong>
+              <span>운영 전환 신호</span>
             </div>
           </div>
 
-          <div className="revenue-command">
-            <article className="revenue-case">
-              <span>Executive business case</span>
-              <strong>월 {formatKrw(revenueCase.monthlySavingsKrw)}원 절감 가능</strong>
-              <p>{revenueCase.anchorMessage}</p>
-              <div className="revenue-kpi-row">
+          <div className="value-command">
+            <article className="value-case">
+              <span>Executive readiness case</span>
+              <strong>월 {formatCount(valueCase.monthlySavedHours)}h 반복 업무 회수 후보</strong>
+              <p>{valueCase.anchorMessage}</p>
+              <div className="value-kpi-row">
                 <article>
                   <TrendingUp size={18} />
-                  <strong>{formatKrw(revenueCase.annualSavingsKrw)}원</strong>
-                  <span>연간 절감 근거</span>
+                  <strong>{formatCount(valueCase.weeklyReviewLoad)}</strong>
+                  <span>주간 리뷰 단위</span>
                 </article>
                 <article>
                   <Gauge size={18} />
-                  <strong>{revenueCase.monthlySavedHours}h</strong>
+                  <strong>{formatCount(valueCase.monthlySavedHours)}h</strong>
                   <span>월 회수 시간</span>
                 </article>
                 <article>
                   <Rocket size={18} />
-                  <strong>{revenueCase.paybackMonths}</strong>
-                  <span>회수 개월</span>
+                  <strong>{approvalSteps}</strong>
+                  <span>승인 단계</span>
                 </article>
                 <article>
                   <Building2 size={18} />
-                  <strong>{revenueCase.recommendedTier}</strong>
-                  <span>추천 패키지</span>
+                  <strong>{valueCase.recommendedPackage}</strong>
+                  <span>권장 범위</span>
                 </article>
               </div>
             </article>
 
-            <div className="revenue-controls">
+            <div className="value-controls">
               <NumberControl label="사용 인원" value={teamMembers} min={3} max={1200} step={5} suffix="명" onChange={setTeamMembers} />
               <NumberControl
                 label="월 반복 업무"
@@ -1023,26 +1021,26 @@ function App() {
                 onChange={setMinutesSavedPerWorkflow}
               />
               <NumberControl
-                label="시간당 비용"
-                value={hourlyCostKrw}
-                min={12000}
-                max={150000}
-                step={1000}
-                suffix="원"
-                onChange={setHourlyCostKrw}
+                label="승인 단계"
+                value={approvalSteps}
+                min={1}
+                max={8}
+                step={1}
+                suffix="단계"
+                onChange={setApprovalSteps}
               />
             </div>
           </div>
 
-          <div className="scale-board">
-            <article className="scale-main">
-              <span>확장 시나리오</span>
-              <strong>{primaryScale.targetAccounts}개 대형 계정 기준 월 {formatKrw(primaryScale.result.mrrKrw)}원 MRR</strong>
-              <p>{primaryScale.whyItCanReach}</p>
+          <div className="expansion-board">
+            <article className="expansion-main">
+              <span>확장 경로</span>
+              <strong>{primaryExpansion.result.targetTeams}개 운영 단위부터 확장 검증</strong>
+              <p>{primaryExpansion.whyItCanReach}</p>
               <div>
-                <span>셋업 파이프라인 {formatKrw(primaryScale.result.setupPipelineKrw)}원</span>
-                <span>ARR {formatKrw(primaryScale.result.annualRunRateKrw)}원</span>
-                <span>{primaryScale.channel}</span>
+                <span>대표 워크플로우 {formatCount(primaryExpansion.result.workflowFootprint)}개</span>
+                <span>{primaryExpansion.resourceFocus}</span>
+                <span>{primaryExpansion.channel}</span>
               </div>
             </article>
             <div className="target-vertical-list">
@@ -1051,47 +1049,47 @@ function App() {
                   <span>{vertical.market}</span>
                   <strong>{vertical.wedgeWorkflow}</strong>
                   <p>{vertical.whyNow}</p>
-                  <em>{vertical.budgetOwner} / {vertical.buyingTrigger}</em>
+                  <em>{vertical.approvalOwner} / {vertical.buyingTrigger}</em>
                 </article>
               ))}
             </div>
           </div>
 
-          <div className="pricing-grid">
-            {pricingTiers.map((tier) => (
-              <article className={`pricing-card ${selectedTier.id === tier.id ? "active" : ""}`} key={tier.id}>
-                <div className="pricing-head">
+          <div className="package-grid">
+            {servicePackages.map((servicePackage) => (
+              <article className={`package-card ${selectedPackage.id === servicePackage.id ? "active" : ""}`} key={servicePackage.id}>
+                <div className="package-head">
                   <div>
-                    <span>{tier.buyer}</span>
-                    <strong>{tier.name}</strong>
+                    <span>{servicePackage.buyer}</span>
+                    <strong>{servicePackage.name}</strong>
                   </div>
-                  {tier.recommended ? <em>추천</em> : null}
+                  {servicePackage.recommended ? <em>추천</em> : null}
                 </div>
-                <p>{tier.promise}</p>
-                <div className="price-line">
-                  <strong>월 {formatKrw(tier.monthlyKrw)}원</strong>
-                  <span>초기 {formatKrw(tier.setupKrw)}원</span>
+                <p>{servicePackage.promise}</p>
+                <div className="package-line">
+                  <strong>{servicePackage.usage}</strong>
+                  <span>{servicePackage.resources.join(" / ")}</span>
                 </div>
                 <ul>
-                  {tier.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
+                  {servicePackage.resources.map((resource) => (
+                    <li key={resource}>{resource}</li>
                   ))}
                 </ul>
-                <button type="button" onClick={() => setSelectedTierId(tier.id)} title={`${tier.name} 패키지 선택`}>
-                  <span>{selectedTier.id === tier.id ? "선택됨" : "선택"}</span>
+                <button type="button" onClick={() => setSelectedPackageId(servicePackage.id)} title={`${servicePackage.name} 범위 선택`}>
+                  <span>{selectedPackage.id === servicePackage.id ? "선택됨" : "선택"}</span>
                 </button>
-                <small>{tier.conversionTrigger}</small>
+                <small>{servicePackage.activationGate}</small>
               </article>
             ))}
           </div>
 
-          <div className="scale-scenario-grid">
-            {scaleResults.map((scenario) => (
-              <article key={scenario.id}>
-                <span>{scenario.name}</span>
-                <strong>월 {formatKrw(scenario.result.mrrKrw)}원</strong>
-                <p>{scenario.wedge}</p>
-                <em>셋업 {formatKrw(scenario.result.setupPipelineKrw)}원 / {scenario.channel}</em>
+          <div className="expansion-scenario-grid">
+            {expansionResults.map((path) => (
+              <article key={path.id}>
+                <span>{path.name}</span>
+                <strong>{formatCount(path.result.workflowFootprint)}개 workflow footprint</strong>
+                <p>{path.wedge}</p>
+                <em>{path.result.reviewCadence} / {path.resourceFocus}</em>
               </article>
             ))}
           </div>
@@ -1142,19 +1140,19 @@ function App() {
             ))}
           </div>
 
-          <div className="experiment-strip">
+          <div className="validation-strip">
             {salesMotions.map((motion) => (
               <article key={motion.id}>
                 <span>{motion.stage}</span>
                 <strong>{motion.action}</strong>
                 <p>{motion.metric}</p>
-                <em>enterprise sales motion</em>
+                <em>enterprise adoption motion</em>
               </article>
             ))}
           </div>
 
-          <div className="experiment-strip">
-            {revenueExperiments.map((experiment) => (
+          <div className="validation-strip">
+            {validationExperiments.map((experiment) => (
               <article key={experiment.id}>
                 <span>{experiment.id}</span>
                 <strong>{experiment.hypothesis}</strong>

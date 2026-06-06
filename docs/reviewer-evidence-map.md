@@ -9,14 +9,14 @@ Use this page as the short path through the repository. It keeps the review grou
 | Field | Notes |
 |---|---|
 | Lane | B2B enterprise GenAI adoption platform |
-| Core idea | Free-first RAG/Agent/security/KPI pilot that converts into governed deployment revenue. |
+| Core idea | Free-first RAG/Agent/security/KPI pilot that converts into governed implementation and operating support after validation. |
 | Primary reader | Customer support, internal knowledge, IT governance, and AI adoption leaders. |
 | Stack | TypeScript/JavaScript, Cloudflare |
 
 ## Open First
 
 1. Start with the README fast path and architecture section.
-2. Open `docs/monetization-playbook.md` only when reviewing the product or service angle.
+2. Open `docs/service-launch-playbook.md` only when reviewing the product or service angle.
 3. Check the commands below before making claims about quality.
 4. Skim the CI workflows and fixture data before deeper implementation review.
 5. Read the boundaries section before presenting the project externally.
@@ -43,13 +43,13 @@ Use this page as the short path through the repository. It keeps the review grou
 - Live Cloudflare demo works
 - Evaluation lab and DLP posture visible
 
-## Commercial Notes
+## Service Notes
 
-| Possible offer | Working price assumption |
+| Possible offer | Working scope assumption |
 |---|---|
-| Free proof-of-value demo | Free demo -> $5k setup |
-| Secure knowledge onboarding setup | $15k-$50k pilot |
-| Monthly KPI and governance reporting | $3k-$15k/month support |
+| Free proof-of-value demo | Synthetic-data walkthrough |
+| Secure knowledge onboarding setup | Buyer-approved implementation diagnostic |
+| Monthly KPI and governance reporting | Operating support and review cadence |
 
 ## Boundaries
 

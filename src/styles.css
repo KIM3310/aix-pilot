@@ -968,7 +968,7 @@ h2 {
 
 #command,
 #trust,
-#revenue,
+#value,
 #rag,
 #agent,
 #security,
@@ -1294,7 +1294,7 @@ h2 {
   background: #f8fbf9;
 }
 
-.revenue-section {
+.value-section {
   margin-bottom: 18px;
   padding: 22px;
   border: 1px solid rgba(223, 106, 86, 0.22);
@@ -1305,17 +1305,17 @@ h2 {
   box-shadow: var(--shadow);
 }
 
-.revenue-heading {
+.value-heading {
   align-items: center;
 }
 
-.revenue-heading h2 {
+.value-heading h2 {
   max-width: 780px;
   font-size: 24px;
   line-height: 1.22;
 }
 
-.close-signal {
+.readiness-signal {
   min-width: 168px;
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr);
@@ -1328,13 +1328,13 @@ h2 {
   color: var(--coral);
 }
 
-.close-signal strong {
+.readiness-signal strong {
   color: var(--ink);
   font-size: 32px;
   line-height: 1;
 }
 
-.close-signal span {
+.readiness-signal span {
   grid-column: 2;
   color: var(--muted);
   font-size: 12px;
@@ -1342,46 +1342,46 @@ h2 {
   text-transform: uppercase;
 }
 
-.close-검증 {
+.readiness-검증 {
   color: var(--gold);
 }
 
-.close-보류 {
+.readiness-보류 {
   color: #9e2e1d;
 }
 
-.revenue-command {
+.value-command {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
   gap: 14px;
   margin-bottom: 14px;
 }
 
-.revenue-case,
-.revenue-controls,
-.pricing-card,
-.scale-main,
+.value-case,
+.value-controls,
+.package-card,
+.expansion-main,
 .target-vertical-list article,
-.scale-scenario-grid article,
+.expansion-scenario-grid article,
 .culture-grid article,
-.experiment-strip article {
+.validation-strip article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.88);
 }
 
-.revenue-case {
+.value-case {
   padding: 16px;
   display: grid;
   align-content: start;
   gap: 10px;
 }
 
-.revenue-case > span,
-.pricing-head span,
+.value-case > span,
+.package-head span,
 .buyer-list span,
 .culture-grid span,
-.experiment-strip span {
+.validation-strip span {
   color: var(--muted);
   font-size: 12px;
   font-weight: 900;
@@ -1389,26 +1389,26 @@ h2 {
   text-transform: uppercase;
 }
 
-.revenue-case > strong {
+.value-case > strong {
   color: var(--ink);
   font-size: 32px;
   line-height: 1.1;
 }
 
-.revenue-case p {
+.value-case p {
   margin: 0;
   color: #3b514d;
   line-height: 1.6;
 }
 
-.revenue-kpi-row {
+.value-kpi-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   margin-top: 4px;
 }
 
-.revenue-kpi-row article {
+.value-kpi-row article {
   min-height: 96px;
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr);
@@ -1420,24 +1420,24 @@ h2 {
   background: #fffdf8;
 }
 
-.revenue-kpi-row svg {
+.value-kpi-row svg {
   color: var(--coral);
 }
 
-.revenue-kpi-row strong {
+.value-kpi-row strong {
   color: var(--ink);
   line-height: 1.1;
   overflow-wrap: anywhere;
 }
 
-.revenue-kpi-row span {
+.value-kpi-row span {
   grid-column: 2;
   color: var(--muted);
   font-size: 12px;
   font-weight: 800;
 }
 
-.revenue-controls {
+.value-controls {
   padding: 16px;
   display: grid;
   gap: 12px;
@@ -1484,14 +1484,14 @@ h2 {
   font-weight: 800;
 }
 
-.scale-board {
+.expansion-board {
   display: grid;
   grid-template-columns: minmax(360px, 0.78fr) minmax(0, 1.22fr);
   gap: 12px;
   margin-bottom: 14px;
 }
 
-.scale-main {
+.expansion-main {
   min-height: 246px;
   padding: 16px;
   display: grid;
@@ -1502,9 +1502,9 @@ h2 {
     repeating-linear-gradient(135deg, rgba(223, 106, 86, 0.06) 0 1px, transparent 1px 48px);
 }
 
-.scale-main > span,
+.expansion-main > span,
 .target-vertical-list span,
-.scale-scenario-grid span {
+.expansion-scenario-grid span {
   color: var(--muted);
   font-size: 12px;
   font-weight: 900;
@@ -1512,25 +1512,25 @@ h2 {
   text-transform: uppercase;
 }
 
-.scale-main strong {
+.expansion-main strong {
   color: var(--ink);
   font-size: 30px;
   line-height: 1.12;
 }
 
-.scale-main p {
+.expansion-main p {
   margin: 0;
   color: #3b514d;
   line-height: 1.6;
 }
 
-.scale-main div {
+.expansion-main div {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
 }
 
-.scale-main div span {
+.expansion-main div span {
   min-height: 28px;
   display: inline-flex;
   align-items: center;
@@ -1543,7 +1543,7 @@ h2 {
 }
 
 .target-vertical-list,
-.scale-scenario-grid {
+.expansion-scenario-grid {
   display: grid;
   gap: 10px;
 }
@@ -1553,13 +1553,13 @@ h2 {
 }
 
 .target-vertical-list article,
-.scale-scenario-grid article {
+.expansion-scenario-grid article {
   padding: 13px;
   background: rgba(255, 255, 255, 0.88);
 }
 
 .target-vertical-list strong,
-.scale-scenario-grid strong {
+.expansion-scenario-grid strong {
   display: block;
   margin-top: 6px;
   color: var(--ink);
@@ -1568,8 +1568,8 @@ h2 {
 
 .target-vertical-list p,
 .target-vertical-list em,
-.scale-scenario-grid p,
-.scale-scenario-grid em {
+.expansion-scenario-grid p,
+.expansion-scenario-grid em {
   display: block;
   margin: 8px 0 0;
   color: #3b514d;
@@ -1578,19 +1578,19 @@ h2 {
   line-height: 1.5;
 }
 
-.pricing-grid {
+.package-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 14px;
 }
 
-.scale-scenario-grid {
+.expansion-scenario-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-bottom: 14px;
 }
 
-.pricing-card {
+.package-card {
   position: relative;
   min-height: 354px;
   padding: 16px;
@@ -1599,27 +1599,27 @@ h2 {
   align-content: start;
 }
 
-.pricing-card.active {
+.package-card.active {
   border-color: rgba(223, 106, 86, 0.58);
   box-shadow: 0 16px 42px rgba(223, 106, 86, 0.14);
 }
 
-.pricing-head,
-.price-line {
+.package-head,
+.package-line {
   display: flex;
   justify-content: space-between;
   gap: 12px;
   align-items: flex-start;
 }
 
-.pricing-head strong {
+.package-head strong {
   display: block;
   margin-top: 4px;
   color: var(--ink);
   font-size: 24px;
 }
 
-.pricing-head em {
+.package-head em {
   min-height: 28px;
   display: inline-flex;
   align-items: center;
@@ -1632,48 +1632,53 @@ h2 {
   font-weight: 900;
 }
 
-.pricing-card p,
-.pricing-card li,
-.pricing-card small,
+.package-card p,
+.package-card li,
+.package-card small,
 .buyer-list p,
 .buyer-list em,
 .behavior-list p,
 .behavior-list span,
 .culture-grid p,
 .culture-grid em,
-.experiment-strip p,
-.experiment-strip em {
+.validation-strip p,
+.validation-strip em {
   color: #3b514d;
   font-size: 13px;
   line-height: 1.5;
 }
 
-.pricing-card p {
+.package-card p {
   margin: 0;
 }
 
-.price-line {
+.package-line {
   align-items: baseline;
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
-.price-line strong {
+.package-line strong {
   color: var(--ink);
   font-size: 22px;
   white-space: nowrap;
 }
 
-.price-line span {
+.package-line span {
   color: var(--muted);
   font-size: 12px;
   font-weight: 800;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
 }
 
-.pricing-card ul {
+.package-card ul {
   margin: 0;
   padding-left: 18px;
 }
 
-.pricing-card button {
+.package-card button {
   min-height: 40px;
   border-radius: 8px;
   background: var(--ink);
@@ -1681,14 +1686,14 @@ h2 {
   font-weight: 900;
 }
 
-.pricing-card.active button {
+.package-card.active button {
   background: var(--coral);
 }
 
-.pricing-card small,
+.package-card small,
 .buyer-list em,
 .culture-grid em,
-.experiment-strip em {
+.validation-strip em {
   font-style: normal;
 }
 
@@ -1716,7 +1721,7 @@ h2 {
 .buyer-list strong,
 .behavior-list strong,
 .culture-grid strong,
-.experiment-strip strong {
+.validation-strip strong {
   display: block;
   color: var(--ink);
   line-height: 1.28;
@@ -1729,8 +1734,8 @@ h2 {
 .behavior-list span,
 .culture-grid p,
 .culture-grid em,
-.experiment-strip p,
-.experiment-strip em {
+.validation-strip p,
+.validation-strip em {
   display: block;
   margin: 7px 0 0;
 }
@@ -1751,13 +1756,13 @@ h2 {
   padding: 13px;
 }
 
-.experiment-strip {
+.validation-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
-.experiment-strip article {
+.validation-strip article {
   min-height: 154px;
   padding: 13px;
 }
@@ -2749,8 +2754,8 @@ h2 {
   .spec-grid.bottom,
   .trust-command,
   .trust-grid,
-  .revenue-command,
-  .scale-board,
+  .value-command,
+  .expansion-board,
   .buyer-grid,
   .ops-grid,
   .analytics-grid,
@@ -2762,15 +2767,15 @@ h2 {
   .proof-flow,
   .proof-card-grid,
   .service-pillar-grid,
-  .pricing-grid,
-  .revenue-kpi-row,
+  .package-grid,
+  .value-kpi-row,
   .target-vertical-list,
-  .scale-scenario-grid,
+  .expansion-scenario-grid,
   .culture-grid,
-  .experiment-strip,
+  .validation-strip,
   .free-runtime-grid,
   .free-runtime-panel {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .proof-flow::before {
@@ -2870,15 +2875,15 @@ h2 {
   .service-pillar-grid,
   .trust-command,
   .trust-grid,
-  .revenue-command,
-  .scale-board,
+  .value-command,
+  .expansion-board,
   .buyer-grid,
-  .pricing-grid,
-  .revenue-kpi-row,
+  .package-grid,
+  .value-kpi-row,
   .target-vertical-list,
-  .scale-scenario-grid,
+  .expansion-scenario-grid,
   .culture-grid,
-  .experiment-strip,
+  .validation-strip,
   .free-runtime-grid,
   .free-runtime-panel,
   .spec-kpi-row,
@@ -2903,7 +2908,7 @@ h2 {
 
   .spec-section,
   .trust-section,
-  .revenue-section,
+  .value-section,
   .eval-section {
     padding: 16px;
   }
@@ -2915,7 +2920,7 @@ h2 {
   .spec-score,
   .eval-score,
   .trust-score,
-  .close-signal {
+  .readiness-signal {
     width: 100%;
   }
 
@@ -3050,7 +3055,7 @@ h2 {
   .workspace-band,
   .spec-section,
   .trust-section,
-  .revenue-section,
+  .value-section,
   .launch-proof,
   .hero-copy,
   .signal-grid > article,
@@ -3071,12 +3076,12 @@ h2 {
   .control-list,
   .stack-map,
   .maturity-track,
-  .pricing-grid,
-  .revenue-kpi-row,
+  .package-grid,
+  .value-kpi-row,
   .target-vertical-list,
-  .scale-scenario-grid,
+  .expansion-scenario-grid,
   .culture-grid,
-  .experiment-strip {
+  .validation-strip {
     grid-template-columns: 1fr;
   }
 

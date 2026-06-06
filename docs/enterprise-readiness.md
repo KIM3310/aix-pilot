@@ -11,7 +11,7 @@ This note defines what an enterprise buyer, public-sector reviewer, serious user
 | Repository | `aix-pilot` |
 | Lane | B2B enterprise GenAI adoption platform |
 | Primary reader or buyer | Customer support, internal knowledge, IT governance, and AI adoption leaders. |
-| Core wedge | Free-first RAG/Agent/security/KPI pilot that converts into governed deployment revenue. |
+| Core wedge | Free-first RAG/Agent/security/KPI pilot that converts into governed implementation and operating support after validation. |
 | Stack | TypeScript/JavaScript, Cloudflare |
 | Readiness posture | Pilot-ready technical surface; production use requires customer-specific identity, monitoring, data, and support controls. |
 
@@ -43,7 +43,7 @@ This note defines what an enterprise buyer, public-sector reviewer, serious user
 ## Acceptance Criteria
 
 - npm run qa can be run or the equivalent CI gate is visible.
-- README, review guide, quality notes, revenue model, and this readiness note agree on the same scope.
+- README, review guide, quality notes, service model, and this readiness note agree on the same scope.
 - Demo, fixture, synthetic, or public-data boundaries are explicit before a buyer sees outputs.
 - A reviewer can identify the first useful outcome without reading implementation details.
 - Production claims stay behind customer-specific validation, access control, monitoring, and support handoff.

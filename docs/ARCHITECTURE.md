@@ -13,7 +13,7 @@ Browser
     Agent Studio
     Security Guard
     Service Trust Model
-    Revenue Engine
+    Value Readiness
     KPI Dashboard
     Evaluation Lab
     Readiness Board
@@ -41,8 +41,8 @@ Local Runtime
   serviceReadiness.ts
     calculateServiceReadiness
     validateServiceOperatingModel
-  revenue.ts
-    calculateRevenueBusinessCase
+  valueModel.ts
+    calculateValueReadiness
     validateBusinessModel
   spec.ts
     validateSpecPack
@@ -54,7 +54,7 @@ Local Runtime
     trust controls
     SLOs
   businessModel.ts
-    pricing tiers
+    service packages
     buyer personas
     behavioral levers
     cultural adoption patterns
@@ -99,11 +99,11 @@ Local Runtime
 
 The Trust section also lists controls, SLOs, launch blockers, and maturity stages. This is intentionally separate from the RAG and Agent code so the project reads like a service with owners, evidence, and release gates.
 
-## Revenue Engine
+## Value Readiness
 
-`src/data/businessModel.ts` and `src/lib/revenue.ts` add a commercial layer above the product. The Revenue Engine calculates monthly saved hours, monthly savings, annual savings, ROI multiple, payback months, close signal, and recommended pricing tier. It also models buyer personas, behavioral economics, culture-aware rollout patterns, and measurable revenue experiments.
+`src/data/businessModel.ts` and `src/lib/valueModel.ts` add a service launch layer above the product. The Value Readiness model calculates monthly recovered workflow time, weekly review load, recommended service scope, and operating transition signal. It also models buyer personas, behavioral economics, culture-aware rollout patterns, resource-focused expansion paths, and measurable validation experiments.
 
-The design intentionally avoids dark patterns. Weak ROI cases produce a "보류" signal and recommend narrowing the workflow before selling a bigger package.
+The design intentionally avoids dark patterns. Weak adoption cases produce a "보류" signal and recommend narrowing the workflow before expanding scope.
 
 ## Spec Pack
 

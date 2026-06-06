@@ -49,16 +49,16 @@
     ]
   },
   "ai_engineering": {
-    "operating_model": "retrieval-backed knowledge answers, agent drafts, safety checks, evaluation scorecards, and revenue-readiness signals that stay inspectable without external credentials",
+    "operating_model": "retrieval-backed knowledge answers, agent drafts, safety checks, evaluation scorecards, and value-readiness signals that stay inspectable without external credentials",
     "patterns": [
       "Keep source documents, retrieval scores, owners, recency, and answer evidence visible beside generated output",
       "Separate deterministic DLP and security checks from agent draft text so the system remains testable",
       "Treat generated emails, reports, and automation drafts as human-reviewed artifacts",
       "Preserve evaluation fixtures and golden questions as CI-safe regression gates",
-      "Keep ROI and revenue signals tied to explicit assumptions instead of hidden model output"
+      "Keep value readiness signals tied to explicit operational assumptions instead of hidden model output"
     ],
     "evaluation_controls": [
-      "Vitest coverage for RAG ranking, agent drafting, DLP masking, revenue calculations, and service-readiness scoring",
+      "Vitest coverage for RAG ranking, agent drafting, DLP masking, value readiness calculations, and service-readiness scoring",
       "golden question fixtures for retrieval quality and citation behavior",
       "content and build checks in npm run qa before deploy",
       "production dependency audit in GitHub Actions"
@@ -67,7 +67,7 @@
       "stale knowledge source metadata",
       "unsafe automation without approval",
       "private data leakage in reports or screenshots",
-      "overconfident ROI or adoption claims",
+      "overconfident adoption claims",
       "external provider outage or quota exhaustion"
     ]
   },

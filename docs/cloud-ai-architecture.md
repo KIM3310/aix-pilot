@@ -37,7 +37,7 @@ Operating model: static-first enterprise pilot console with optional Cloudflare 
 
 ## AI Engineering
 
-Operating model: retrieval-backed knowledge answers, agent drafts, safety checks, evaluation scorecards, and revenue-readiness signals that stay inspectable without external credentials.
+Operating model: retrieval-backed knowledge answers, agent drafts, safety checks, evaluation scorecards, and value-readiness signals that stay inspectable without external credentials.
 
 ### Engineering patterns
 
@@ -45,11 +45,11 @@ Operating model: retrieval-backed knowledge answers, agent drafts, safety checks
 - Separate deterministic DLP/security checks from agent draft text so the system remains testable.
 - Treat generated emails, reports, and automation drafts as human-reviewed artifacts.
 - Preserve evaluation fixtures and golden questions as CI-safe regression gates.
-- Keep ROI and revenue signals tied to explicit assumptions instead of hidden model output.
+- Keep value readiness signals tied to explicit operational assumptions instead of hidden model output.
 
 ### Evaluation controls
 
-- Vitest coverage for RAG ranking, agent drafting, DLP masking, revenue calculations, and service-readiness scoring.
+- Vitest coverage for RAG ranking, agent drafting, DLP masking, value readiness calculations, and service-readiness scoring.
 - Golden question fixtures for retrieval quality and citation behavior.
 - Content and build checks in `npm run qa` before deploy.
 - Production dependency audit in GitHub Actions.
@@ -59,7 +59,7 @@ Operating model: retrieval-backed knowledge answers, agent drafts, safety checks
 - stale knowledge source metadata
 - unsafe automation without approval
 - private data leakage in reports or screenshots
-- overconfident ROI or adoption claims
+- overconfident adoption claims
 - external provider outage or quota exhaustion
 
 ## Architecture Map
@@ -70,7 +70,7 @@ Operating model: retrieval-backed knowledge answers, agent drafts, safety checks
 | Data | sample documents, owner metadata, recency, workspace state | fixtures, reset flow, report output |
 | AI | retrieval, agent drafts, DLP, evaluation | golden questions, Vitest suites, scorecards |
 | Cloud | Pages deployment, secrets, preview boundaries | workflow logs, `wrangler.toml`, deployment notes |
-| Operations | pilot readiness, KPI assumptions, governance handoff | service model, revenue model, docs/ADR |
+| Operations | pilot readiness, KPI assumptions, governance handoff | service model, value model, docs/ADR |
 
 ## Research Grounding
 
@@ -94,5 +94,5 @@ The CI workflow `.github/workflows/architecture-blueprint.yml` runs the same che
 
 - Keep Cloudflare Functions documented when API adapters change.
 - Add new evaluation fixtures before expanding agent draft behavior.
-- Keep revenue assumptions and ROI calculations bounded by explicit input data.
+- Keep value readiness assumptions bounded by explicit input data.
 - Update deployment notes whenever Pages, D1, Workers AI, or local fallback behavior changes.
