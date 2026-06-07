@@ -16,7 +16,7 @@ This is a better target than generic SMB knowledge search because the pain is me
 
 ## Public Service Packages
 
-| Package | Buyer-facing scope | Required resources | Activation gate |
+| Package | Reviewer-facing scope | Required resources | Activation gate |
 |---|---|---|---|
 | Diagnostic | One workflow, one knowledge source, read-only pilot | Cloudflare Pages, local fixtures, Ollama or approved LLM gateway | Document owner, security owner, and operations owner agree on Go/No-Go criteria |
 | Operations | Department rollout with approval routing and QA review | Cloudflare D1 or managed Postgres, vector database, audit log storage, Sentry | Shared release checklist approved by operations and security |
@@ -26,7 +26,7 @@ This is a better target than generic SMB knowledge search because the pain is me
 
 The strongest buying trigger is not model novelty. It is the moment an operator sees that repeated work, security review, and answer quality can be governed.
 
-| Value lever | Buyer language | Proof in product |
+| Value lever | Reviewer language | Proof in product |
 |---|---|---|
 | Time recovery | "We are searching and rewriting the same answers." | Value Readiness controls |
 | Risk reduction | "AI adoption cannot leak PII or bypass approval." | Trust controls and DLP tests |

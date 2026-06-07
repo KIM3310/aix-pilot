@@ -9,7 +9,7 @@ Enterprise GenAI pilot console that connects RAG, agent drafts, DLP masking, eva
 
 This repository is packaged as a concrete system surface, not a loose code sample. The enterprise value is a narrow proof that can be inspected, run, tested, and converted into a scoped pilot or implementation motion after workflow-specific validation.
 
-## Buyer And Service Path
+## Audience And Service Path
 
 | Area | Position |
 | --- | --- |

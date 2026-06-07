@@ -1,7 +1,7 @@
 export type ServicePackage = {
   id: string;
   name: string;
-  buyer: string;
+  reviewer: string;
   promise: string;
   usage: string;
   resources: string[];
@@ -74,7 +74,7 @@ export const servicePackages: ServicePackage[] = [
   {
     id: "PKG-DIAGNOSTIC",
     name: "Diagnostic",
-    buyer: "고객센터 1개 핵심 업무",
+    reviewer: "고객센터 1개 핵심 업무",
     promise: "2주 안에 한 업무의 검색 근거, 상담 초안, QA 기준선을 검증합니다.",
     usage: "문서 원천 1~2개, 관리자 1개 팀, 읽기 전용 파일럿",
     resources: ["Cloudflare Pages", "Ollama or approved LLM gateway", "localStorage or D1"],
@@ -84,7 +84,7 @@ export const servicePackages: ServicePackage[] = [
   {
     id: "PKG-OPERATIONS",
     name: "Operations",
-    buyer: "규제 산업 운영 조직",
+    reviewer: "규제 산업 운영 조직",
     promise: "보안 승인, QA 리포트, 상담 지식 표준화를 묶어 현장 확산을 준비합니다.",
     usage: "부서별 권한, 승인 워크플로우, 평가 게이트, SLO 리포트",
     resources: ["Cloudflare D1 or Postgres", "vector database", "audit log storage", "Sentry"],
@@ -95,7 +95,7 @@ export const servicePackages: ServicePackage[] = [
   {
     id: "PKG-ENTERPRISE",
     name: "Enterprise",
-    buyer: "대형 금융/보험/통신 컨택센터",
+    reviewer: "대형 금융/보험/통신 컨택센터",
     promise: "지식, Agent, QA, 보안 감사까지 운영형 AI 레이어로 묶습니다.",
     usage: "SSO/RBAC, SIEM/DLP 연동, 고급 감사 로그, 릴리스 게이트",
     resources: ["managed Postgres", "private model gateway", "SIEM/DLP", "SSO", "backup storage"],

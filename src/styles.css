@@ -1379,7 +1379,7 @@ h2 {
 
 .value-case > span,
 .package-head span,
-.buyer-list span,
+.reviewer-list span,
 .culture-grid span,
 .validation-strip span {
   color: var(--muted);
@@ -1635,8 +1635,8 @@ h2 {
 .package-card p,
 .package-card li,
 .package-card small,
-.buyer-list p,
-.buyer-list em,
+.reviewer-list p,
+.reviewer-list em,
 .behavior-list p,
 .behavior-list span,
 .culture-grid p,
@@ -1693,26 +1693,26 @@ h2 {
 }
 
 .package-card small,
-.buyer-list em,
+.reviewer-list em,
 .culture-grid em,
 .validation-strip em {
   font-style: normal;
 }
 
-.buyer-grid {
+.reviewer-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
   gap: 14px;
   margin-bottom: 14px;
 }
 
-.buyer-list,
+.reviewer-list,
 .behavior-list {
   display: grid;
   gap: 10px;
 }
 
-.buyer-list article,
+.reviewer-list article,
 .behavior-list article {
   padding: 13px;
   border: 1px solid var(--line);
@@ -1720,7 +1720,7 @@ h2 {
   background: #ffffff;
 }
 
-.buyer-list strong,
+.reviewer-list strong,
 .behavior-list strong,
 .culture-grid strong,
 .validation-strip strong {
@@ -1730,8 +1730,8 @@ h2 {
   overflow-wrap: anywhere;
 }
 
-.buyer-list p,
-.buyer-list em,
+.reviewer-list p,
+.reviewer-list em,
 .behavior-list p,
 .behavior-list span,
 .culture-grid p,
@@ -2758,7 +2758,7 @@ h2 {
   .trust-grid,
   .value-command,
   .expansion-board,
-  .buyer-grid,
+  .reviewer-grid,
   .ops-grid,
   .analytics-grid,
   .pilot-status,
@@ -2895,7 +2895,7 @@ h2 {
   .trust-grid,
   .value-command,
   .expansion-board,
-  .buyer-grid,
+  .reviewer-grid,
   .package-grid,
   .value-kpi-row,
   .target-vertical-list,

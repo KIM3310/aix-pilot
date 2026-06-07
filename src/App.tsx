@@ -1060,7 +1060,7 @@ function App() {
               <article className={`package-card ${selectedPackage.id === servicePackage.id ? "active" : ""}`} key={servicePackage.id}>
                 <div className="package-head">
                   <div>
-                    <span>{servicePackage.buyer}</span>
+                    <span>{servicePackage.reviewer}</span>
                     <strong>{servicePackage.name}</strong>
                   </div>
                   {servicePackage.recommended ? <em>추천</em> : null}
@@ -1094,13 +1094,13 @@ function App() {
             ))}
           </div>
 
-          <div className="buyer-grid">
-            <div className="workspace-band buyer-panel">
+          <div className="reviewer-grid">
+            <div className="workspace-band reviewer-panel">
               <div className="section-heading compact">
-                <h2>구매자 관점</h2>
+                <h2>검토자 관점</h2>
                 <Users size={22} />
               </div>
-              <div className="buyer-list">
+              <div className="reviewer-list">
                 {buyerPersonas.map((persona) => (
                   <article key={persona.id}>
                     <span>{persona.role}</span>
