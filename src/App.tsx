@@ -49,9 +49,9 @@ import {
 } from "recharts";
 import {
   behavioralLevers,
-  buyerPersonas,
+  reviewerPersonas,
   culturalAdoptionPatterns,
-  salesMotions,
+  reviewMotions,
   servicePackages,
   validationExperiments,
   expansionPaths,
@@ -1049,7 +1049,7 @@ function App() {
                   <span>{vertical.market}</span>
                   <strong>{vertical.wedgeWorkflow}</strong>
                   <p>{vertical.whyNow}</p>
-                  <em>{vertical.approvalOwner} / {vertical.buyingTrigger}</em>
+                  <em>{vertical.approvalOwner} / {vertical.adoptionTrigger}</em>
                 </article>
               ))}
             </div>
@@ -1101,7 +1101,7 @@ function App() {
                 <Users size={22} />
               </div>
               <div className="reviewer-list">
-                {buyerPersonas.map((persona) => (
+                {reviewerPersonas.map((persona) => (
                   <article key={persona.id}>
                     <span>{persona.role}</span>
                     <strong>{persona.desiredOutcome}</strong>
@@ -1141,7 +1141,7 @@ function App() {
           </div>
 
           <div className="validation-strip">
-            {salesMotions.map((motion) => (
+            {reviewMotions.map((motion) => (
               <article key={motion.id}>
                 <span>{motion.stage}</span>
                 <strong>{motion.action}</strong>

@@ -10,7 +10,7 @@ export type ServicePackage = {
   recommended?: boolean;
 };
 
-export type BuyerPersona = {
+export type ReviewerPersona = {
   id: string;
   role: string;
   pain: string;
@@ -49,7 +49,7 @@ export type TargetVertical = {
   whyNow: string;
   wedgeWorkflow: string;
   approvalOwner: string;
-  buyingTrigger: string;
+  adoptionTrigger: string;
 };
 
 export type ExpansionPath = {
@@ -63,7 +63,7 @@ export type ExpansionPath = {
   resourceFocus: string;
 };
 
-export type SalesMotion = {
+export type ReviewMotion = {
   id: string;
   stage: string;
   action: string;
@@ -104,9 +104,9 @@ export const servicePackages: ServicePackage[] = [
   }
 ];
 
-export const buyerPersonas: BuyerPersona[] = [
+export const reviewerPersonas: ReviewerPersona[] = [
   {
-    id: "BUY-PMO",
+    id: "REV-PMO",
     role: "AI PMO",
     pain: "여러 부서의 AI PoC가 산발적으로 끝나고 운영 전환 기준이 없습니다.",
     desiredOutcome: "Go/No-Go를 지표, 리스크, 스펙으로 설명",
@@ -115,7 +115,7 @@ export const buyerPersonas: BuyerPersona[] = [
     closeMessage: "파일럿은 작은 업무로 시작하고, 운영 전환 근거가 보일 때만 범위를 넓힙니다."
   },
   {
-    id: "BUY-OPS",
+    id: "REV-OPS",
     role: "고객센터/IT 운영 리더",
     pain: "상담원과 운영자가 같은 답을 반복해서 찾고 초안을 매번 새로 씁니다.",
     desiredOutcome: "응답 시간 단축, 초안 품질 표준화, 신규 인력 온보딩 단축",
@@ -124,7 +124,7 @@ export const buyerPersonas: BuyerPersona[] = [
     closeMessage: "자기 문서로 첫 성공 경험을 만들고, 팀 리더가 매주 회수 시간을 확인합니다."
   },
   {
-    id: "BUY-SEC",
+    id: "REV-SEC",
     role: "보안/컴플라이언스",
     pain: "AI 도입은 빠른데 로그, 권한, DLP, 승인 통제가 뒤따르지 않습니다.",
     desiredOutcome: "민감정보 노출과 무단 발송 리스크 차단",
@@ -224,7 +224,7 @@ export const targetVerticals: TargetVertical[] = [
     whyNow: "상담량, 규제, 민감정보, QA 부담이 모두 커서 AI를 써도 통제 증적이 필요합니다.",
     wedgeWorkflow: "분실/청구/민원/상품설명 FAQ와 상담 후처리",
     approvalOwner: "고객센터장 + CISO + AI PMO",
-    buyingTrigger: "상담 시간 단축 또는 QA 샘플링 부담 완화"
+    adoptionTrigger: "상담 시간 단축 또는 QA 샘플링 부담 완화"
   },
   {
     id: "TV-TELCO",
@@ -232,7 +232,7 @@ export const targetVerticals: TargetVertical[] = [
     whyNow: "요금제, 환불, 배송, 장애 응대 지식이 자주 바뀌고 상담 스크립트 표준화가 어렵습니다.",
     wedgeWorkflow: "요금제 변경, 장애 안내, 환불 예외 승인",
     approvalOwner: "CX 본부 + 운영혁신 + 정보보안",
-    buyingTrigger: "1차 응답 시간과 상담 후처리 시간을 동시에 줄여야 하는 시점"
+    adoptionTrigger: "1차 응답 시간과 상담 후처리 시간을 동시에 줄여야 하는 시점"
   },
   {
     id: "TV-BPO",
@@ -240,7 +240,7 @@ export const targetVerticals: TargetVertical[] = [
     whyNow: "한 번 검증하면 여러 고객사 센터로 확장 가능한 채널 레버리지가 있습니다.",
     wedgeWorkflow: "신규 프로젝트 상담원 온보딩과 고객사별 지식팩",
     approvalOwner: "BPO 대표/사업본부 + 고객사 운영 책임자",
-    buyingTrigger: "신규 센터 런칭 기간 단축과 agent productivity 증명"
+    adoptionTrigger: "신규 센터 런칭 기간 단축과 agent productivity 증명"
   }
 ];
 
@@ -277,7 +277,7 @@ export const expansionPaths: ExpansionPath[] = [
   }
 ];
 
-export const salesMotions: SalesMotion[] = [
+export const reviewMotions: ReviewMotion[] = [
   {
     id: "MOTION-WEDGE",
     stage: "01 Wedge",

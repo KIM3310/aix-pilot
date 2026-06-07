@@ -1,9 +1,9 @@
 import {
   behavioralLevers,
-  buyerPersonas,
+  reviewerPersonas,
   culturalAdoptionPatterns,
   expansionPaths,
-  salesMotions,
+  reviewMotions,
   servicePackages,
   targetVerticals,
   validationExperiments,
@@ -81,13 +81,13 @@ function hasText(value: string) {
 export function validateBusinessModel() {
   const ids = [
     ...servicePackages.map((item) => item.id),
-    ...buyerPersonas.map((item) => item.id),
+    ...reviewerPersonas.map((item) => item.id),
     ...behavioralLevers.map((item) => item.id),
     ...culturalAdoptionPatterns.map((item) => item.id),
     ...validationExperiments.map((item) => item.id),
     ...targetVerticals.map((item) => item.id),
     ...expansionPaths.map((item) => item.id),
-    ...salesMotions.map((item) => item.id)
+    ...reviewMotions.map((item) => item.id)
   ];
 
   return {
@@ -100,16 +100,16 @@ export function validateBusinessModel() {
         hasText(item.activationGate) &&
         hasText(item.riskReversal)
     ),
-    personasCloseable: buyerPersonas.every(
+    personasCloseable: reviewerPersonas.every(
       (persona) => hasText(persona.pain) && hasText(persona.desiredOutcome) && hasText(persona.proof) && hasText(persona.closeMessage)
     ),
     behavioralLeversEthical: behavioralLevers.every((lever) => hasText(lever.ethicalUse) && hasText(lever.productMove) && hasText(lever.metric)),
     culturalPatternsActionable: culturalAdoptionPatterns.every((pattern) => hasText(pattern.friction) && hasText(pattern.rolloutMove) && hasText(pattern.message)),
     experimentsMeasurable: validationExperiments.every((experiment) => hasText(experiment.hypothesis) && hasText(experiment.test) && hasText(experiment.successMetric)),
     targetVerticalsFocused: targetVerticals.every(
-      (vertical) => hasText(vertical.market) && hasText(vertical.wedgeWorkflow) && hasText(vertical.approvalOwner) && hasText(vertical.buyingTrigger)
+      (vertical) => hasText(vertical.market) && hasText(vertical.wedgeWorkflow) && hasText(vertical.approvalOwner) && hasText(vertical.adoptionTrigger)
     ),
     expansionPathsConcrete: expansionPaths.every((path) => path.targetTeams > 0 && path.representativeWorkflows > 0 && hasText(path.resourceFocus)),
-    salesMotionMeasurable: salesMotions.every((motion) => hasText(motion.stage) && hasText(motion.action) && hasText(motion.metric))
+    reviewMotionMeasurable: reviewMotions.every((motion) => hasText(motion.stage) && hasText(motion.action) && hasText(motion.metric))
   };
 }

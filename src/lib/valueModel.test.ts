@@ -52,6 +52,6 @@ describe("value readiness model", () => {
     expect(result.experimentsMeasurable).toBe(true);
     expect(result.targetVerticalsFocused).toBe(true);
     expect(result.expansionPathsConcrete).toBe(true);
-    expect(result.salesMotionMeasurable).toBe(true);
+    expect(result.reviewMotionMeasurable).toBe(true);
   });
 });
