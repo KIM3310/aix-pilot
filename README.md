@@ -6,14 +6,14 @@
 
 ## Product and Review Surface
 
-AIX Pilot is a free-first enterprise GenAI pilot console that can become a governed implementation, secure knowledge onboarding, and monthly operating support service after buyer-specific validation.
+AIX Pilot is a free-first enterprise GenAI pilot console that can become a governed implementation, secure knowledge onboarding, and monthly operating support service after workflow-specific validation.
 
 | Lens | Definition |
 |---|---|
-| Buyer or user | Customer-center leaders, internal knowledge owners, IT governance teams, and AI adoption leads. |
-| Commercial route | Start with a free proof-of-value demo, then sell implementation setup, secure knowledge onboarding, evaluation tuning, and monthly KPI reporting. |
+| Audience | Customer-center leaders, internal knowledge owners, IT governance teams, and AI adoption leads. |
+| Review path | Validate the demo, README, architecture notes, and quality gate before deeper workflow review. |
 | Review signal | RAG, Agent drafts, DLP masking, evaluation lab, KPI dashboard, value readiness model, presentation pack, and Cloudflare-ready deployment. |
-| Safety boundary | Demo data is local and controlled; paid deployments should use approved customer storage, access control, audit logs, and model routing. |
+| Safety boundary | Demo data is local and controlled; external deployments should use approved customer storage, access control, audit logs, and model routing. |
 | Fast proof | `npm run verify` runs TypeScript checks, tests, production build, and content verification. |
 
 ## Reviewer Fast Path
@@ -21,20 +21,16 @@ AIX Pilot is a free-first enterprise GenAI pilot console that can become a gover
 - **First minute:** Open the value readiness model, service trust model, and evaluation lab before reading implementation details.
 - **Local demo:** Run `npm install && npm run dev`, then open `http://localhost:5173`.
 - **Verification:** Run `npm run verify`; it covers TypeScript, tests, production build, and content verification.
-- **Commercial read:** Sell the pilot as a free proof-of-value that upgrades into knowledge onboarding, governance, and monthly KPI reporting.
 
 ## Service Launch Playbook
 
-- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to buyer segments, offer ladder, proof gates, proof gates, and risk boundaries.
+- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to review audiences, offer ladder, proof gates, proof gates, and risk boundaries.
 
 ## Review Notes
 
 - [Review guide](docs/reviewer-evidence-map.md) summarizes the project angle, first files to inspect, verification commands, and known boundaries.
 - [Quality notes](docs/quality-gate.md) lists the local checks, CI surface, and release expectations for this repository.
-- [Service growth model](docs/service-growth-model.md) maps the project to an ethical service path, activation loop, scope logic, and growth experiments.
 - [Enterprise readiness notes](docs/enterprise-readiness.md) outlines security, data, operations, integration, and handoff expectations.
-- [Conversion UX model](docs/conversion-ux-model.md) maps the buyer path, behavioral design, UI/UX direction, service scope frame, and ethical conversion guardrails.
-- [Commercial offer](docs/commercial-offer.md) packages the repository into a buyer-ready offer ladder, proof gate, outreach angle, and close path.
 - [Cloud + AI architecture blueprint](docs/cloud-ai-architecture.md) records the deployment, runtime, AI evaluation, and risk-control surface.
 - [Machine-readable architecture manifest](docs/architecture/blueprint.json) keeps the blueprint reviewable in CI.
 
@@ -187,7 +183,7 @@ public/
 
 ## Enterprise Productization
 
-- [Product operating model](docs/product-operating-model.md) defines the buyer, paid wedge, trust boundary, operating checks, and service path for this repository.
+- [Product operating model](docs/product-operating-model.md) defines the reviewer, trust boundary, trust boundary, operating checks, and service path for this repository.
 
 ## Service Architecture
 

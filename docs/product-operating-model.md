@@ -7,13 +7,13 @@ Last reviewed: 2026-06-03 KST
 
 Enterprise GenAI pilot console that connects RAG, agent drafts, DLP masking, evaluation gates, KPI reporting, and a free runtime path.
 
-This repository is packaged as a concrete system surface, not a loose code sample. The enterprise value is a narrow proof that can be inspected, run, tested, and converted into a scoped pilot or implementation motion after buyer-specific validation.
+This repository is packaged as a concrete system surface, not a loose code sample. The enterprise value is a narrow proof that can be inspected, run, tested, and converted into a scoped pilot or implementation motion after workflow-specific validation.
 
 ## Buyer And Service Path
 
 | Area | Position |
 | --- | --- |
-| Target buyer | Mid-market support teams and internal knowledge operations |
+| Target reviewer | Mid-market support teams and internal knowledge operations |
 | Service wedge | Pilot-to-operating GenAI operations console |
 | Review signal | Enterprise GenAI product architecture, RAG evaluation, and security gates |
 | Delivery shape | Fixed-scope pilot, integration sprint, and handoff-ready operating pack |
@@ -34,7 +34,7 @@ This repository is packaged as a concrete system surface, not a loose code sampl
 | Local verification | `npm run verify` |
 | Runtime stack | Node/TypeScript |
 | Demo readiness | README, architecture docs, and proof assets should explain the first five minutes of evaluation. |
-| Support handoff | Capture setup, known limits, recovery steps, and customer-specific extension points before a paid pilot. |
+| Support handoff | Capture setup, known limits, recovery steps, and customer-specific extension points before a production test. |
 | Release discipline | Do not ship dependency mega-bumps, workflow edits, or demo URL changes without rerunning repository validators and project checks. |
 
 ## Debug And Reliability Checklist

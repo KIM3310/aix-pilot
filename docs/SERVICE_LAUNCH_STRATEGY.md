@@ -2,7 +2,7 @@
 
 ## Positioning
 
-AIX Pilot is a compliance-safe AI Knowledge and Agent Ops layer for regulated contact centers. The public repository should show why the product is useful, what cloud resources are needed, what must be approved, and which operational risks remain. Commercial assumptions, contract values, and buyer-specific financial models belong in private planning artifacts, not in this repo.
+AIX Pilot is a compliance-safe AI Knowledge and Agent Ops layer for regulated contact centers. The public repository should show why the product is useful, what cloud resources are needed, what must be approved, and which operational risks remain. Workflow-specific assumptions belong in private planning artifacts, not in this repo.
 
 ## Highest-Probability Target
 
@@ -70,7 +70,7 @@ The strongest buying trigger is not model novelty. It is the moment an operator 
 
 ## Guardrails
 
-- Do not sell automation as headcount replacement.
+- Do not present automation as headcount replacement.
 - Do not publish public financial forecasts, customer contract values, or public scope assumptions.
 - Do not use fake scarcity, fake testimonials, or hidden lock-in.
 - Do not accept production customer data before access control, DLP, and audit policy are approved.
@@ -78,4 +78,4 @@ The strongest buying trigger is not model novelty. It is the moment an operator 
 
 ## Portfolio Signal
 
-This makes the project read as a service-ready system: product value, operating risk, buyer psychology, cultural adoption, cloud resources, and validation experiments are all connected to code and tests without exposing private financial assumptions.
+This makes the project read as a service-ready system: product value, operating risk, reviewer psychology, cultural adoption, cloud resources, and validation experiments are all connected to code and tests without exposing private financial assumptions.

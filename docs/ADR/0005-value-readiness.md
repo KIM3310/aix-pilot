@@ -29,4 +29,4 @@ Add a Value Readiness model for regulated contact-center enterprise adoption tha
 - The service is positioned around a narrow high-governance workflow instead of a broad chatbot market.
 - Weak adoption cases produce a "보류" signal and recommend narrowing the workflow before expanding.
 - The business model remains testable through `valueModel.test.ts`.
-- The project gives a clearer product signal: commercial judgment, responsible service design, cloud readiness, and measurable validation assumptions.
+- The project gives a clearer product signal: product judgment, responsible service design, cloud readiness, and measurable validation assumptions.

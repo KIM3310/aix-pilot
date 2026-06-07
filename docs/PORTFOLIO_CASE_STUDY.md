@@ -2,7 +2,7 @@
 
 ## One-line
 
-AIX Pilot is a local-first Enterprise GenAI pilot workspace that combines RAG, agent workflows, DLP masking, auditability, KPI tracking, and evaluation gates without paid APIs.
+AIX Pilot is a local-first Enterprise GenAI pilot workspace that combines RAG, agent workflows, DLP masking, auditability, KPI tracking, and evaluation gates without external APIs.
 
 ## Why This Exists
 
@@ -18,7 +18,7 @@ AIX Pilot is built to show those operational answers upfront. It is intentionall
 | Agent | FAQ, email, report, automation modes with approval steps | Workflow thinking beyond a chatbot |
 | Security | Phone, email, resident-number pattern, sensitive keyword detection and masking | Responsible AI and privacy awareness |
 | Service Trust | Launch readiness score, trust controls, SLOs, maturity track | Product/infra ownership beyond UI polish |
-| Value Readiness | Operational value model, regulated contact-center ICP, service packages, resource-focused expansion paths | Commercial product thinking and ethical service launch |
+| Value Readiness | Operational value model, regulated contact-center ICP, service packages, resource-focused expansion paths | Product judgment and ethical service launch |
 | KPI | Adoption, RAG quality, automation, cost, risk dashboards | Product measurement mindset |
 | Evaluation | Golden question suite with retrieval, citation, safety score | Regression testing for AI behavior |
 | Spec Pack | Requirements, rollout phases, gates, stack decisions | Enterprise handoff and execution clarity |
@@ -50,7 +50,7 @@ flowchart LR
 | Deterministic RAG and agent outputs | Stable tests and predictable review behavior |
 | Golden evaluation suite | AI features need acceptance criteria, not only screenshots |
 | DLP before export | Report downloads should not become the privacy leak |
-| Spec Pack in the product UI | Enterprise buyers and internal platform teams need the operating model, not just the prototype |
+| Spec Pack in the product UI | enterprise reviewers and internal platform teams need the operating model, not just the prototype |
 
 ## Quality Bar
 
@@ -72,7 +72,7 @@ The repository is designed so the reviewer can inspect product, code, and govern
 3. Point out that the phone number is masked in the Agent output and report.
 4. Open Evaluation Lab to show retrieval, citation, safety, and confidence scores.
 5. Open Service Trust Model to show launch readiness, controls, SLOs, and blockers.
-6. Open Value Readiness to show why the target is regulated contact centers, which cloud resources are needed next, and how buyer objections are handled.
+6. Open Value Readiness to show why the target is regulated contact centers, which cloud resources are needed next, and how reviewer objections are handled.
 7. Finish with Enterprise Spec Pack to show rollout, security gates, requirements, and stack decisions.
 
 ## Production Path

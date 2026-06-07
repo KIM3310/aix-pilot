@@ -87,7 +87,7 @@ export const servicePillars: ServicePillar[] = [
     name: "Free Deployment Path",
     intent: "Ollama, Cloudflare Pages, D1로 무료 LLM/배포/DB 경로를 실행 가능하게 유지",
     operator: "Infra",
-    metric: "Zero paid API baseline + CI green",
+    metric: "Zero external API baseline + CI green",
     evidence: "FREE_DEPLOYMENT.md / GitHub Actions / Free runtime panel",
     score: 91
   }

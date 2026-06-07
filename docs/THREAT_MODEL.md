@@ -2,7 +2,7 @@
 
 ## Scope
 
-This threat model covers the local-first AIX Pilot prototype and the expected path to an enterprise GenAI pilot. The current app does not call paid external APIs, but it still models the controls required before real customer or employee data is introduced.
+This threat model covers the local-first AIX Pilot prototype and the expected path to an enterprise GenAI pilot. The current app does not call external APIs, but it still models the controls required before real customer or employee data is introduced.
 
 ## Assets
 

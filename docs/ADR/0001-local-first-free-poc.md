@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-The project must be impressive as a portfolio artifact while remaining free to run. Requiring paid APIs, cloud accounts, or private credentials would make the reviewer experience fragile and harder to reproduce.
+The project must be impressive as a portfolio artifact while remaining free to run. Requiring external APIs, cloud accounts, or private credentials would make the reviewer experience fragile and harder to reproduce.
 
 ## Decision
 

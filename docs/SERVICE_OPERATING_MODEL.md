@@ -13,7 +13,7 @@ AIX Pilot is positioned as a free, local-first Enterprise GenAI pilot that can e
 | Agent Control | Business Ops | Are high-risk actions routed through human approval? |
 | Security Governance | Security | Are PII, secrets, prompt injection, and policy bypass attempts detected? |
 | Operating Evidence | AI PMO | Can quality, adoption, cost, and risk support a Go/No-Go decision? |
-| Free Deployment Path | Infra | Can the pilot start with no paid API while showing a credible enterprise path? |
+| Free Deployment Path | Infra | Can the pilot start with no external API while showing a credible enterprise path? |
 
 ## Service Readiness Score
 
