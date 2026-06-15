@@ -12,7 +12,7 @@ AIX Pilot is a free-first enterprise GenAI pilot console that can become a gover
 |---|---|
 | Audience | Customer-center leaders, internal knowledge owners, IT governance teams, and AI adoption leads. |
 | Review path | Validate the demo, README, architecture notes, and quality gate before deeper workflow review. |
-| Review signal | RAG, Agent drafts, DLP masking, evaluation lab, KPI dashboard, value readiness model, presentation pack, and Cloudflare-ready deployment. |
+| Architecture signal | RAG, Agent drafts, DLP masking, evaluation lab, KPI dashboard, value readiness model, presentation pack, and Cloudflare-ready deployment. |
 | Safety boundary | Demo data is local and controlled; external deployments should use approved customer storage, access control, audit logs, and model routing. |
 | Fast proof | `npm run verify` runs TypeScript checks, tests, production build, and content verification. |
 
@@ -184,6 +184,10 @@ public/
 ## Enterprise Productization
 
 - [Product operating model](docs/product-operating-model.md) defines the reviewer, trust boundary, trust boundary, operating checks, and service path for this repository.
+
+## System Architecture
+
+- [System architecture](docs/system-architecture.md) maps the runtime boundary, data/control flow, cloud or local deployment surface, and operating assumptions for this repository.
 
 ## Service Architecture
 
