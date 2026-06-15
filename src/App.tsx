@@ -49,7 +49,7 @@ import {
 } from "recharts";
 import {
   behavioralLevers,
-  reviewerPersonas,
+  architecturePersonas,
   culturalAdoptionPatterns,
   reviewMotions,
   servicePackages,
@@ -1060,7 +1060,7 @@ function App() {
               <article className={`package-card ${selectedPackage.id === servicePackage.id ? "active" : ""}`} key={servicePackage.id}>
                 <div className="package-head">
                   <div>
-                    <span>{servicePackage.reviewer}</span>
+                    <span>{servicePackage.architecture}</span>
                     <strong>{servicePackage.name}</strong>
                   </div>
                   {servicePackage.recommended ? <em>추천</em> : null}
@@ -1094,14 +1094,14 @@ function App() {
             ))}
           </div>
 
-          <div className="reviewer-grid">
-            <div className="workspace-band reviewer-panel">
+          <div className="architecture-grid">
+            <div className="workspace-band architecture-panel">
               <div className="section-heading compact">
                 <h2>검토자 관점</h2>
                 <Users size={22} />
               </div>
-              <div className="reviewer-list">
-                {reviewerPersonas.map((persona) => (
+              <div className="architecture-list">
+                {architecturePersonas.map((persona) => (
                   <article key={persona.id}>
                     <span>{persona.role}</span>
                     <strong>{persona.desiredOutcome}</strong>

@@ -1,6 +1,6 @@
 import {
   behavioralLevers,
-  reviewerPersonas,
+  architecturePersonas,
   culturalAdoptionPatterns,
   expansionPaths,
   reviewMotions,
@@ -81,7 +81,7 @@ function hasText(value: string) {
 export function validateBusinessModel() {
   const ids = [
     ...servicePackages.map((item) => item.id),
-    ...reviewerPersonas.map((item) => item.id),
+    ...architecturePersonas.map((item) => item.id),
     ...behavioralLevers.map((item) => item.id),
     ...culturalAdoptionPatterns.map((item) => item.id),
     ...validationExperiments.map((item) => item.id),
@@ -100,7 +100,7 @@ export function validateBusinessModel() {
         hasText(item.activationGate) &&
         hasText(item.riskReversal)
     ),
-    personasCloseable: reviewerPersonas.every(
+    personasCloseable: architecturePersonas.every(
       (persona) => hasText(persona.pain) && hasText(persona.desiredOutcome) && hasText(persona.proof) && hasText(persona.closeMessage)
     ),
     behavioralLeversEthical: behavioralLevers.every((lever) => hasText(lever.ethicalUse) && hasText(lever.productMove) && hasText(lever.metric)),

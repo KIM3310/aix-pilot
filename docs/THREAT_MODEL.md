@@ -31,7 +31,7 @@ flowchart TB
 | Abuse Case | Impact | Mitigation |
 |---|---|---|
 | User enters phone, email, resident-number pattern | PII exposure in answer or report | DLP detection and masking tests |
-| Agent drafts an external email without review | Incorrect or risky customer communication | Human approval badge and playbook steps |
+| Agent drafts an external email without architecture | Incorrect or risky customer communication | Human approval badge and playbook steps |
 | RAG retrieves a restricted document | Unauthorized knowledge disclosure | Production RBAC and allowed-role metadata requirement |
 | Prompt asks for secrets or security exception | Sensitive operational leakage | Sensitive keyword detection and security gate |
 | Prompt asks to ignore instructions or reveal system prompts | Prompt injection, policy bypass, unsafe disclosure | Prompt Injection Guard and high-risk launch penalty |

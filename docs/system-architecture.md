@@ -71,7 +71,7 @@ Operating model: retrieval-backed knowledge answers, agent drafts, safety checks
 
 - Keep source documents, retrieval scores, owners, recency, and answer evidence visible beside generated output
 - Separate deterministic DLP and security checks from agent draft text so the system remains testable
-- Treat generated emails, reports, and automation drafts as human-reviewed artifacts
+- Treat generated emails, reports, and automation drafts as human-approved artifacts
 - Preserve evaluation fixtures and golden questions as CI-safe regression gates
 - Keep value readiness signals tied to explicit operational assumptions instead of hidden model output
 

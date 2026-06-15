@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-Enterprise Agent features often fail trust review when they jump directly from generated text to external actions. Emails, refunds, permission changes, and security exceptions can cause customer, financial, or compliance impact.
+Enterprise Agent features often fail trust architecture when they jump directly from generated text to external actions. Emails, refunds, permission changes, and security exceptions can cause customer, financial, or compliance impact.
 
 ## Decision
 

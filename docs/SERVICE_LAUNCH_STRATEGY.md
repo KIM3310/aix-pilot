@@ -16,17 +16,17 @@ This is a better target than generic SMB knowledge search because the pain is me
 
 ## Public Service Packages
 
-| Package | Reviewer-facing scope | Required resources | Activation gate |
+| Package | Architecture-facing scope | Required resources | Activation gate |
 |---|---|---|---|
 | Diagnostic | One workflow, one knowledge source, read-only pilot | Cloudflare Pages, local fixtures, Ollama or approved LLM gateway | Document owner, security owner, and operations owner agree on Go/No-Go criteria |
-| Operations | Department rollout with approval routing and QA review | Cloudflare D1 or managed Postgres, vector database, audit log storage, Sentry | Shared release checklist approved by operations and security |
+| Operations | Department rollout with approval routing and QA architecture | Cloudflare D1 or managed Postgres, vector database, audit log storage, Sentry | Shared release checklist approved by operations and security |
 | Enterprise | SSO/RBAC, SIEM/DLP, long-term audit retention, release gates | Managed Postgres, private model gateway, SSO, SIEM/DLP, backup storage | CISO, AI PMO, and operations leadership approve production boundaries |
 
 ## Value Readiness Model
 
-The strongest buying trigger is not model novelty. It is the moment an operator sees that repeated work, security review, and answer quality can be governed.
+The strongest buying trigger is not model novelty. It is the moment an operator sees that repeated work, security architecture, and answer quality can be governed.
 
-| Value lever | Reviewer language | Proof in product |
+| Value lever | Technical reader language | Proof in product |
 |---|---|---|
 | Time recovery | "We are searching and rewriting the same answers." | Value Readiness controls |
 | Risk reduction | "AI adoption cannot leak PII or bypass approval." | Trust controls and DLP tests |
@@ -49,7 +49,7 @@ The strongest buying trigger is not model novelty. It is the moment an operator 
 |---|---|
 | Loss aversion | Show time and risk already being lost, without exaggerating fear or publishing financial claims. |
 | Endowment effect | Let teams upload their own approved documents so the demo feels like their operating system. |
-| Commitment device | Use a 6-week pilot with weekly KPI reviews and an explicit Go/No-Go gate. |
+| Commitment device | Use a 6-week pilot with weekly KPI architectures and an explicit Go/No-Go gate. |
 | Social proof | Use real department adoption and workflow success metrics, not fabricated testimonials. |
 
 ## Culture-Aware Selling
@@ -78,4 +78,4 @@ The strongest buying trigger is not model novelty. It is the moment an operator 
 
 ## Portfolio Signal
 
-This makes the project read as a service-ready system: product value, operating risk, reviewer psychology, cultural adoption, cloud resources, and validation experiments are all connected to code and tests without exposing private financial assumptions.
+This makes the project read as a service-ready system: product value, operating risk, technical reader psychology, cultural adoption, cloud resources, and validation experiments are all connected to code and tests without exposing private financial assumptions.

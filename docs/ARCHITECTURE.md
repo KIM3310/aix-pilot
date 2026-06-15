@@ -55,7 +55,7 @@ Local Runtime
     SLOs
   businessModel.ts
     service packages
-    reviewer personas
+    technical reader personas
     behavioral levers
     cultural adoption patterns
   enterpriseSpec.ts
@@ -73,7 +73,7 @@ Local Runtime
 | 규칙 기반 답변 | Ollama local LLM | 사내 승인 LLM gateway |
 | localStorage | SQLite/Postgres | 데이터 거버넌스 저장소 |
 | 패턴 DLP | Presidio/OPA | SIEM/DLP 연동 |
-| 골든 질문셋 | Promptfoo/Ragas | CI release gate + SME review |
+| 골든 질문셋 | Promptfoo/Ragas | CI release gate + SME architecture |
 | 브라우저 감사 로그 | 서버 감사 로그 | 장기 보관/감사 리포팅 |
 
 ## 보안 원칙
@@ -101,7 +101,7 @@ The Trust section also lists controls, SLOs, launch blockers, and maturity stage
 
 ## Value Readiness
 
-`src/data/businessModel.ts` and `src/lib/valueModel.ts` add a service launch layer above the product. The Value Readiness model calculates monthly recovered workflow time, weekly review load, recommended service scope, and operating transition signal. It also models reviewer personas, behavioral economics, culture-aware rollout patterns, resource-focused expansion paths, and measurable validation experiments.
+`src/data/businessModel.ts` and `src/lib/valueModel.ts` add a service launch layer above the product. The Value Readiness model calculates monthly recovered workflow time, weekly architecture load, recommended service scope, and operating transition signal. It also models technical reader personas, behavioral economics, culture-aware rollout patterns, resource-focused expansion paths, and measurable validation experiments.
 
 The design intentionally avoids dark patterns. Weak adoption cases produce a "보류" signal and recommend narrowing the workflow before expanding scope.
 
