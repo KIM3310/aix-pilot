@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-RAG and Agent demos can look correct for one hand-picked prompt while regressing silently when documents, ranking, or prompt logic changes. A portfolio project should show how AI behavior will be evaluated, not only how it is rendered.
+RAG and Agent demos can look correct for one hand-picked prompt while regressing silently when documents, ranking, or prompt logic changes. A technical project should show how AI behavior will be evaluated, not only how it is rendered.
 
 ## Decision
 

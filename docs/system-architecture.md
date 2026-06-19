@@ -17,7 +17,7 @@ Browser-first GenAI pilot console with local RAG fixtures, agent drafts, DLP mas
 
 ```mermaid
 flowchart LR
-    User["User or technical reader"] --> Surface["Public demo, CLI, package, or README surface"]
+    User["User or technical inspection"] --> Surface["Public demo, CLI, package, or README surface"]
     Surface --> Runtime["Runtime boundary: React, Vite, TypeScript, Vitest, Cloudflare Pages, Cloudflare Functions"]
     Runtime --> Control["Control plane: configuration, policies, adapters, and jobs"]
     Control --> Data["Data and artifacts: fixtures, reports, logs, exports, or model outputs"]

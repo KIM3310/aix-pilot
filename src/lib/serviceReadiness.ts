@@ -15,7 +15,7 @@ export type ServiceReadinessInput = {
 
 export type ServiceReadinessResult = {
   score: number;
-  tier: "Launch Ready" | "Pilot Hardened" | "Executive Review" | "Needs Hardening";
+  tier: "Launch Ready" | "Pilot Hardened" | "Leadership Readout" | "Needs Hardening";
   posture: string;
   riskPenalty: number;
   blockers: string[];
@@ -70,13 +70,13 @@ export function calculateServiceReadiness(input: ServiceReadinessInput): Service
   ].filter(Boolean);
 
   const tier =
-    score >= 92 ? "Launch Ready" : score >= 84 ? "Pilot Hardened" : score >= 74 ? "Executive Review" : "Needs Hardening";
+    score >= 92 ? "Launch Ready" : score >= 84 ? "Pilot Hardened" : score >= 74 ? "Leadership Readout" : "Needs Hardening";
   const posture =
     tier === "Launch Ready"
       ? "운영 전환 검토 가능"
       : tier === "Pilot Hardened"
         ? "파일럿 확장 가능"
-        : tier === "Executive Review"
+        : tier === "Leadership Readout"
           ? "임원 검토 전 보완 필요"
           : "보안/품질 보강 필요";
 

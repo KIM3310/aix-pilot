@@ -51,7 +51,7 @@ import {
   behavioralLevers,
   architecturePersonas,
   culturalAdoptionPatterns,
-  reviewMotions,
+  adoptionMotions,
   servicePackages,
   validationExperiments,
   expansionPaths,
@@ -183,8 +183,8 @@ function SourceBadge({ source }: { source: string }) {
   return <span className="source-badge">{source}</span>;
 }
 
-function StepStatus({ status }: { status: "done" | "review" | "waiting" }) {
-  const label = status === "done" ? "완료" : status === "review" ? "검토" : "대기";
+function StepStatus({ status }: { status: "done" | "needs_attention" | "waiting" }) {
+  const label = status === "done" ? "완료" : status === "needs_attention" ? "검토" : "대기";
   return <span className={`step-status ${status}`}>{label}</span>;
 }
 
@@ -193,7 +193,7 @@ function SpecStatus({ value }: { value: "완료" | "검증" | "확장" }) {
 }
 
 function EvalVerdictBadge({ value }: { value: EvalVerdict }) {
-  const label = value === "pass" ? "통과" : value === "review" ? "검토" : "실패";
+  const label = value === "pass" ? "통과" : value === "needs_attention" ? "검토" : "실패";
   return <span className={`eval-badge eval-${value}`}>{label}</span>;
 }
 
@@ -979,8 +979,8 @@ function App() {
               <div className="value-kpi-row">
                 <article>
                   <TrendingUp size={18} />
-                  <strong>{formatCount(valueCase.weeklyReviewLoad)}</strong>
-                  <span>주간 리뷰 단위</span>
+                  <strong>{formatCount(valueCase.weeklyCheckpointLoad)}</strong>
+                  <span>주간 체크 단위</span>
                 </article>
                 <article>
                   <Gauge size={18} />
@@ -1089,7 +1089,7 @@ function App() {
                 <span>{path.name}</span>
                 <strong>{formatCount(path.result.workflowFootprint)}개 workflow footprint</strong>
                 <p>{path.wedge}</p>
-                <em>{path.result.reviewCadence} / {path.resourceFocus}</em>
+                <em>{path.result.checkpointCadence} / {path.resourceFocus}</em>
               </article>
             ))}
           </div>
@@ -1141,7 +1141,7 @@ function App() {
           </div>
 
           <div className="validation-strip">
-            {reviewMotions.map((motion) => (
+            {adoptionMotions.map((motion) => (
               <article key={motion.id}>
                 <span>{motion.stage}</span>
                 <strong>{motion.action}</strong>
@@ -1570,7 +1570,7 @@ function App() {
               <div className="section-heading compact">
                 <h2>Regression Golden Set</h2>
                 <span className="eval-count">
-                  {evaluationRun.passCount} 통과 / {evaluationRun.reviewCount} 검토 / {evaluationRun.failCount} 실패
+                  {evaluationRun.passCount} 통과 / {evaluationRun.attentionCount} 검토 / {evaluationRun.failCount} 실패
                 </span>
               </div>
               <div className="eval-case-list">

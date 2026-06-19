@@ -5,7 +5,7 @@ export type AgentMode = "FAQ 응답" | "이메일 생성" | "보고서 생성" |
 
 export type AgentStep = {
   label: string;
-  status: "done" | "review" | "waiting";
+  status: "done" | "needs_attention" | "waiting";
   detail: string;
 };
 
@@ -38,10 +38,10 @@ export function runAgent(mode: AgentMode, query: string, ragAnswer: RagAnswer): 
   const safeSecurityNote = securityNote(risk);
   const baseSteps: AgentStep[] = [
     { label: "요청 분류", status: "done", detail: `${mode} 업무로 분류` },
-    { label: "RAG 검색", status: ragAnswer.citations.length ? "done" : "review", detail: citationLine(ragAnswer.citations) },
+    { label: "RAG 검색", status: ragAnswer.citations.length ? "done" : "needs_attention", detail: citationLine(ragAnswer.citations) },
     {
       label: "보안 점검",
-      status: risk.length ? "review" : "done",
+      status: risk.length ? "needs_attention" : "done",
       detail: risk.length ? `${risk.length}개 리스크 발견` : "민감정보 없음"
     }
   ];
@@ -84,7 +84,7 @@ export function runAgent(mode: AgentMode, query: string, ragAnswer: RagAnswer): 
     mode,
     title: "FAQ 응답 초안",
     output: `${safeAnswer}${safeSecurityNote}`,
-    steps: [...baseSteps, { label: "FAQ 게시", status: "review", detail: "정책 소유자 검토 후 게시 권장" }],
+    steps: [...baseSteps, { label: "FAQ 게시", status: "needs_attention", detail: "정책 소유자 검토 후 게시 권장" }],
     requiresApproval: hasHighRisk
   };
 }

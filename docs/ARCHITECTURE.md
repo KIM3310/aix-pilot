@@ -55,7 +55,7 @@ Local Runtime
     SLOs
   businessModel.ts
     service packages
-    technical reader personas
+    technical inspection personas
     behavioral levers
     cultural adoption patterns
   enterpriseSpec.ts
@@ -101,7 +101,7 @@ The Trust section also lists controls, SLOs, launch blockers, and maturity stage
 
 ## Value Readiness
 
-`src/data/businessModel.ts` and `src/lib/valueModel.ts` add a service launch layer above the product. The Value Readiness model calculates monthly recovered workflow time, weekly architecture load, recommended service scope, and operating transition signal. It also models technical reader personas, behavioral economics, culture-aware rollout patterns, resource-focused expansion paths, and measurable validation experiments.
+`src/data/businessModel.ts` and `src/lib/valueModel.ts` add a service launch layer above the product. The Value Readiness model calculates monthly recovered workflow time, weekly architecture load, recommended service scope, and operating transition signal. It also models technical inspection personas, behavioral economics, culture-aware rollout patterns, resource-focused expansion paths, and measurable validation experiments.
 
 The design intentionally avoids dark patterns. Weak adoption cases produce a "보류" signal and recommend narrowing the workflow before expanding scope.
 

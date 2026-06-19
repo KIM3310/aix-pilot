@@ -48,7 +48,7 @@ Use this page as the short path through the repository. It keeps the architectur
 | Possible offer | Working scope assumption |
 |---|---|
 | Free proof-of-value demo | Synthetic-data walkthrough |
-| Secure knowledge onboarding setup | Technical reader-approved implementation diagnostic |
+| Secure knowledge onboarding setup | Technical inspection-approved implementation diagnostic |
 | Monthly KPI and governance reporting | Operating support and architecture cadence |
 
 ## Boundaries

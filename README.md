@@ -51,15 +51,15 @@ AIX Pilot is a free-first enterprise GenAI pilot console that can become a gover
 - 중복 근거 제거와 민감정보 마스킹을 포함한 데모 품질 보정
 - RAG/Agent/Security/Evaluation 핵심 로직 자동 테스트
 
-## 포트폴리오 임팩트
+## 기술 스택 임팩트
 
 - 단순 챗봇이 아니라 RAG, Agent, 보안, 감사, KPI, 평가를 한 화면에서 운영하는 제품형 데모입니다.
 - `public/brand`의 자체 제작 이미지와 GIF 모션 자산으로 저작권 리스크 없이 제품 첫인상을 제공합니다.
 - `무료 기준 스택`에서 Ollama 로컬 LLM, Cloudflare Workers AI fallback, Cloudflare Pages, Cloudflare D1 저장 상태를 바로 확인할 수 있습니다.
 - `Service Trust Model`은 보안 탐지, 승인 흐름, 평가 점수, 스펙 커버리지를 합산해 운영 전환 준비도를 계산합니다.
-- `Value Readiness`는 반복 업무 회수 시간, 승인 단계, 권장 서비스 범위, 운영 리소스, 검토자 반론 처리를 연결해 공개 추정치 없이 서비스 전환 가능성을 보여줍니다.
+- `Value Readiness`는 반복 업무 회수 시간, 승인 단계, 권장 서비스 범위, 운영 리소스, 도입 리스크 처리를 연결해 공개 추정치 없이 서비스 전환 가능성을 보여줍니다.
 - `Evaluation Lab`과 `evaluation.test.ts`로 AI 기능을 골든 질문셋 기준으로 회귀 검증합니다.
-- `docs/THREAT_MODEL.md`, `docs/ADR/`, `docs/PORTFOLIO_CASE_STUDY.md`까지 포함해 제품 판단, 보안 사고, 엔지니어링 의사결정을 같이 보여줍니다.
+- `docs/THREAT_MODEL.md`, `docs/ADR/`, `docs/ARCHITECTURE_CASE_STUDY.md`까지 포함해 제품 판단, 보안 사고, 엔지니어링 의사결정을 같이 보여줍니다.
 - `npm run verify` 하나로 TypeScript, 테스트, 빌드를 재현할 수 있어 CI에 바로 연결할 수 있습니다.
 - GitHub Actions QA, Dependabot, 수동 Cloudflare Pages 배포 워크플로까지 포함해 공개 저장소에서도 유지보수 신뢰도를 확인할 수 있습니다.
 
@@ -169,7 +169,7 @@ public/
 6. 파일럿 KPI를 정합니다: 검색 성공률, 근거 포함률, 상담 처리 시간, 자동화 완료율, 보안 차단 건수.
 
 상세 제품 스펙은 [docs/PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md)에 정리되어 있습니다.
-서비스 운영 모델은 [docs/SERVICE_OPERATING_MODEL.md](docs/SERVICE_OPERATING_MODEL.md), 서비스 런칭 전략은 [docs/SERVICE_LAUNCH_STRATEGY.md](docs/SERVICE_LAUNCH_STRATEGY.md), 기술 리뷰용 케이스 스터디는 [docs/PORTFOLIO_CASE_STUDY.md](docs/PORTFOLIO_CASE_STUDY.md), 위협 모델은 [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md), 주요 의사결정은 [docs/ADR](docs/ADR)에 정리되어 있습니다.
+서비스 운영 모델은 [docs/SERVICE_OPERATING_MODEL.md](docs/SERVICE_OPERATING_MODEL.md), 서비스 런칭 전략은 [docs/SERVICE_LAUNCH_STRATEGY.md](docs/SERVICE_LAUNCH_STRATEGY.md), 아키텍처 케이스 스터디는 [docs/ARCHITECTURE_CASE_STUDY.md](docs/ARCHITECTURE_CASE_STUDY.md), 위협 모델은 [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md), 주요 의사결정은 [docs/ADR](docs/ADR)에 정리되어 있습니다.
 클라우드와 AI 운영 경계는 [docs/cloud-ai-architecture.md](docs/cloud-ai-architecture.md)와 [docs/architecture/blueprint.json](docs/architecture/blueprint.json)에 정리되어 있습니다.
 
 ## 무료 배포 옵션
@@ -183,7 +183,7 @@ public/
 
 ## Enterprise Productization
 
-- [Product operating model](docs/product-operating-model.md) defines the technical reader, trust boundary, trust boundary, operating checks, and service path for this repository.
+- [Product operating model](docs/product-operating-model.md) defines the technical inspection, trust boundary, trust boundary, operating checks, and service path for this repository.
 
 ## System Architecture
 

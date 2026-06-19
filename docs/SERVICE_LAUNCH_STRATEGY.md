@@ -26,7 +26,7 @@ This is a better target than generic SMB knowledge search because the pain is me
 
 The strongest buying trigger is not model novelty. It is the moment an operator sees that repeated work, security architecture, and answer quality can be governed.
 
-| Value lever | Technical reader language | Proof in product |
+| Value lever | Technical inspection language | Proof in product |
 |---|---|---|
 | Time recovery | "We are searching and rewriting the same answers." | Value Readiness controls |
 | Risk reduction | "AI adoption cannot leak PII or bypass approval." | Trust controls and DLP tests |
@@ -78,4 +78,4 @@ The strongest buying trigger is not model novelty. It is the moment an operator 
 
 ## Portfolio Signal
 
-This makes the project read as a service-ready system: product value, operating risk, technical reader psychology, cultural adoption, cloud resources, and validation experiments are all connected to code and tests without exposing private financial assumptions.
+This makes the project read as a service-ready system: product value, operating risk, technical inspection psychology, cultural adoption, cloud resources, and validation experiments are all connected to code and tests without exposing private financial assumptions.

@@ -3,7 +3,7 @@ import {
   architecturePersonas,
   culturalAdoptionPatterns,
   expansionPaths,
-  reviewMotions,
+  adoptionMotions,
   servicePackages,
   targetVerticals,
   validationExperiments,
@@ -19,7 +19,7 @@ export type ValueAssumptions = {
 
 export type ValueReadinessCase = {
   monthlySavedHours: number;
-  weeklyReviewLoad: number;
+  weeklyCheckpointLoad: number;
   recommendedPackage: string;
   readinessSignal: "준비" | "검증" | "보류";
   anchorMessage: string;
@@ -28,7 +28,7 @@ export type ValueReadinessCase = {
 export type ExpansionPathResult = {
   targetTeams: number;
   workflowFootprint: number;
-  reviewCadence: string;
+  checkpointCadence: string;
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -46,7 +46,7 @@ export function calculateValueReadiness(input: ValueAssumptions): ValueReadiness
   const approvalSteps = clamp(input.approvalSteps, 1, 8);
 
   const monthlySavedHours = Math.round((monthlyWorkflows * minutesSaved) / 60);
-  const weeklyReviewLoad = Math.max(1, Math.ceil((teamMembers + approvalSteps * 8) / 25));
+  const weeklyCheckpointLoad = Math.max(1, Math.ceil((teamMembers + approvalSteps * 8) / 25));
   const recommendedPackage = teamMembers >= 300 || monthlyWorkflows >= 75000 ? "Enterprise" : teamMembers >= 50 || monthlyWorkflows >= 15000 ? "Operations" : "Diagnostic";
   const readinessSignal =
     monthlySavedHours >= 5000 && approvalSteps <= 5 ? "준비" : monthlySavedHours >= 800 || approvalSteps <= 6 ? "검증" : "보류";
@@ -59,7 +59,7 @@ export function calculateValueReadiness(input: ValueAssumptions): ValueReadiness
 
   return {
     monthlySavedHours,
-    weeklyReviewLoad,
+    weeklyCheckpointLoad,
     recommendedPackage,
     readinessSignal,
     anchorMessage
@@ -70,7 +70,7 @@ export function calculateExpansionPath(path: ExpansionPath): ExpansionPathResult
   return {
     targetTeams: path.targetTeams,
     workflowFootprint: path.targetTeams * path.representativeWorkflows,
-    reviewCadence: path.targetTeams >= 12 ? "biweekly steering review" : "weekly pilot review"
+    checkpointCadence: path.targetTeams >= 12 ? "biweekly steering checkpoint" : "weekly pilot checkpoint"
   };
 }
 
@@ -87,7 +87,7 @@ export function validateBusinessModel() {
     ...validationExperiments.map((item) => item.id),
     ...targetVerticals.map((item) => item.id),
     ...expansionPaths.map((item) => item.id),
-    ...reviewMotions.map((item) => item.id)
+    ...adoptionMotions.map((item) => item.id)
   ];
 
   return {
@@ -110,6 +110,6 @@ export function validateBusinessModel() {
       (vertical) => hasText(vertical.market) && hasText(vertical.wedgeWorkflow) && hasText(vertical.approvalOwner) && hasText(vertical.adoptionTrigger)
     ),
     expansionPathsConcrete: expansionPaths.every((path) => path.targetTeams > 0 && path.representativeWorkflows > 0 && hasText(path.resourceFocus)),
-    reviewMotionMeasurable: reviewMotions.every((motion) => hasText(motion.stage) && hasText(motion.action) && hasText(motion.metric))
+    reviewMotionMeasurable: adoptionMotions.every((motion) => hasText(motion.stage) && hasText(motion.action) && hasText(motion.metric))
   };
 }

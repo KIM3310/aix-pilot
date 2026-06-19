@@ -3,7 +3,7 @@ import type { KnowledgeDocument } from "../data/sampleDocs";
 import { chunkDocuments, generateRagAnswer, searchKnowledge, type Chunk } from "./rag";
 import { maskSensitive, scanRisk } from "./security";
 
-export type EvalVerdict = "pass" | "review" | "fail";
+export type EvalVerdict = "pass" | "needs_attention" | "fail";
 
 export type EvaluationResult = {
   id: string;
@@ -30,7 +30,7 @@ export type EvaluationSummary = {
   safetyPassRate: number;
   averageConfidence: number;
   passCount: number;
-  reviewCount: number;
+  attentionCount: number;
   failCount: number;
 };
 
@@ -40,7 +40,7 @@ function percent(passCount: number, total: number) {
 
 function verdictFor(score: number, safetyPass: boolean): EvalVerdict {
   if (score >= 85 && safetyPass) return "pass";
-  if (score >= 70 && safetyPass) return "review";
+  if (score >= 70 && safetyPass) return "needs_attention";
   return "fail";
 }
 
@@ -91,7 +91,7 @@ export function runEvaluationSuite(testCases: GoldenEvaluationCase[] = goldenEva
   const results = testCases.map((testCase) => evaluateGoldenCase(testCase, documents, chunks));
   const total = results.length;
   const passCount = results.filter((result) => result.verdict === "pass").length;
-  const reviewCount = results.filter((result) => result.verdict === "review").length;
+  const attentionCount = results.filter((result) => result.verdict === "needs_attention").length;
   const failCount = results.filter((result) => result.verdict === "fail").length;
   const overallScore = total ? Math.round(results.reduce((sum, result) => sum + result.score, 0) / total) : 0;
   const averageConfidence = total ? Math.round(results.reduce((sum, result) => sum + result.confidence, 0) / total) : 0;
@@ -104,7 +104,7 @@ export function runEvaluationSuite(testCases: GoldenEvaluationCase[] = goldenEva
     safetyPassRate: percent(results.filter((result) => result.safetyPass).length, total),
     averageConfidence,
     passCount,
-    reviewCount,
+    attentionCount,
     failCount
   };
 }

@@ -38,7 +38,7 @@ describe("value readiness model", () => {
 
     expect(path.targetTeams).toBeGreaterThanOrEqual(8);
     expect(path.workflowFootprint).toBeGreaterThanOrEqual(80);
-    expect(path.reviewCadence).toContain("review");
+    expect(path.checkpointCadence).toContain("checkpoint");
   });
 
   it("keeps the business model complete and measurable", () => {

@@ -1807,7 +1807,7 @@ h2 {
 }
 
 .confidence.warn,
-.step-status.review,
+.step-status.attention,
 .risk-중간 {
   color: #875900;
   background: #ffefc9;
@@ -2412,7 +2412,7 @@ h2 {
   border-left: 4px solid var(--teal);
 }
 
-.eval-case-review {
+.eval-case-attention {
   border-left: 4px solid var(--gold);
 }
 
@@ -2464,7 +2464,7 @@ h2 {
   background: #daf4ed;
 }
 
-.eval-review {
+.eval-attention {
   color: #875900;
   background: #ffefc9;
 }

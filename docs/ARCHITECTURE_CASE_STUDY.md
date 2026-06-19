@@ -46,7 +46,7 @@ flowchart LR
 
 | Decision | Reason |
 |---|---|
-| Local-first browser demo | Free to run, no API key exposure, easy for technical readers to start |
+| Local-first browser demo | Free to run, no API key exposure, easy for architecture inspection to start |
 | Deterministic RAG and agent outputs | Stable tests and predictable architecture behavior |
 | Golden evaluation suite | AI features need acceptance criteria, not only screenshots |
 | DLP before export | Report downloads should not become the privacy leak |
@@ -54,7 +54,7 @@ flowchart LR
 
 ## Quality Bar
 
-The repository is designed so the technical reader can inspect product, code, and governance artifacts together.
+The repository is designed so the technical inspection can inspect product, code, and governance artifacts together.
 
 - `npm run qa` runs TypeScript, Vitest, and production build.
 - `src/lib/evaluation.test.ts` keeps the golden suite above the pilot acceptance bar.
@@ -72,7 +72,7 @@ The repository is designed so the technical reader can inspect product, code, an
 3. Point out that the phone number is masked in the Agent output and report.
 4. Open Evaluation Lab to show retrieval, citation, safety, and confidence scores.
 5. Open Service Trust Model to show launch readiness, controls, SLOs, and blockers.
-6. Open Value Readiness to show why the target is regulated contact centers, which cloud resources are needed next, and how technical reader objections are handled.
+6. Open Value Readiness to show why the target is regulated contact centers, which cloud resources are needed next, and how technical inspection objections are handled.
 7. Finish with Enterprise Spec Pack to show rollout, security gates, requirements, and stack decisions.
 
 ## Production Path

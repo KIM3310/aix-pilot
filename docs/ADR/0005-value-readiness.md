@@ -6,9 +6,9 @@ Accepted
 
 ## Context
 
-The product already demonstrates RAG, Agent workflows, security, evaluation, and service readiness. To look like a service instead of a technical demo, it needs a clear answer to why a technical reader should continue the conversation, what operational scope is appropriate, and which cloud or governance resources are required next.
+The product already demonstrates RAG, Agent workflows, security, evaluation, and service readiness. To look like a service instead of a technical demo, it needs a clear answer to why a technical inspection should continue the conversation, what operational scope is appropriate, and which cloud or governance resources are required next.
 
-Public repository docs should not include public financial forecasts, scope assumptions, or contract assumptions. Those belong in private planning, CRM, or technical reader-specific proposal artifacts.
+Public repository docs should not include public financial forecasts, scope assumptions, or contract assumptions. Those belong in private planning, CRM, or technical inspection-specific proposal artifacts.
 
 ## Decision
 
@@ -18,7 +18,7 @@ Add a Value Readiness model for regulated contact-center enterprise adoption tha
 - Service packages for Diagnostic, Operations, and Enterprise scopes without public financial assumptions.
 - Expansion paths based on operating teams, workflow footprint, channel, and resource focus.
 - Target verticals for financial, insurance, telecom, commerce, and BPO contact centers.
-- Technical reader personas with pains, objections, proof, and internal approval messages.
+- Technical inspection personas with pains, objections, proof, and internal approval messages.
 - Behavioral economics levers with explicit ethical usage.
 - Culture-aware adoption patterns for hierarchical, regulated, speed-driven, and learning-oriented organizations.
 - Validation experiments with measurable success metrics.
