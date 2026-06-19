@@ -192,3 +192,17 @@ public/
 ## Service Architecture
 
 - [Service architecture](docs/service-architecture.md) defines the cloud resources, account information, cost controls, and production guardrails needed to turn this repo into a scoped service without publishing public financial assumptions.
+
+<!-- search-growth-readme:start -->
+
+## Search And Service Surface
+
+- Public entry: public Cloudflare Pages demo with synthetic fixtures
+- Paid boundary: paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case
+- Canonical URL: https://aix-pilot.pages.dev/
+- Lead capture: mailto:ehdjs1351@gmail.com?subject=AIX%20Pilot%20private%20workspace&body=I%20am%20interested%20in%20paid%20pilot%20workspace%20with%20private%20docs%2C%20provider%20keys%2C%20KPI%20dashboards%2C%20and%20exportable%20business%20case%20for%20AIX%20Pilot.
+- Machine-readable offer: [docs/service-offer.json](docs/service-offer.json)
+- Search growth implementation: [docs/search-growth-implementation.md](docs/search-growth-implementation.md)
+- Revenue architecture: [docs/revenue-architecture.md](docs/revenue-architecture.md)
+
+<!-- search-growth-readme:end -->

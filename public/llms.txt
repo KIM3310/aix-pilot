@@ -1,0 +1,12 @@
+# AIX Pilot
+
+Purpose: enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows
+Free entry point: public Cloudflare Pages demo with synthetic fixtures
+Paid boundary: paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case
+Canonical URL: https://aix-pilot.pages.dev/
+Repository: https://github.com/KIM3310/aix-pilot
+System architecture: https://github.com/KIM3310/aix-pilot/blob/main/docs/system-architecture.md
+Revenue architecture: https://github.com/KIM3310/aix-pilot/blob/main/docs/revenue-architecture.md
+Lead capture: mailto:ehdjs1351@gmail.com?subject=AIX%20Pilot%20private%20workspace&body=I%20am%20interested%20in%20paid%20pilot%20workspace%20with%20private%20docs%2C%20provider%20keys%2C%20KPI%20dashboards%2C%20and%20exportable%20business%20case%20for%20AIX%20Pilot.
+
+Use this project as a runnable or inspectable reference for AIX Pilot demo, AIX Pilot system architecture, AIX Pilot business tool, enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows service.
