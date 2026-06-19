@@ -200,7 +200,7 @@ public/
 - Public entry: public Cloudflare Pages demo with synthetic fixtures
 - Paid boundary: paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case
 - Canonical URL: https://aix-pilot.pages.dev/
-- Lead capture: mailto:ehdjs1351@gmail.com?subject=AIX%20Pilot%20private%20workspace&body=I%20am%20interested%20in%20paid%20pilot%20workspace%20with%20private%20docs%2C%20provider%20keys%2C%20KPI%20dashboards%2C%20and%20exportable%20business%20case%20for%20AIX%20Pilot.
+- Lead capture: https://github.com/KIM3310/aix-pilot/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+AIX+Pilot
 - Machine-readable offer: [docs/service-offer.json](docs/service-offer.json)
 - Search growth implementation: [docs/search-growth-implementation.md](docs/search-growth-implementation.md)
 - Revenue architecture: [docs/revenue-architecture.md](docs/revenue-architecture.md)

@@ -10,7 +10,7 @@ This repository now exposes a search-readable service surface in addition to the
 | Revenue architecture | [docs/revenue-architecture.md](./revenue-architecture.md) |
 | System architecture | [docs/system-architecture.md](./system-architecture.md) |
 | Public canonical URL | https://aix-pilot.pages.dev/ |
-| Lead capture URL | mailto:ehdjs1351@gmail.com?subject=AIX%20Pilot%20private%20workspace&body=I%20am%20interested%20in%20paid%20pilot%20workspace%20with%20private%20docs%2C%20provider%20keys%2C%20KPI%20dashboards%2C%20and%20exportable%20business%20case%20for%20AIX%20Pilot. |
+| Lead capture URL | https://github.com/KIM3310/aix-pilot/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+AIX+Pilot |
 
 ## Search Positioning
 
@@ -27,5 +27,5 @@ The public surface stays crawlable and free. Paid value starts when a visitor wa
 
 - Keep the sitemap and robots file aligned with the final production domain.
 - Submit the canonical URL and sitemap in Google Search Console after the domain is connected.
-- Use a real checkout or lead-capture endpoint only after the free demo shows repeated intent.
+- The lead-capture path is a GitHub Issue Form so private workspace and paid-package requests create a trackable queue before payment infrastructure is added.
 - Keep exact free-tier quotas out of public promises because provider limits change.
