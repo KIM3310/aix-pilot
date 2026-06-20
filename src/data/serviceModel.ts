@@ -205,7 +205,7 @@ export const launchMaturity: MaturityStage[] = [
   {
     id: "L1",
     stage: "Pilot Hardened",
-    promise: "골든 질문셋, 승인 게이트, 보안 통제가 반복 검증됨",
+    promise: "골든 질문셋, 승인 게이트, 보안 통제가 반복 운영 가능",
     gate: "Eval 85+, Spec 90+, PII raw exposure 0"
   },
   {
