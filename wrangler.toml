@@ -9,3 +9,8 @@ database_id = "7de5f3a9-435d-4b12-878e-0eb12a7053b7"
 
 [ai]
 binding = "AI"
+
+[vars]
+OPENROUTER_MODEL = "google/gemini-3.5-flash"
+OPENROUTER_HTTP_REFERER = "https://aix-pilot.pages.dev"
+OPENROUTER_APP_TITLE = "AIX Pilot"
