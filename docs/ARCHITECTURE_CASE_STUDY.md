@@ -54,7 +54,7 @@ flowchart LR
 
 ## Quality Bar
 
-The repository is designed so the technical inspection can inspect product, code, and governance artifacts together.
+The repository is designed so product, code, and governance artifacts can be inspected together.
 
 - `npm run qa` runs TypeScript, Vitest, and production build.
 - `src/lib/evaluation.test.ts` keeps the golden suite above the pilot acceptance bar.
