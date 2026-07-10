@@ -70,7 +70,7 @@ export function calculateExpansionPath(path: ExpansionPath): ExpansionPathResult
   return {
     targetTeams: path.targetTeams,
     workflowFootprint: path.targetTeams * path.representativeWorkflows,
-    checkpointCadence: path.targetTeams >= 12 ? "biweekly steering checkpoint" : "weekly pilot checkpoint"
+    checkpointCadence: path.targetTeams >= 12 ? "biweekly steering review" : "weekly pilot review"
   };
 }
 

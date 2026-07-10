@@ -4,31 +4,31 @@
 
 기업용 GenAI 도입을 위한 무료 기준 RAG, Agent, 보안, KPI 대시보드 통합 플랫폼 프로토타입입니다.
 
-## Product and System Surface
+## System Overview
 
 AIX Pilot is a free-first enterprise GenAI pilot console that can become a governed implementation, secure knowledge onboarding, and monthly operating support service after workflow-specific validation.
 
-| Lens | Definition |
+| Area | Details |
 |---|---|
-| Audience | Customer-center leaders, internal knowledge owners, IT governance teams, and AI adoption leads. |
-| Architecture path | Validate the demo, README, architecture notes, and quality gate before deeper workflow architecture. |
-| System signal | RAG, Agent drafts, DLP masking, evaluation lab, KPI dashboard, value readiness model, presentation pack, and Cloudflare-ready deployment. |
-| Safety boundary | Demo data is local and controlled; external deployments should use approved customer storage, access control, audit logs, and model routing. |
-| Fast path | `npm run verify` runs TypeScript checks, tests, production build, and content verification. |
+| Users | Customer-center leaders, internal knowledge owners, IT governance teams, and AI adoption leads. |
+| Technical path | Validate the demo, README, architecture notes, and quality gate before deeper workflow review. |
+| System scope | RAG, Agent drafts, DLP masking, evaluation lab, KPI dashboard, value readiness model, presentation pack, and Cloudflare-ready deployment. |
+| Operating boundary | Demo data is local and controlled; external deployments should use approved customer storage, access control, audit logs, and model routing. |
+| Evaluation path | `npm run verify` runs TypeScript checks, tests, production build, and content verification. |
 
-## System Fast Path
+## Evaluation Path
 
-- **First minute:** Open the value readiness model, service trust model, and evaluation lab before reading implementation details.
+- **Start here:** Open the value readiness model, service trust model, and evaluation lab before reading implementation details.
 - **Local demo:** Run `npm install && npm run dev`, then open `http://localhost:5173`.
-- **Verification:** Run `npm run verify`; it covers TypeScript, tests, production build, and content verification.
+- **Checks:** Run `npm run verify`; it covers TypeScript, tests, production build, and content verification.
 
 ## Service Launch Playbook
 
-- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to architecture audiences, operating gates, operating boundaries, and risk controls.
+- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to intended audiences, operating gates, operating boundaries, and risk controls.
 
 ## Architecture Notes
 
-- [Architecture guide](docs/architecture-evidence-map.md) summarizes the project angle, first files to inspect, runtime commands, and known boundaries.
+- [Architecture guide](docs/architecture-evidence-map.md) summarizes the system scope, first files to inspect, runtime commands, and known boundaries.
 - [Quality notes](docs/quality-gate.md) lists the local checks, CI surface, and release expectations for this repository.
 - [Enterprise readiness notes](docs/enterprise-readiness.md) outlines security, data, operations, integration, and handoff expectations.
 - [Cloud + AI architecture blueprint](docs/cloud-ai-architecture.md) records the deployment, runtime, AI evaluation, and risk-control surface.
@@ -183,7 +183,7 @@ public/
 
 ## Enterprise Productization
 
-- [Product operating model](docs/product-operating-model.md) defines the technical inspection, trust boundary, trust boundary, operating checks, and service path for this repository.
+- [Product operating model](docs/product-operating-model.md) defines the product scope, trust boundary, operating checks, and service path for this repository.
 
 ## System Architecture
 

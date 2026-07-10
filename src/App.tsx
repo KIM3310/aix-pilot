@@ -980,7 +980,7 @@ function App() {
                 <article>
                   <TrendingUp size={18} />
                   <strong>{formatCount(valueCase.weeklyCheckpointLoad)}</strong>
-                  <span>주간 체크 단위</span>
+                  <span>주간 검토 단위</span>
                 </article>
                 <article>
                   <Gauge size={18} />

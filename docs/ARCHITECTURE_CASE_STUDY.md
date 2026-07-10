@@ -12,7 +12,7 @@ AIX Pilot is built to show those operational answers upfront. It is intentionall
 
 ## Product Scope
 
-| Area | Built Into Demo | Architecture Signal |
+| Area | Built Into Demo | Operational Signal |
 |---|---|---|
 | RAG | Local chunking, Korean-friendly tokenization, search ranking, citation dedupe | Retrieval quality and evidence discipline |
 | Agent | FAQ, email, report, automation modes with approval steps | Workflow thinking beyond a chatbot |
@@ -46,8 +46,8 @@ flowchart LR
 
 | Decision | Reason |
 |---|---|
-| Local-first browser demo | Free to run, no API key exposure, easy for architecture inspection to start |
-| Deterministic RAG and agent outputs | Stable tests and predictable architecture behavior |
+| Local-first browser demo | Free to run, no API key exposure, easy for technical evaluators to start |
+| Deterministic RAG and agent outputs | Stable tests and predictable review behavior |
 | Golden evaluation suite | AI features need acceptance criteria, not only screenshots |
 | DLP before export | Report downloads should not become the privacy leak |
 | Spec Pack in the product UI | enterprise operators and internal platform teams need the operating model, not just the prototype |
@@ -72,7 +72,7 @@ The repository is designed so product, code, and governance artifacts can be ins
 3. Point out that the phone number is masked in the Agent output and report.
 4. Open Evaluation Lab to show retrieval, citation, safety, and confidence scores.
 5. Open Service Trust Model to show launch readiness, controls, SLOs, and blockers.
-6. Open Value Readiness to show why the target is regulated contact centers, which cloud resources are needed next, and how technical inspection objections are handled.
+6. Open Value Readiness to show why the target is regulated contact centers, which cloud resources are needed next, and how stakeholder objections are handled.
 7. Finish with Enterprise Spec Pack to show rollout, security gates, requirements, and stack decisions.
 
 ## Production Path

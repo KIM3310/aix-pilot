@@ -153,8 +153,8 @@ export const behavioralLevers: BehavioralLever[] = [
     id: "BEH-COMMIT",
     principle: "실행 약속",
     ethicalUse: "작은 실행 약속을 명확히 하되 해지와 보류 선택권을 유지합니다.",
-    productMove: "6주 파일럿, 주간 KPI 체크, Go/No-Go 기준",
-    metric: "weekly active teams / checkpoint completion"
+    productMove: "6주 파일럿, 주간 KPI 검토, Go/No-Go 기준",
+    metric: "weekly active teams / review completion"
   },
   {
     id: "BEH-SOCIAL",
@@ -207,13 +207,13 @@ export const validationExperiments: ValidationExperiment[] = [
     id: "EXP-TRUST",
     hypothesis: "보안 통제와 운영 전환 리스크를 먼저 보여주면 엔터프라이즈 구매 저항이 낮아진다.",
     test: "Trust section을 서비스 범위 설명 전에 노출",
-    successMetric: "security checklist accepted"
+    successMetric: "security review checklist accepted"
   },
   {
     id: "EXP-CHAMPION",
     hypothesis: "팀 리더용 주간 리포트를 제공하면 내부 champion이 생긴다.",
     test: "리포트 다운로드와 주간 KPI 템플릿 제공",
-    successMetric: "weekly checkpoint cadence created"
+    successMetric: "weekly review cadence created"
   }
 ];
 
@@ -300,6 +300,6 @@ export const adoptionMotions: AdoptionMotion[] = [
     id: "MOTION-RETAIN",
     stage: "04 Retain",
     action: "월간 QA 리포트와 평가 게이트를 운영 회의에 연결해 지속 사용 근거를 남깁니다.",
-    metric: "월간 운영 체크 유지"
+    metric: "월간 운영 검토 유지"
   }
 ];

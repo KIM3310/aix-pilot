@@ -50,6 +50,6 @@ High-risk security findings apply a launch penalty. This makes the UI behave lik
 | High-risk auto-send | 0 incidents |
 | Audit completeness | 95%+ after backend handoff |
 
-## Architecture Signal
+## Operating Signal
 
 This layer shows that the project is more than a chatbot UI. It demonstrates product judgment, security thinking, system design, release gating, and measurable service ownership.
