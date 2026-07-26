@@ -8,5 +8,6 @@ Repository: https://github.com/KIM3310/aix-pilot
 System architecture: https://github.com/KIM3310/aix-pilot/blob/main/docs/system-architecture.md
 Revenue architecture: https://github.com/KIM3310/aix-pilot/blob/main/docs/revenue-architecture.md
 Lead capture: https://github.com/KIM3310/aix-pilot/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+AIX+Pilot
+Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers
 
 Use this project as a runnable or inspectable reference for AIX Pilot demo, AIX Pilot system architecture, AIX Pilot business tool, enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows service.

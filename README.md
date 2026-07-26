@@ -201,6 +201,7 @@ public/
 - Paid boundary: paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case
 - Canonical URL: https://aix-pilot.pages.dev/
 - Lead capture: https://github.com/KIM3310/aix-pilot/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+AIX+Pilot
+- Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers
 - Machine-readable offer: [docs/service-offer.json](docs/service-offer.json)
 - Search growth implementation: [docs/search-growth-implementation.md](docs/search-growth-implementation.md)
 - Revenue architecture: [docs/revenue-architecture.md](docs/revenue-architecture.md)
