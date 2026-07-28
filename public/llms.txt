@@ -10,6 +10,7 @@ Repository: https://github.com/KIM3310/aix-pilot
 System architecture: https://github.com/KIM3310/aix-pilot/blob/main/docs/system-architecture.md
 Revenue architecture: https://github.com/KIM3310/aix-pilot/blob/main/docs/revenue-architecture.md
 Lead capture: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry
+Resource route: https://kim3310-doeon-kim-portfolio.pages.dev/resources/aix-pilot/
 Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers
 
 Use this project to inspect a bounded AI readiness workflow: document retrieval, citations, draft generation, redaction checks, golden-set evaluation, readiness scoring, and report export.

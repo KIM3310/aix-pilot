@@ -201,9 +201,20 @@ public/
 - Paid boundary: fixed-scope Private AI Readiness Sprint; private data onboarding and production implementation require separate approval
 - Canonical URL: https://aix-pilot.pages.dev/
 - Lead capture: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry
+- Resource route: https://kim3310-doeon-kim-portfolio.pages.dev/resources/aix-pilot/
 - Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers
 - Machine-readable offer: [docs/service-offer.json](docs/service-offer.json)
 - Search growth implementation: [docs/search-growth-implementation.md](docs/search-growth-implementation.md)
 - Revenue architecture: [docs/revenue-architecture.md](docs/revenue-architecture.md)
 
 <!-- search-growth-readme:end -->
+
+<!-- KIM3310:AD-DATA-PIVOT:START -->
+## Free Resource, Advertising, and Aggregate Data
+
+- [Public utility and architecture checklist](https://kim3310-doeon-kim-portfolio.pages.dev/resources/aix-pilot/)
+- Revenue model: contextual advertising on the policy-eligible central resource page.
+- Aggregate value: anonymous aggregate enterprise AI readiness topic interest and scorecard-open counts
+- Boundary: ads allowed only on public GenAI readiness resources; console, RAG, DLP, eval, KPI, and dashboard flows are ad-free
+- Consent defaults off, DNT/GPC fail closed, and personal or sensitive data is never sold.
+<!-- KIM3310:AD-DATA-PIVOT:END -->
