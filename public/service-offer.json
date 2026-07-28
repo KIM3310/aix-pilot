@@ -5,23 +5,23 @@
   "repository_url": "https://github.com/KIM3310/aix-pilot",
   "architecture_url": "https://github.com/KIM3310/aix-pilot/blob/main/docs/system-architecture.md",
   "revenue_architecture_url": "https://github.com/KIM3310/aix-pilot/blob/main/docs/revenue-architecture.md",
-  "lead_capture_url": "https://github.com/KIM3310/aix-pilot/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+AIX+Pilot",
-  "productized_offer": "enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows",
-  "first_paid_sku": "paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case",
-  "free_lead_magnet": "public Cloudflare Pages demo with synthetic fixtures",
+  "lead_capture_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry",
+  "productized_offer": "browser-based enterprise AI readiness workbench for local retrieval, cited drafts, PII masking, golden-set evaluation, and pilot reporting",
+  "first_paid_sku": "Private AI Readiness Sprint with a use-case scorecard, data and policy boundaries, an evaluation plan, deployment options, and a go or no-go roadmap",
+  "free_lead_magnet": "interactive synthetic-data readiness demo",
   "search_positioning": {
-    "primary_query": "AIX Pilot enterprise GenAI console",
+    "primary_query": "enterprise AI readiness assessment RAG evaluation",
     "secondary_queries": [
-      "AIX Pilot demo",
-      "AIX Pilot system architecture",
-      "AIX Pilot business tool",
-      "enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows service"
+      "enterprise RAG evaluation demo",
+      "AI pilot PII masking",
+      "golden set retrieval evaluation",
+      "private AI readiness sprint"
     ],
-    "audience_intent": "Find a runnable demo, inspect the system architecture, and decide whether a private workspace or implementation package is useful."
+    "audience_intent": "Evaluate a bounded enterprise AI pilot workflow and decide whether a private readiness assessment is warranted."
   },
   "monetization_boundary": {
-    "free": "public Cloudflare Pages demo with synthetic fixtures",
-    "paid": "paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case",
+    "free": "interactive browser demo using synthetic documents and local state",
+    "paid": "fixed-scope Private AI Readiness Sprint; private data onboarding or production implementation requires a separately approved scope",
     "metering_hooks": [
       "workspace_id",
       "plan",
@@ -42,10 +42,17 @@
     "@type": "SoftwareApplication",
     "name": "AIX Pilot",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web, serverless, and local development environments",
+    "operatingSystem": "Web browser",
     "url": "https://aix-pilot.pages.dev/",
     "codeRepository": "https://github.com/KIM3310/aix-pilot",
-    "description": "AIX Pilot: enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows. Free entry point: public Cloudflare Pages demo with synthetic fixtures. Paid path: paid pilot workspace with.",
+    "description": "AIX Pilot is a browser-based enterprise AI readiness demo for local document retrieval, cited drafts, PII masking, golden-set evaluation, and pilot reporting.",
+    "featureList": [
+      "Local document retrieval with citations",
+      "Rule-based answer and workflow drafts",
+      "PII and secret-pattern masking",
+      "Golden-set retrieval and safety evaluation",
+      "Downloadable pilot report"
+    ],
     "creator": {
       "@type": "Person",
       "name": "KIM3310",
@@ -54,7 +61,7 @@
     "offers": [
       {
         "@type": "Offer",
-        "name": "public Cloudflare Pages demo with synthetic fixtures",
+        "name": "Interactive synthetic-data readiness demo",
         "price": "0",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
@@ -62,30 +69,30 @@
       },
       {
         "@type": "Offer",
-        "name": "paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case",
+        "name": "Private AI Readiness Sprint",
         "availability": "https://schema.org/LimitedAvailability",
-        "url": "https://github.com/KIM3310/aix-pilot/blob/main/docs/revenue-architecture.md"
+        "url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry"
       }
     ],
     "isAccessibleForFree": true,
-    "keywords": "aix-pilot, AIX, Pilot, enterprise, GenAI, pilot, console, RAG, fixtures, DLP, masking, KPI, views, evaluation, flows, docs, provider, keys, dashboards, exportable, business, case"
+    "keywords": "enterprise AI readiness, RAG evaluation, PII masking, cited answer drafts, golden set evaluation, AI pilot reporting"
   },
   "commerce": {
     "gateway_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers",
-    "lane_id": "aix-governance-sprint",
-    "lane_name": "AIX Governance Sprint",
+    "lane_id": "private-ai-readiness-sprint",
+    "lane_name": "Private AI Readiness Sprint",
     "billing_mode": "quote",
-    "price_unit": "governance sprint or deployment pack",
-    "fulfillment_kind": "private workshop, controls evidence, and deployment adaptation",
+    "price_unit": "typical discovery scope from USD 2,500",
+    "fulfillment_kind": "use-case scorecard, data and policy boundaries, evaluation plan, deployment options, and go or no-go roadmap",
     "risk_bucket": "high-trust-b2b",
     "checkout": {
-      "provider": "lemon-squeezy",
-      "status": "account-onboarding-required",
-      "fallback_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers"
+      "provider": null,
+      "status": "not-configured",
+      "fallback_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry"
     },
     "sponsorship": {
       "provider": "github-sponsors",
-      "eligible": true,
+      "eligible": false,
       "status": "sponsors-listing-not-configured"
     },
     "advertising": {

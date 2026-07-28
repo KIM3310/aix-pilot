@@ -90,6 +90,8 @@ const agentModes: AgentMode[] = ["FAQ 응답", "이메일 생성", "보고서 �
 const pieColors = ["#11A7A2", "#F36B4F", "#F6B53C", "#6C8FF6"];
 const demoScenario =
   "고객이 배송 지연으로 불만을 제기했습니다. 보상 가능 여부와 안내 메일 초안을 만들어줘. 데모 연락처 010-0000-0000은 외부 발송 전에 마스킹해줘.";
+const readinessSprintUrl =
+  "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry";
 const storageKeys = {
   documents: "aix-pilot.documents",
   query: "aix-pilot.query",
@@ -687,6 +689,16 @@ function App() {
                 <Download size={18} />
                 <span>Export Report</span>
               </button>
+              <a
+                className="icon-button inquiry-link"
+                href={readinessSprintUrl}
+                target="_blank"
+                rel="noreferrer"
+                title="비공개 AI 준비도 진단 문의"
+              >
+                <ClipboardList size={18} />
+                <span>AI 준비도 진단 문의</span>
+              </a>
               <button type="button" className="icon-button ghost" title="초기화" onClick={resetWorkspace}>
                 <RotateCcw size={18} />
                 <span>Reset</span>

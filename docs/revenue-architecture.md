@@ -7,11 +7,12 @@ This document turns the repository architecture into a zero-to-low-cost service 
 | Layer | Decision |
 | --- | --- |
 | Target buyer / user | enterprise AI program owner validating governance, RAG, DLP, and pilot ROI before a wider rollout |
-| Productized offer | enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows |
-| First paid SKU | paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case |
-| Free lead magnet | public Cloudflare Pages demo with synthetic fixtures |
+| Productized offer | browser-based enterprise AI readiness workbench for retrieval, cited drafts, PII masking, golden-set evaluation, and pilot reporting |
+| First paid SKU | fixed-scope Private AI Readiness Sprint with a use-case scorecard, data and policy boundaries, evaluation plan, deployment options, and go or no-go roadmap |
+| Free lead magnet | interactive synthetic-data readiness demo |
 | Paid expansion | fixed pilot package, per-workspace subscription, and implementation support |
 | Data / workflow moat | pilot scoring criteria, redaction patterns, KPI baselines, and stakeholder-ready reports |
+| Private inquiry | https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry |
 
 ## Free-Tier-First Launch Stack
 
@@ -52,7 +53,7 @@ flowchart LR
 ## 30-Day Revenue Test
 
 1. Publish the public demo or architecture page with one clear CTA: request private workspace, download a pack, or run a sample report.
-2. Add a lead capture route using Workers + D1/KV, Supabase, Firebase, or a GitHub issue form.
+2. Route confidential and commercial requests through the [central Cloudflare D1 private inquiry](https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry); keep public GitHub issues limited to non-confidential product discussion.
 3. Create one downloadable artifact: report PDF, template pack, runbook, dataset sample, or export bundle.
 4. Offer a fixed-scope paid package before building subscription complexity.
 5. Track activation manually first: visits, CTA clicks, export requests, email replies, and paid pilot conversations.

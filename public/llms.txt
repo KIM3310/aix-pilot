@@ -1,13 +1,15 @@
 # AIX Pilot
 
-Purpose: enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows
-Free entry point: public Cloudflare Pages demo with synthetic fixtures
-Paid boundary: paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case
+Purpose: browser-based enterprise AI readiness workbench for local retrieval, cited drafts, PII masking, golden-set evaluation, and pilot reporting
+Free entry point: interactive synthetic-data readiness demo
+Paid boundary: fixed-scope Private AI Readiness Sprint; private data onboarding and production implementation require separate approval
+Browser-local proof boundary: synthetic documents and local state are the default; Ollama and Workers AI are optional adapters, not a production claim
+Technology: React, TypeScript, Vite, Vitest, Recharts, Cloudflare Pages Functions, optional Cloudflare D1, and optional Ollama
 Canonical URL: https://aix-pilot.pages.dev/
 Repository: https://github.com/KIM3310/aix-pilot
 System architecture: https://github.com/KIM3310/aix-pilot/blob/main/docs/system-architecture.md
 Revenue architecture: https://github.com/KIM3310/aix-pilot/blob/main/docs/revenue-architecture.md
-Lead capture: https://github.com/KIM3310/aix-pilot/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+AIX+Pilot
+Lead capture: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry
 Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers
 
-Use this project as a runnable or inspectable reference for AIX Pilot demo, AIX Pilot system architecture, AIX Pilot business tool, enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows service.
+Use this project to inspect a bounded AI readiness workflow: document retrieval, citations, draft generation, redaction checks, golden-set evaluation, readiness scoring, and report export.

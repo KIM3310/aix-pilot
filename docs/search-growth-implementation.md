@@ -10,15 +10,15 @@ This repository now exposes a search-readable service surface in addition to the
 | Revenue architecture | [docs/revenue-architecture.md](./revenue-architecture.md) |
 | System architecture | [docs/system-architecture.md](./system-architecture.md) |
 | Public canonical URL | https://aix-pilot.pages.dev/ |
-| Lead capture URL | https://github.com/KIM3310/aix-pilot/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+AIX+Pilot |
+| Lead capture URL | https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry |
 | Commercial route | https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers |
 
 ## Search Positioning
 
-- Primary query: AIX Pilot enterprise GenAI console
-- Secondary queries: AIX Pilot demo; AIX Pilot system architecture; AIX Pilot business tool; enterprise GenAI pilot console with RAG fixtures, DLP masking, KPI views, and evaluation flows service
-- Public entry point: public Cloudflare Pages demo with synthetic fixtures
-- Paid boundary: paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case
+- Primary query: enterprise AI readiness assessment RAG evaluation
+- Secondary queries: enterprise RAG evaluation demo; AI pilot PII masking; golden set retrieval evaluation; private AI readiness sprint
+- Public entry point: interactive browser demo using synthetic documents and local state
+- Paid boundary: fixed-scope Private AI Readiness Sprint; private data onboarding and production implementation require separate approval
 
 ## Conversion Boundary
 
@@ -28,5 +28,5 @@ The public surface stays crawlable and free. Paid value starts when a visitor wa
 
 - Keep the sitemap and robots file aligned with the final production domain.
 - Submit the canonical URL and sitemap in Google Search Console after the domain is connected.
-- The lead-capture path is a GitHub Issue Form so private workspace and paid-package requests create a trackable queue before payment infrastructure is added.
+- The lead-capture path is the central private inquiry form. Public GitHub issues are not used for confidential scoping.
 - Keep exact free-tier quotas out of public promises because provider limits change.

@@ -2,11 +2,11 @@
 
 [![QA](https://github.com/KIM3310/aix-pilot/actions/workflows/qa.yml/badge.svg)](https://github.com/KIM3310/aix-pilot/actions/workflows/qa.yml)
 
-기업용 GenAI 도입을 위한 무료 기준 RAG, Agent, 보안, KPI 대시보드 통합 플랫폼 프로토타입입니다.
+합성 문서로 로컬 검색, 근거 기반 초안, 개인정보 마스킹, 골든셋 평가, 파일럿 리포트를 검증하는 브라우저 기반 기업 AI 준비도 데모입니다.
 
 ## System Overview
 
-AIX Pilot is a free-first enterprise GenAI pilot console that can become a governed implementation, secure knowledge onboarding, and monthly operating support service after workflow-specific validation.
+AIX Pilot is a browser-based enterprise AI readiness workbench. The public demo uses synthetic documents and local state; optional Ollama, Cloudflare Workers AI, and D1 adapters illustrate extension points without implying production readiness.
 
 | Area | Details |
 |---|---|
@@ -197,10 +197,10 @@ public/
 
 ## Search And Service Surface
 
-- Public entry: public Cloudflare Pages demo with synthetic fixtures
-- Paid boundary: paid pilot workspace with private docs, provider keys, KPI dashboards, and exportable business case
+- Public entry: interactive synthetic-data readiness demo
+- Paid boundary: fixed-scope Private AI Readiness Sprint; private data onboarding and production implementation require separate approval
 - Canonical URL: https://aix-pilot.pages.dev/
-- Lead capture: https://github.com/KIM3310/aix-pilot/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+AIX+Pilot
+- Lead capture: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&inquiry=private-ai-readiness-sprint#private-inquiry
 - Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers
 - Machine-readable offer: [docs/service-offer.json](docs/service-offer.json)
 - Search growth implementation: [docs/search-growth-implementation.md](docs/search-growth-implementation.md)
