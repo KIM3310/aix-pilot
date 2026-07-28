@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Guide | AIX Pilot</title>
+  <meta name="description" content="Free enterprise GenAI readiness scorecard for RAG, agent, DLP, eval, and KPI controls. Source-backed guide for enterprise AI leaders and platform teams.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="google-adsense-account" content="ca-pub-4973160293737562">
+  <link rel="canonical" href="https://aix-pilot.pages.dev/guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Project Guide | AIX Pilot">
+  <meta property="og:description" content="Free enterprise GenAI readiness scorecard for RAG, agent, DLP, eval, and KPI controls. Source-backed guide for enterprise AI leaders and platform teams.">
+  <meta property="og:url" content="https://aix-pilot.pages.dev/guide.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Project Guide | AIX Pilot","description":"Free enterprise GenAI readiness scorecard for RAG, agent, DLP, eval, and KPI controls. Source-backed guide for enterprise AI leaders and platform teams.","url":"https://aix-pilot.pages.dev/guide.html","dateModified":"2026-07-28","author":{"@type":"Person","name":"KIM3310","url":"https://github.com/KIM3310"},"publisher":{"@type":"Person","name":"KIM3310","url":"https://kim3310-doeon-kim-portfolio.pages.dev"},"isAccessibleForFree":true}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4973160293737562" crossorigin="anonymous"></script>
+  <style>
+    :root { color-scheme: light; --ink: #17201f; --muted: #52605d; --line: #cbd2ce; --paper: #ffffff; --ground: #f5f6f4; --green: #126455; --coral: #c94732; --gold: #b67a00; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 17px/1.72 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: var(--green); text-underline-offset: 3px; }
+    .site-header { border-bottom: 1px solid var(--line); background: rgba(245, 246, 244, .97); }
+    .site-nav, .article-shell, .site-footer-inner { width: min(920px, calc(100% - 32px)); margin: 0 auto; }
+    .site-nav { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .site-nav strong { font-size: .92rem; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: .84rem; }
+    .article-shell { padding: 54px 0 72px; }
+    .breadcrumbs { color: var(--muted); font-size: .82rem; }
+    .article-intro { padding: 28px 0 36px; border-bottom: 2px solid var(--ink); }
+    .kicker { color: var(--coral); font-size: .76rem; font-weight: 800; text-transform: uppercase; }
+    h1 { margin: 10px 0 16px; max-width: 18ch; font-size: 3.5rem; line-height: 1.04; letter-spacing: 0; overflow-wrap: anywhere; }
+    .lede { max-width: 68ch; color: var(--muted); font-size: 1.08rem; }
+    .review-note { margin-top: 18px; color: var(--muted); font-size: .84rem; }
+    article { padding-top: 24px; }
+    article h2 { margin: 42px 0 12px; padding-top: 6px; font-size: 1.75rem; line-height: 1.2; letter-spacing: 0; }
+    article h3 { margin: 30px 0 8px; font-size: 1.2rem; letter-spacing: 0; }
+    article h4 { margin: 24px 0 6px; font-size: 1.02rem; letter-spacing: 0; }
+    article p, article li { max-width: 76ch; }
+    article li + li { margin-top: 6px; }
+    pre { max-width: 100%; overflow: auto; border-left: 4px solid var(--gold); background: #1d2423; color: #f6f8f7; padding: 18px; border-radius: 4px; font-size: .86rem; }
+    code { overflow-wrap: anywhere; }
+    :not(pre) > code { border: 1px solid var(--line); background: var(--paper); padding: 1px 5px; border-radius: 3px; font-size: .9em; }
+    .table-scroll { overflow-x: auto; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; background: var(--paper); font-size: .9rem; }
+    th, td { border: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #e9eeeb; }
+    .boundary-note { margin: 30px 0 4px; border-left: 4px solid var(--coral); background: var(--paper); padding: 18px; }
+    .source-basis { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); }
+    .site-footer { border-top: 1px solid var(--line); background: var(--paper); }
+    .site-footer-inner { padding: 28px 0 44px; color: var(--muted); font-size: .84rem; }
+    .site-footer-links { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 12px; }
+    @media (max-width: 720px) {
+      .site-nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      .article-shell { padding-top: 32px; }
+      h1 { font-size: 2.35rem; }
+    }
+  </style>
+</head>
+<body data-ad-surface="editorial">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <strong>AIX Pilot</strong>
+      <div class="nav-links"><a href="/">Home</a><a href="/guide.html">Project guide</a><a href="/architecture.html">Architecture</a><a href="/verification.html">Verification</a><a href="/publisher.html">Publisher</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
+    </nav>
+  </header>
+  <main class="article-shell">
+    <p class="breadcrumbs"><a href="/">Home</a> / Project guide</p>
+    <header class="article-intro">
+      <div class="kicker">Project guide</div>
+      <h1>Project Guide | AIX Pilot</h1>
+      <p class="lede">Free enterprise GenAI readiness scorecard for RAG, agent, DLP, eval, and KPI controls. This guide organizes the repository&#039;s original implementation notes for enterprise AI leaders and platform teams.</p>
+      <p class="review-note">Reviewed 2026-07-28. This page is derived from checked-in repository evidence and links back to its source.</p>
+    </header>
+
+    <article><h2>AIX Pilot</h2>
+<p>합성 문서로 로컬 검색, 근거 기반 초안, 개인정보 마스킹, 골든셋 평가, 파일럿 리포트를 검증하는 브라우저 기반 기업 AI 준비도 데모입니다.</p>
+<h3>System Overview</h3>
+<p>AIX Pilot is a browser-based enterprise AI readiness workbench. The public demo uses synthetic documents and local state; optional Ollama, Cloudflare Workers AI, and D1 adapters illustrate extension points without implying production readiness.</p>
+<div class="table-scroll"><table><thead><tr><th>Area</th><th>Details</th></tr></thead><tbody><tr><td>Users</td><td>Customer-center leaders, internal knowledge owners, IT governance teams, and AI adoption leads.</td></tr><tr><td>Technical path</td><td>Validate the demo, README, architecture notes, and quality gate before deeper workflow review.</td></tr><tr><td>System scope</td><td>RAG, Agent drafts, DLP masking, evaluation lab, KPI dashboard, value readiness model, presentation pack, and Cloudflare-ready deployment.</td></tr><tr><td>Operating boundary</td><td>Demo data is local and controlled; external deployments should use approved customer storage, access control, audit logs, and model routing.</td></tr><tr><td>Evaluation path</td><td><code>npm run verify</code> runs TypeScript checks, tests, production build, and content verification.</td></tr></tbody></table></div>
+<h3>Evaluation Path</h3>
+<ul><li><strong>Start here:</strong> Open the value readiness model, service trust model, and evaluation lab before reading implementation details.</li><li><strong>Local demo:</strong> Run <code>npm install &amp;&amp; npm run dev</code>, then open <code>http://localhost:5173</code>.</li><li><strong>Checks:</strong> Run <code>npm run verify</code>; it covers TypeScript, tests, production build, and content verification.</li></ul>
+<h3>Architecture Notes</h3>
+<ul><li><a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/architecture-evidence-map.md" rel="noopener">Architecture guide</a> summarizes the system scope, first files to inspect, runtime commands, and known boundaries.</li><li><a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/quality-gate.md" rel="noopener">Quality notes</a> lists the local checks, CI surface, and release expectations for this repository.</li><li><a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/enterprise-readiness.md" rel="noopener">Enterprise readiness notes</a> outlines security, data, operations, integration, and handoff expectations.</li><li><a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/cloud-ai-architecture.md" rel="noopener">Cloud + AI architecture blueprint</a> records the deployment, runtime, AI evaluation, and risk-control surface.</li><li><a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/architecture/blueprint.json" rel="noopener">Machine-readable architecture manifest</a> keeps the blueprint inspectable in CI.</li></ul>
+<h3>핵심 기능</h3>
+<ul><li>고객센터/사내 지식 문서를 로컬에서 청크화하고 검색하는 RAG 콘솔</li><li>근거 문서, 점수, 출처, 소유자, 최신성 표시</li><li>FAQ 응답, 이메일 생성, 보고서 생성, 업무 자동화 Agent 초안</li><li>전화번호, 이메일, 주민등록번호 패턴, 민감 키워드 DLP 스캔</li><li>RAG 성공률, 자동화율, 보안 차단, 부서별 도입률 KPI 대시보드</li><li>지식, 근거, 보안, 승인 준비도 보드</li><li>Service Trust Model: 서비스 운영 준비도, 운영 전환 리스크, trust control, SLO, maturity track</li><li>Value Readiness: 반복 업무 회수 시간, 규제 산업 고객센터 타깃, 승인자 지도, 운영 리소스, 검토자 심리/조직 문화별 도입 전략</li><li>Evaluation Lab: 골든 질문셋 기반 검색 정확도, Citation 포함률, DLP 안전성 회귀 검증</li><li>Enterprise Spec Pack: 요구사항 추적, 6주 도입 로드맵, 평가/보안 게이트, 무료 스택 의사결정</li><li>유료 API 없이 동작하는 브라우저 기반 데모</li><li>감사 로그, 로컬 저장, 개인정보 마스킹 리포트 다운로드, 데모 시나리오 실행/초기화</li><li>중복 근거 제거와 민감정보 마스킹을 포함한 데모 품질 보정</li><li>RAG/Agent/Security/Evaluation 핵심 로직 자동 테스트</li></ul>
+<h3>기술 스택 임팩트</h3>
+<ul><li>단순 챗봇이 아니라 RAG, Agent, 보안, 감사, KPI, 평가를 한 화면에서 운영하는 제품형 데모입니다.</li><li><code>public/brand</code>의 자체 제작 이미지와 GIF 모션 자산으로 저작권 리스크 없이 제품 첫인상을 제공합니다.</li><li><code>무료 기준 스택</code>에서 Ollama 로컬 LLM, Cloudflare Workers AI fallback, Cloudflare Pages, Cloudflare D1 저장 상태를 바로 확인할 수 있습니다.</li><li><code>Service Trust Model</code>은 보안 탐지, 승인 흐름, 평가 점수, 스펙 커버리지를 합산해 운영 전환 준비도를 계산합니다.</li><li><code>Value Readiness</code>는 반복 업무 회수 시간, 승인 단계, 권장 서비스 범위, 운영 리소스, 도입 리스크 처리를 연결해 공개 추정치 없이 서비스 전환 가능성을 보여줍니다.</li><li><code>Evaluation Lab</code>과 <code>evaluation.test.ts</code>로 AI 기능을 골든 질문셋 기준으로 회귀 검증합니다.</li><li><code>docs/THREAT_MODEL.md</code>, <code>docs/ADR/</code>, <code>docs/ARCHITECTURE_CASE_STUDY.md</code>까지 포함해 제품 판단, 보안 사고, 엔지니어링 의사결정을 같이 보여줍니다.</li><li><code>npm run verify</code> 하나로 TypeScript, 테스트, 빌드를 재현할 수 있어 CI에 바로 연결할 수 있습니다.</li><li>GitHub Actions QA, Dependabot, 수동 Cloudflare Pages 배포 워크플로까지 포함해 공개 저장소에서도 유지보수 신뢰도를 확인할 수 있습니다.</li></ul>
+<h3>무료 기준 스택</h3>
+<div class="table-scroll"><table><thead><tr><th>영역</th><th>기본 구현</th><th>확장 옵션</th></tr></thead><tbody><tr><td>UI</td><td>React, Vite, TypeScript</td><td>Next.js, Remix</td></tr><tr><td>RAG 검색</td><td>로컬 TF-IDF/BM25 유사 검색</td><td>Qdrant, Chroma, LanceDB</td></tr><tr><td>LLM</td><td>Ollama <code>qwen2.5:1.5b</code> + Workers AI free allocation + 규칙 기반 fallback</td><td>사내 승인 LLM gateway</td></tr><tr><td>Agent</td><td>Playbook 기반 오케스트레이션</td><td>LangGraph, CrewAI, n8n</td></tr><tr><td>보안</td><td>DLP 패턴 탐지, 마스킹, 승인 플래그</td><td>OPA, Keycloak, Authentik</td></tr><tr><td>평가</td><td>Golden set + Vitest</td><td>Promptfoo, Ragas, LangSmith</td></tr><tr><td>운영 준비도</td><td>Service readiness scoring</td><td>SLO, incident runbook, SIEM</td></tr><tr><td>서비스 런칭</td><td>Value readiness + service packages</td><td>CRM, billing, usage metering</td></tr><tr><td>KPI</td><td>Recharts</td><td>Metabase, Superset</td></tr><tr><td>배포</td><td>Cloudflare Pages free tier</td><td>WAF, custom domain, SSO</td></tr><tr><td>DB</td><td>Cloudflare D1 + localStorage fallback</td><td>Governed Postgres/D1</td></tr></tbody></table></div>
+<h3>실행</h3>
+<pre><code>npm install
+npm run dev</code></pre>
+<p>브라우저에서 <code>http://localhost:5173</code>으로 접속합니다.</p>
+<h3>빌드</h3>
+<pre><code>npm run build</code></pre>
+<h3>전체 QA</h3>
+<pre><code>npm run verify</code></pre>
+<p><code>qa</code>는 TypeScript 검사, Vitest 자동 테스트, 프로덕션 빌드를 순서대로 실행합니다. GitHub Actions에서도 모든 push와 pull request마다 같은 검증을 실행합니다.</p>
+<h3>운영 품질 게이트</h3>
+<ul><li><code>QA</code> workflow: TypeScript, 30개 Vitest 테스트, 프로덕션 빌드, production dependency audit</li><li><code>Repository Surface</code> workflow: README, local docs, architecture blueprint, and neutral positioning guard</li><li><code>Architecture Blueprint</code> workflow: machine-readable cloud/AI architecture manifest validation</li><li><code>scripts/validate_architecture_blueprint.py</code>: local architecture manifest guard used by CI</li><li><code>Cloudflare Pages</code> workflow: 릴리스 후보를 다시 검증한 뒤 <code>dist/</code>를 Cloudflare Pages에 수동 배포</li><li><code>Dependabot</code>: npm 패키지와 GitHub Actions 버전을 주 1회 점검</li><li>배포 전 로컬 명령: <code>npm run verify &amp;&amp; npm audit --omit=dev</code></li></ul>
+<h3>파일 구조</h3>
+<pre><code>src/
+  App.tsx                # 대시보드 UI와 상호작용
+  data/
+    businessModel.ts     # 서비스 패키지, 검토자 심리, 문화 도입, 검증 실험 데이터
+    sampleDocs.ts        # 고객센터/사내지식 샘플 문서
+    metrics.ts           # KPI와 운영 이벤트 샘플 데이터
+    enterpriseSpec.ts    # 요구사항/로드맵/평가/보안 게이트 스펙 데이터
+    serviceModel.ts      # 서비스 운영 모델, trust control, SLO, maturity 데이터
+  lib/
+    rag.ts               # 로컬 문서 청크화, 검색, 근거 답변 생성
+    rag.test.ts          # RAG 랭킹과 fallback 테스트
+    agent.ts             # Agent 초안 생성과 승인 단계
+    agent.test.ts        # Agent 플레이북 테스트
+    report.ts            # Markdown 파일럿 리포트 생성과 마스킹
+    report.test.ts       # 리포트 개인정보 미노출 테스트
+    valueModel.ts        # 회수 시간, 승인 단계, 운영 전환 신호 계산
+    valueModel.test.ts   # 가치 검증 모델과 과장 포지셔닝 방지 테스트
+    evaluation.ts        # 골든 질문셋 기반 RAG/보안 평가
+    evaluation.test.ts   # 평가 점수와 DLP 회귀 테스트
+    serviceReadiness.ts  # 운영 준비도 계산과 서비스 모델 무결성 검증
+    serviceReadiness.test.ts # 운영 준비도와 trust model 테스트
+    spec.ts              # 스펙팩 완성도와 ID 무결성 검증
+    spec.test.ts         # 스펙팩 요구사항/게이트 테스트
+    security.ts          # DLP 탐지와 마스킹
+    security.test.ts     # DLP 탐지/마스킹 테스트
+  styles.css             # 반응형 엔터프라이즈 UI
+public/
+  brand/
+    aix-hero-generated.png  # 저작권 안전 제품 비주얼 백업 자산
+    aix-hero-generated.webp # 브라우저용 최적화 백업 이미지
+    aix-hero-4k.png         # 로컬 제작 4K 비주얼
+    aix-motion.gif          # 로컬 제작 운영 흐름 GIF</code></pre>
+<h3>데모 시나리오</h3>
+<p>상단 <code>실행</code> 버튼은 배송 지연 고객 응대 시나리오를 실행합니다. 전화번호가 포함된 요청을 넣어 RAG 답변, 이메일 Agent 초안, DLP 마스킹, 감사 로그가 함께 움직이는 것을 확인할 수 있습니다.</p>
+<p><code>리포트</code> 버튼은 현재 질의, 답변, 근거 문서, 보안 탐지, 파일럿 상태를 Markdown 리포트로 다운로드합니다. 리포트에는 감지된 전화번호, 이메일, 주민등록번호 패턴이 마스킹된 값으로 기록됩니다.</p>
+<p><code>초기화</code> 버튼은 업로드 문서와 감사 로그를 초기 샘플 상태로 되돌립니다.</p>
+<h3>실제 기업 파일럿으로 확장하는 순서</h3>
+<ol><li>사내 문서 원천을 정리합니다: Google Drive, Confluence, SharePoint, Notion, Zendesk, GitHub Wiki.</li><li>문서 메타데이터를 통일합니다: 소유자, 최신일, 민감도, 접근 권한, 업무 태그.</li><li>로컬 검색을 Qdrant 또는 Chroma로 교체합니다.</li><li>Ollama 같은 로컬 LLM을 연결하고 근거 없는 답변은 차단합니다.</li><li>SSO/RBAC, DLP, 감사 로그를 먼저 붙이고 외부 발송 Agent는 휴먼 승인으로 제한합니다.</li><li>파일럿 KPI를 정합니다: 검색 성공률, 근거 포함률, 상담 처리 시간, 자동화 완료율, 보안 차단 건수.</li></ol>
+<p>상세 제품 스펙은 <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/PRODUCT_SPEC.md" rel="noopener">docs/PRODUCT_SPEC.md</a>에 정리되어 있습니다. 서비스 운영 모델은 <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/SERVICE_OPERATING_MODEL.md" rel="noopener">docs/SERVICE_OPERATING_MODEL.md</a>, 서비스 런칭 전략은 <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/SERVICE_LAUNCH_STRATEGY.md" rel="noopener">docs/SERVICE_LAUNCH_STRATEGY.md</a>, 아키텍처 케이스 스터디는 <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/ARCHITECTURE_CASE_STUDY.md" rel="noopener">docs/ARCHITECTURE_CASE_STUDY.md</a>, 위협 모델은 <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/THREAT_MODEL.md" rel="noopener">docs/THREAT_MODEL.md</a>, 주요 의사결정은 <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/ADR" rel="noopener">docs/ADR</a>에 정리되어 있습니다. 클라우드와 AI 운영 경계는 <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/cloud-ai-architecture.md" rel="noopener">docs/cloud-ai-architecture.md</a>와 <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/architecture/blueprint.json" rel="noopener">docs/architecture/blueprint.json</a>에 정리되어 있습니다.</p>
+<h3>무료 배포 옵션</h3>
+<ul><li>로컬 데모: Vite dev server</li><li>정적 배포: GitHub Pages, Cloudflare Pages, Netlify free tier</li><li>사내 PoC: Docker + Nginx, 또는 사내 VM</li><li>로컬 LLM 확장: Ollama 서버를 같은 네트워크에 두고 API 프록시로 연결</li></ul>
+<p>이 프로젝트는 무료 기준의 설득력 있는 파일럿 데모를 목표로 합니다. 실제 개인정보나 고객 데이터를 넣기 전에는 반드시 접근 권한, 로그 보관, DLP 정책을 먼저 확정하세요.</p>
+<h3>Enterprise Productization</h3>
+<ul><li><a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/product-operating-model.md" rel="noopener">Product operating model</a> defines the product scope, trust boundary, operating checks, and service path for this repository.</li></ul>
+<h3>System Architecture</h3>
+<ul><li><a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/system-architecture.md" rel="noopener">System architecture</a> maps the runtime boundary, data/control flow, cloud or local deployment surface, and operating assumptions for this repository.</li></ul>
+<h3>Service Architecture</h3>
+<ul><li><a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/service-architecture.md" rel="noopener">Service architecture</a> defines the cloud resources, account information, cost controls, and production guardrails needed to turn this repo into a scoped service without publishing public financial assumptions.</li></ul>
+<h3>Search And Service Surface</h3>
+<ul><li>Public entry: interactive synthetic-data readiness demo</li><li>Paid boundary: fixed-scope Private AI Readiness Sprint; private data onboarding and production implementation require separate approval</li><li>Canonical URL: https://aix-pilot.pages.dev/</li><li>Lead capture: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot&amp;inquiry=private-ai-readiness-sprint#private-inquiry</li><li>Resource route: https://kim3310-doeon-kim-portfolio.pages.dev/resources/aix-pilot/</li><li>Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot#service-offers</li><li>Machine-readable offer: <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/service-offer.json" rel="noopener">docs/service-offer.json</a></li><li>Search growth implementation: <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/search-growth-implementation.md" rel="noopener">docs/search-growth-implementation.md</a></li><li>Revenue architecture: <a href="https://github.com/KIM3310/aix-pilot/blob/main/docs/revenue-architecture.md" rel="noopener">docs/revenue-architecture.md</a></li></ul></article>
+    <aside class="source-basis">
+      <strong>Source basis:</strong> <a href="https://github.com/KIM3310/aix-pilot/blob/main/README.md" rel="noopener">README.md</a>. Corrections can be proposed through the public repository without submitting private data.
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-links"><a href="/">Home</a><a href="/guide.html">Project guide</a><a href="/architecture.html">Architecture</a><a href="/verification.html">Verification</a><a href="/publisher.html">Publisher</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="https://kim3310-doeon-kim-portfolio.pages.dev/">Resource atlas</a></div>
+      <p>Advertising may appear on this public editorial page after Google approves the site. Ads are not placed inside private, transactional, diagnostic, security-response, or operational workflows.</p>
+    </div>
+  </footer>
+</body>
+</html>

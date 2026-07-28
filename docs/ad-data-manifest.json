@@ -6,7 +6,7 @@
   "audience": "enterprise AI leaders and platform teams",
   "public_resource": {
     "url": "https://kim3310-doeon-kim-portfolio.pages.dev/resources/aix-pilot/",
-    "live_demo": "https://aix-pilot.pages.dev",
+    "live_demo": "https://aix-pilot.pages.dev/",
     "readiness_checklist": [
       "Architecture Summary",
       "Runtime And Data Flow",
