@@ -15,8 +15,8 @@ Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=aix-pilot
 
 Use this project to inspect a bounded AI readiness workflow: document retrieval, citations, draft generation, redaction checks, golden-set evaluation, readiness scoring, and report export.
 # ADSENSE-PUBLICATION:START
-Editorial guide: https://aix-pilot.pages.dev/guide.html
-Architecture article: https://aix-pilot.pages.dev/architecture.html
-Verification article: https://aix-pilot.pages.dev/verification.html
-Publisher information: https://aix-pilot.pages.dev/publisher.html
+Editorial guide: https://aix-pilot.pages.dev/guide
+Architecture article: https://aix-pilot.pages.dev/architecture
+Verification article: https://aix-pilot.pages.dev/verification
+Publisher information: https://aix-pilot.pages.dev/publisher
 # ADSENSE-PUBLICATION:END
