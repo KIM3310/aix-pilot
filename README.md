@@ -11,7 +11,6 @@ AIX Pilot is a browser-based enterprise AI readiness workbench. The public demo 
 | Area | Details |
 |---|---|
 | Users | Customer-center leaders, internal knowledge owners, IT governance teams, and AI adoption leads. |
-| Technical path | Validate the demo, README, architecture notes, and quality gate before deeper workflow review. |
 | System scope | RAG, Agent drafts, DLP masking, evaluation lab, KPI dashboard, value readiness model, presentation pack, and Cloudflare-ready deployment. |
 | Operating boundary | Demo data is local and controlled; external deployments should use approved customer storage, access control, audit logs, and model routing. |
 | Evaluation path | `npm run verify` runs TypeScript checks, tests, production build, and content verification. |
