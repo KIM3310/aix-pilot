@@ -1,2 +1,8 @@
 blank_issues_enabled: false
-contact_links: []
+contact_links:
+  - name: Private collaboration or scoped-service inquiry
+    url: https://www.linkedin.com/in/doeon-kim-4742a2388
+    about: Use a private channel for collaboration or non-public scoping; do not open a public issue.
+  - name: Security vulnerability
+    url: https://github.com/KIM3310/aix-pilot/security/advisories/new
+    about: Report security-sensitive issues privately through GitHub Security Advisories.
