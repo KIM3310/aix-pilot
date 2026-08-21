@@ -13,13 +13,13 @@ AIX Pilot is a browser-based enterprise AI readiness workbench. The public demo 
 | Users | Customer-center leaders, internal knowledge owners, IT governance teams, and AI adoption leads. |
 | System scope | RAG, Agent drafts, DLP masking, evaluation lab, KPI dashboard, value readiness model, presentation pack, and Cloudflare-ready deployment. |
 | Operating boundary | Demo data is local and controlled; external deployments should use approved customer storage, access control, audit logs, and model routing. |
-| Evaluation path | `npm run verify` runs TypeScript checks, tests, production build, and content verification. |
+| Evaluation path | `npm run verify` runs TypeScript checks, tests, and the production build. Repository-content checks run in the separate `Repository Surface` workflow. |
 
 ## Evaluation Path
 
 - **Start here:** Open the value readiness model, service trust model, and evaluation lab before reading implementation details.
 - **Local demo:** Run `npm install && npm run dev`, then open `http://localhost:5173`.
-- **Checks:** Run `npm run verify`; it covers TypeScript, tests, production build, and content verification.
+- **Checks:** Run `npm run verify` for TypeScript, tests, and the production build. The `Repository Surface` workflow validates README and architecture content in CI.
 
 ## Service Launch Playbook
 
